@@ -1,16 +1,21 @@
 # common alias
-alias ll='ls -al'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ll='ls -AlF'
 alias sz='source ~/.zshrc'
 alias zshrc='vim ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
 alias e_alias='vim ~/dotfiles/zshrc.alias.sh'
 alias attend='cd ~/mf_works/mf_attendance'
 alias spec='bundle exec rspec'
-
+alias dice='echo $(($RANDOM % 6 + 1))'
+alias bomb=':(){ :|:& };:'
 if is_osx; then
+  alias ls='ls -G'
   alias -g CP='| pbcopy'
   alias -g CC='| tee /dev/tty | pbcopy'
 elif is_linux; then
+  alias ls='ls --color=auto'
   # sudo apt-get install xsel
   alias -g CP='| xsel --clipboard --input'
 fi
