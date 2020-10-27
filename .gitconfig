@@ -1,0 +1,14 @@
+[user]
+	name = hikasa_akito
+	email = wetsand.wfs@gmail.com
+
+[color]
+	ui = auto
+
+[alias]
+	show-pr = !"f() { git log --merges --oneline --ancestry-path $1...master | grep 'Merge pull request #' | tail -n 1; }; f"
+	show-commit = !"f() { git log --reverse --ancestry-path $1^...master; }; f"
+	find-comment = !"f() { git log --all --grep=$1; }; f"
+
+[url "git@github.com:"]
+	insteadOf = "g:"
