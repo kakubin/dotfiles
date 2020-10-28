@@ -11,6 +11,7 @@
   find-comment = !"f() { git log --all --grep=$1; }; f"
   remove-merged-branch = "!git branch -d $(git branch --merged | grep -v master | grep -v '*')"
   fuzzy-checkout = !"f() { git branch -vv | grep -v '*' | fzf +m | git checkout $(awk '{print $1}'); }; f"
+  awesome-log = "!git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
 [url "git@github.com:"]
   insteadOf = "g:"

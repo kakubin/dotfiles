@@ -53,7 +53,7 @@ alias gdc='gd --cached'
 # git fetch --prune
 alias gf='git remote update --prune'
 alias gi='git init'
-alias gl='git log'
+alias gl='git awesome-log'
 alias glp='gl -p'
 alias glg='gl --graph --oneline --decorate'
 alias gld='gl --pretty=format:"%h %ad %s" --date=short'
