@@ -6,6 +6,7 @@ brew upgrade
 brew install git
 brew install vim
 brew install tig
+brew install fzf
 
 brew install rbenv
 brew install goenv

@@ -6,10 +6,11 @@ alias sz='source ~/.zshrc'
 alias zshrc='vim ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
 alias e_alias='vim ~/dotfiles/zshrc.alias.sh'
-alias attend='cd ~/mf_works/mf_attendance'
+alias attend='cd ~/mf_works/mf_attendance && clear'
 alias spec='bundle exec rspec'
 alias dice='echo $(($RANDOM % 6 + 1))'
 alias bomb=':(){ :|:& };:'
+
 if is_osx; then
   alias ls='ls -G'
   alias -g CP='| pbcopy'
