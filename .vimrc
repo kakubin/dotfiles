@@ -60,6 +60,7 @@ if dein#load_state(s:dein_dir)
   "call dein#add('prabirshrestha/vim-lsp')
   "call dein#add('mattn/vim-lsp-settings')
   call dein#add('easymotion/vim-easymotion')
+  call dein#add('vim-scripts/vim-auto-save')
   call dein#add('doums/darcula')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
@@ -68,7 +69,6 @@ if dein#load_state(s:dein_dir)
   "call dein#add('Shougo/neosnippet-snippets')
   "call dein#add('roxma/nvim-yarp')
   "call dein#add('roxma/vim-hug-neovim-rpc')
-
   call dein#end()
   call dein#save_state()
 endif
@@ -82,3 +82,4 @@ endif
 
 syntax enable
 colorscheme darcula
+let g:auto_save = 1
