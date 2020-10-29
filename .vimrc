@@ -3,6 +3,7 @@ set wildmenu
 set autoread
 set hidden
 
+"Indent
 set autoindent
 set smartindent
 set tabstop=2
@@ -10,6 +11,14 @@ set softtabstop=2
 set shiftwidth=2
 "set smarttab
 set expandtab
+
+"Search
+set ignorecase
+set smartcase
+set wrapscan
+set incsearch
+set hlsearch
+nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
 
 set nocursorline
 autocmd InsertEnter,InsertLeave * set cursorline!
@@ -19,7 +28,15 @@ augroup space
   autocmd BufWritePre * :%s/\s\+$//e
 augroup END
 
+" auto reload .vimrc
+augroup source-vimrc
+  autocmd!
+  autocmd BufWritePost *vimrc source $MYVIMRC | set foldmethod=marker
+  autocmd BufWritePost *gvimrc if has('gui_running') source $MYGVIMRC
+augroup END
+
 set number
+syntax on
 let mapleader = "¥<Space>"
 inoremap <silent> jj <ESC>
 inoremap { {}<LEFT>
