@@ -1,22 +1,30 @@
-set nocompatible
 set wildmenu
+"set wildmode=list:longest
+set autoread
+set hidden
 
-set expandtab
 set autoindent
 set smartindent
-set smarttab
+set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-set tabstop=2
+"set smarttab
+set expandtab
 
 set nocursorline
 autocmd InsertEnter,InsertLeave * set cursorline!
+
+augroup space
+  autocmd!
+  autocmd BufWritePre * :%s/\s\+$//e
+augroup END
 
 set number
 let mapleader = "¥<Space>"
 inoremap <silent> jj <ESC>
 inoremap { {}<LEFT>
 inoremap ( ()<LEFT>
+inoremap [ []<LEFT>
 inoremap ' ''<LEFT>
 inoremap " ""<LEFT>
 
