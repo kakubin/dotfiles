@@ -42,6 +42,8 @@ augroup source-vimrc
   autocmd BufWritePost *gvimrc if has('gui_running') source $MYGVIMRC
 augroup END
 
+set clipboard+=unnamed
+
 set number
 syntax on
 let mapleader = "¥<Space>"
@@ -62,8 +64,9 @@ if dein#load_state(s:dein_dir)
   call dein#add(s:dein_repo_dir)
   call dein#add('slim-template/vim-slim')
   call dein#add('scrooloose/nerdtree')
-  call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
+  "call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
   call dein#add('junegunn/fzf.vim')
+  call dein#add('airblade/vim-gitgutter')
   "call dein#add('prabirshrestha/vim-lsp')
   "call dein#add('mattn/vim-lsp-settings')
   call dein#add('easymotion/vim-easymotion')
@@ -71,9 +74,8 @@ if dein#load_state(s:dein_dir)
   call dein#add('doums/darcula')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
-  "call dein#add('cocopon/iceberg.vim')
-  "call dein#add('Shougo/neosnippet.vim')
-  "call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
   "call dein#add('roxma/nvim-yarp')
   "call dein#add('roxma/vim-hug-neovim-rpc')
   call dein#end()
