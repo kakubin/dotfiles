@@ -3,10 +3,9 @@ brew update
 # update already-installed formula
 brew upgrade
 
-brew install git
 brew install vim
-brew install tig
 brew install fzf
+brew install ripgrep
 
 brew install rbenv
 brew install goenv
