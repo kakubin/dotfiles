@@ -48,11 +48,6 @@ set number
 syntax on
 let mapleader = "¥<Space>"
 inoremap <silent> jj <ESC>
-inoremap { {}<LEFT>
-inoremap ( ()<LEFT>
-inoremap [ []<LEFT>
-inoremap ' ''<LEFT>
-inoremap " ""<LEFT>
 
 " dein.plugin manager================================
 let s:dein_dir = expand('~/.cache/dein')
@@ -71,6 +66,7 @@ if dein#load_state(s:dein_dir)
   "call dein#add('mattn/vim-lsp-settings')
   call dein#add('easymotion/vim-easymotion')
   call dein#add('vim-scripts/vim-auto-save')
+  call dein#add('jiangmiao/auto-pairs')
   call dein#add('doums/darcula')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
