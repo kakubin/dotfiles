@@ -66,7 +66,7 @@ if dein#load_state(s:dein_dir)
   call dein#add('doums/darcula')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
-
+  call dein#add('Yggdroot/indentLine')
   call dein#add('scrooloose/nerdtree')
 
   "fzf brewを使ってインストールされている場合
@@ -81,6 +81,7 @@ if dein#load_state(s:dein_dir)
   call dein#add('jiangmiao/auto-pairs')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
+  "call dein#add('scrooloose/syntastic')
   call dein#end()
   call dein#save_state()
 endif
@@ -98,4 +99,9 @@ colorscheme darcula
 "plugin config
 "vim-auto-save
 let g:auto_save = 1
+
+"indentline"
+"let g:indentLine_color_term =239
+"let g:indentLine_color_gui = '#708090'
+"let g:indentLine_char = '¦'
 
