@@ -60,6 +60,8 @@ execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
   call dein#add(s:dein_repo_dir)
+  "document
+  call dein#add('vim-jp/vimdoc-ja')
   "style
   call dein#add('doums/darcula')
   call dein#add('vim-airline/vim-airline')
