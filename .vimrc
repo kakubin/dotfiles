@@ -31,17 +31,17 @@ nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
 set nocursorline
 autocmd InsertEnter,InsertLeave * set cursorline!
 
-"augroup delete space
-"  autocmd!
-"  autocmd BufWritePre * :%s/\s\+$//e
-"augroup END
+augroup delete space
+  autocmd!
+  autocmd BufWritePre * :%s/\s\+$//e
+augroup END
 
 " auto reload .vimrc
-"augroup source-vimrc
-"  autocmd!
-"  autocmd BufWritePost *vimrc source $MYVIMRC | set foldmethod=marker
-"  autocmd BufWritePost *gvimrc if has('gui_running') source $MYGVIMRC
-"augroup END
+augroup source-vimrc
+  autocmd!
+  autocmd BufWritePost *vimrc source $MYVIMRC | set foldmethod=marker
+  autocmd BufWritePost *gvimrc if has('gui_running') source $MYGVIMRC
+augroup END
 
 set clipboard+=unnamed
 
@@ -96,9 +96,11 @@ endif
 syntax enable
 colorscheme darcula
 
-"plugin config
+"plugin config================================
 "vim-auto-save
 let g:auto_save = 1
+let g:auto_save_in_insert_mode = 0
+let g:auto_save_silent = 1
 
 "indentline"
 "let g:indentLine_color_term =239
