@@ -31,19 +31,20 @@ nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
 set nocursorline
 autocmd InsertEnter,InsertLeave * set cursorline!
 
-augroup delete space
+augroup DeleteSpace
   autocmd!
   autocmd BufWritePre * :%s/\s\+$//e
 augroup END
 
-" auto reload .vimrc
-augroup source-vimrc
+augroup ReloadVimrc
   autocmd!
   autocmd BufWritePost *vimrc source $MYVIMRC | set foldmethod=marker
   autocmd BufWritePost *gvimrc if has('gui_running') source $MYGVIMRC
 augroup END
 
 set clipboard+=unnamed
+
+set noswapfile
 
 set number
 syntax on
@@ -68,7 +69,7 @@ if dein#load_state(s:dein_dir)
   call dein#add('vim-airline/vim-airline-themes')
   call dein#add('Yggdroot/indentLine')
   call dein#add('scrooloose/nerdtree')
-
+  call dein#add('slim-template/vim-slim')
   "fzf brewを使ってインストールされている場合
   call dein#add('/usr/local/opt/fzf')
   call dein#add('junegunn/fzf.vim')
@@ -79,8 +80,13 @@ if dein#load_state(s:dein_dir)
   call dein#add('easymotion/vim-easymotion')
   call dein#add('vim-scripts/vim-auto-save')
   call dein#add('jiangmiao/auto-pairs')
+
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
+
+  "rails
+  call dein#add('tpope/vim-rails')
+  call dein#add('tpope/vim-endwise')
   "call dein#add('scrooloose/syntastic')
   call dein#end()
   call dein#save_state()
