@@ -52,7 +52,7 @@ eval "$(goenv init -)"
 export PATH="$PATH:$GOPATH/bin"
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='rg --files --follow -g "!.git/*"'
+export FZF_DEFAULT_COMMAND='rg --hidden --files --follow -g "!.git/*"'
 
 ostype() {
   echo ${(L):-$(uname)}

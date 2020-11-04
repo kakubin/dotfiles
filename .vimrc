@@ -53,6 +53,17 @@ inoremap <silent> jj <ESC>
 nnoremap j gj
 nnoremap k gk
 
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
+nnoremap ; :
+nnoremap <Leader>f :FZF<CR>
+
+nnoremap ,.  :<C-u>edit $MYVIMRC<CR>
+nnoremap ,s. :<C-u>source $MYVIMRC<CR>
+
 " dein.plugin manager================================
 let s:dein_dir = expand('~/.cache/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
