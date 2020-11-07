@@ -28,6 +28,11 @@ set incsearch
 set hlsearch
 nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
 
+set completeopt=menuone,popup
+for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
+  exec "imap <expr> " . k . " pumvisible() ? '" . k . "' : '" . k . "\<C-X>\<C-P>\<C-N>'"
+endfor
+
 "set laststatus
 set nocursorline
 autocmd InsertEnter,InsertLeave * set cursorline!
