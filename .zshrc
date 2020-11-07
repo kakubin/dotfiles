@@ -41,7 +41,7 @@ RPROMPT="%F{118}[%*]%f"
 eval "$(direnv hook zsh)"
 eval "$(nodenv init -)"
 eval "$(rbenv init -)"
-export PATH=$HOME/.yarn/bin:$PATH
+export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.nodenv/bin:$PATH"
 # export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
