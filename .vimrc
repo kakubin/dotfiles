@@ -54,7 +54,7 @@ set noswapfile
 
 set number
 syntax on
-let mapleader = "¥<Space>"
+let g:mapleader = "\<Space>"
 inoremap <silent> jj <ESC>
 nnoremap j gj
 nnoremap k gk
