@@ -2,7 +2,7 @@
 set encoding=utf-8
 scriptencoding utf-8
 set fileencoding=utf-8 " 保存時の文字コード
-set fileencodings=ucs-boms,utf-8,euc-jp,cp932 " 読み込み時の文字コードの自動判別. 左側が優先される
+set fileencodings=utf-8,ucs-bom,seuc-jp,cp932 " 読み込み時の文字コードの自動判別. 左側が優先される
 set fileformats=unix,dos,mac " 改行コードの自動判別. 左側が優先される
 set ambiwidth=double " □や○文字が崩れる問題を解決
 
@@ -92,6 +92,7 @@ if dein#load_state(s:dein_dir)
   call dein#add('junegunn/fzf.vim')
 
   call dein#add('airblade/vim-gitgutter')
+  call dein#add('tpope/vim-fugitive')
   "call dein#add('prabirshrestha/vim-lsp')
   call dein#add('easymotion/vim-easymotion')
   call dein#add('vim-scripts/vim-auto-save')
