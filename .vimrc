@@ -58,6 +58,8 @@ let g:mapleader = "\<Space>"
 inoremap <silent> jj <ESC>
 nnoremap j gj
 nnoremap k gk
+nnoremap <C-w>v <C-w>v<C-w>l
+nnoremap <C-w>s <C-w>s<C-w>j
 
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
@@ -144,4 +146,5 @@ highlight link ALEWarningSign StorageClass
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-
+"NERDTree
+nnoremap <silent><Leader>t :NERDTreeToggle<CR>
