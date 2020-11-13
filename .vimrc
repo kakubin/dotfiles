@@ -67,7 +67,10 @@ inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
 nnoremap ; :
-nnoremap <Leader>f :FZF<CR>
+nnoremap <Leader>gf :GFiles<CR>
+nnoremap <Leader>gs :GFiles?<CR>
+nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>fl :Lines<CR>
 
 nnoremap ,.  :<C-u>edit $MYVIMRC<CR>
 nnoremap ,s. :<C-u>source $MYVIMRC<CR>
