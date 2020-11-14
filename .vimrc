@@ -69,6 +69,7 @@ inoremap <C-l> <Right>
 nnoremap ; :
 nnoremap ,.  :<C-u>edit $MYVIMRC<CR>
 "nnoremap ,s. :<C-u>source $MYVIMRC<CR>
+nnoremap <Leader>git :!tig<CR>
 
 " dein.plugin manager================================
 let s:dein_dir = expand('~/.cache/dein')
@@ -148,7 +149,7 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 nnoremap <silent><Leader>t :NERDTreeToggle<CR>
 
 "FZF
-nnoremap <Leader>gf :GFiles<CR>
-nnoremap <Leader>gs :GFiles?<CR>
-nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>ff :GFiles<CR>
+nnoremap <Leader>fs :GFiles?<CR>
+nnoremap <Leader>fb :Buffers<CR>
 nnoremap <Leader>fl :Lines<CR>
