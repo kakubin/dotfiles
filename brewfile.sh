@@ -12,6 +12,7 @@ brew install goenv
 brew install nodenv
 
 brew install mysql
+brew install postgresql
 brew install redis
 
 brew install brew-cask
