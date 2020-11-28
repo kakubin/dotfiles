@@ -26,7 +26,7 @@ set smartcase
 set wrapscan
 set incsearch
 set hlsearch
-nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
+nnoremap <silent> <Esc><Esc> :nohlsearch<CR><ESC>
 
 set completeopt=menuone,popup
 for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
@@ -98,6 +98,7 @@ if dein#load_state(s:dein_dir)
   call dein#add('easymotion/vim-easymotion')
   call dein#add('vim-scripts/vim-auto-save')
   call dein#add('jiangmiao/auto-pairs')
+  call dein#add('tpope/vim-surround')
   call dein#add('dense-analysis/ale')
 
   call dein#add('Shougo/neosnippet.vim')
