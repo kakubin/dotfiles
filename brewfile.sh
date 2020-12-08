@@ -12,6 +12,7 @@ brew install docker
 brew install rbenv
 brew install goenv
 brew install nodenv
+brew install ffmpeg
 
 brew install mysql
 brew install postgresql
