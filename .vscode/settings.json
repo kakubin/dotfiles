@@ -1,0 +1,14 @@
+{
+    "files.autoSave": "afterDelay",
+    "workbench.colorTheme": "Darcula Theme from IntelliJ",
+    "editor.tabSize": 2,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "files.trimTrailingWhitespace": true,
+    "editor.fontSize": 16,
+    "explorer.confirmDelete": false,
+    "diffEditor.renderSideBySide": false,
+    "ruby.lint": {
+        "rubocop": true
+    },
+    "window.zoomLevel": 0,
+}

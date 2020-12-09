@@ -19,6 +19,7 @@ brew install postgresql
 brew install redis
 
 brew install brew-cask
+brew cask install visual-studio-code
 brew cask install git-gui
 brew cask install google-chrome
 brew cask install postman
