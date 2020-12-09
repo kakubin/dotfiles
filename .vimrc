@@ -28,10 +28,11 @@ set incsearch
 set hlsearch
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR><ESC>
 
-set completeopt=menuone,popup
-for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
-  exec "imap <expr> " . k . " pumvisible() ? '" . k . "' : '" . k . "\<C-X>\<C-P>\<C-N>'"
-endfor
+"set completeopt=menuone,noinsert
+set completeopt& completeopt+=menuone completeopt-=preview
+"for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
+"  exec "imap <expr> " . k . " pumvisible() ? '" . k . "' : '" . k . "\<C-X>\<C-P>\<C-N>'"
+"endfor
 
 "set laststatus
 set nocursorline
@@ -66,10 +67,18 @@ inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
+inoremap <expr><Tab>   pumvisible() ? "<Down>" : "<Tab>"
+inoremap <expr><S-Tab> pumvisible() ? "<Up>" : "<S-Tab>"
+
+"空行挿入したいだけだけど動作遅いし多分消す
+nnoremap <C-o> o<ESC>k
+
 nnoremap ; :
 nnoremap ,.  :<C-u>edit $MYVIMRC<CR>
-"nnoremap ,s. :<C-u>source $MYVIMRC<CR>
+nnoremap ,s. :<C-u>source $MYVIMRC<CR>
 nnoremap <Leader>git :!tig<CR>
+
+cnoremap <C-p> <Up>
 
 " dein.plugin manager================================
 let s:dein_dir = expand('~/.cache/dein')
@@ -95,14 +104,16 @@ if dein#load_state(s:dein_dir)
   call dein#add('airblade/vim-gitgutter')
   call dein#add('tpope/vim-fugitive')
   "call dein#add('prabirshrestha/vim-lsp')
+  "call dein#add('mattn/vim-lsp-settings')
   call dein#add('easymotion/vim-easymotion')
   call dein#add('vim-scripts/vim-auto-save')
   call dein#add('jiangmiao/auto-pairs')
   call dein#add('tpope/vim-surround')
   call dein#add('dense-analysis/ale')
 
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
+  "call dein#add('prabirshrestha/asyncomplete.vim')
+  "call dein#add('Shougo/neosnippet.vim')
+  "call dein#add('Shougo/neosnippet-snippets')
 
   "rails
   call dein#add('tpope/vim-rails')
@@ -156,3 +167,6 @@ nnoremap <Leader>ff :GFiles<CR>
 nnoremap <Leader>fs :GFiles?<CR>
 nnoremap <Leader>fb :Buffers<CR>
 nnoremap <Leader>fl :Lines<CR>
+
+"asyncomplete
+"inoremap <expr><CR> pumvisible() ? asyncomplete#close_popup() : "<CR>"
