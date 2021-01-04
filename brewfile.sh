@@ -14,6 +14,8 @@ brew install goenv
 brew install nodenv
 brew install ffmpeg
 brew install coreutils
+brew install graphviz
+brew install virtualbox
 
 brew install mysql
 brew install postgresql
