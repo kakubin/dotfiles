@@ -81,53 +81,44 @@ nnoremap <Leader>git :!tig<CR>
 cnoremap <C-p> <Up>
 
 " dein.plugin manager================================
-let s:dein_dir = expand('~/.cache/dein')
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
-  call dein#add(s:dein_repo_dir)
-  "document
-  call dein#add('vim-jp/vimdoc-ja')
-  "style
-  call dein#add('doums/darcula')
-  call dein#add('vim-airline/vim-airline')
-  call dein#add('vim-airline/vim-airline-themes')
-  call dein#add('Yggdroot/indentLine')
-  call dein#add('scrooloose/nerdtree')
-  call dein#add('slim-template/vim-slim')
-  "fzf brewを使ってインストールされている場合
-  call dein#add('/usr/local/opt/fzf')
-  call dein#add('junegunn/fzf.vim')
+call plug#begin('~/.vim/plugged')
 
-  call dein#add('airblade/vim-gitgutter')
-  call dein#add('tpope/vim-fugitive')
-  "call dein#add('prabirshrestha/vim-lsp')
-  "call dein#add('mattn/vim-lsp-settings')
-  call dein#add('easymotion/vim-easymotion')
-  call dein#add('vim-scripts/vim-auto-save')
-  call dein#add('jiangmiao/auto-pairs')
-  call dein#add('tpope/vim-surround')
-  call dein#add('dense-analysis/ale')
+"document
+Plug 'vim-jp/vimdoc-ja'
+"style
+Plug 'doums/darcula'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Yggdroot/indentLine'
+Plug 'scrooloose/nerdtree'
+Plug 'slim-template/vim-slim'
+"fzf brewを使ってインストールされている場合
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
-  "call dein#add('prabirshrestha/asyncomplete.vim')
-  "call dein#add('Shougo/neosnippet.vim')
-  "call dein#add('Shougo/neosnippet-snippets')
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+"Plug 'prabirshrestha/vim-lsp'
+"Plug 'mattn/vim-lsp-settings'
+Plug 'easymotion/vim-easymotion'
+Plug 'vim-scripts/vim-auto-save'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
+Plug 'dense-analysis/ale'
 
-  "rails
-  call dein#add('tpope/vim-rails')
-  call dein#add('tpope/vim-endwise')
-  call dein#end()
-  call dein#save_state()
-endif
+"Plug 'prabirshrestha/asyncomplete.vim'
+"Plug 'Shougo/neosnippet.vim'
+"Plug 'Shougo/neosnippet-snippets'
+
+"rails
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-endwise'
+
+call plug#end()
 
 filetype plugin indent on
-syntax enable
 
-if dein#check_install()
-  call dein#install()
-endif
 
 syntax enable
 colorscheme darcula
