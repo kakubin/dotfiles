@@ -67,8 +67,8 @@ inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
-inoremap <expr><Tab>   pumvisible() ? "<Down>" : "<Tab>"
-inoremap <expr><S-Tab> pumvisible() ? "<Up>" : "<S-Tab>"
+inoremap <expr><Tab>   pumvisible() ? "\<Down>" : "\<Tab>"
+inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
 
 "空行挿入したいだけだけど動作遅いし多分消す
 nnoremap <C-o> o<ESC>k
@@ -80,12 +80,17 @@ nnoremap <Leader>git :!tig<CR>
 
 cnoremap <C-p> <Up>
 
-" dein.plugin manager================================
 
 call plug#begin('~/.vim/plugged')
 
 "document
 Plug 'vim-jp/vimdoc-ja'
+
+"completion
+Plug 'prabirshrestha/asyncomplete.vim'
+"Plug 'prabirshrestha/vim-lsp'
+"Plug 'mattn/vim-lsp-settings'
+
 "style
 Plug 'doums/darcula'
 Plug 'vim-airline/vim-airline'
@@ -99,17 +104,11 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-"Plug 'prabirshrestha/vim-lsp'
-"Plug 'mattn/vim-lsp-settings'
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-scripts/vim-auto-save'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'dense-analysis/ale'
-
-"Plug 'prabirshrestha/asyncomplete.vim'
-"Plug 'Shougo/neosnippet.vim'
-"Plug 'Shougo/neosnippet-snippets'
 
 "rails
 Plug 'tpope/vim-rails'
@@ -160,4 +159,4 @@ nnoremap <Leader>fb :Buffers<CR>
 nnoremap <Leader>fl :Lines<CR>
 
 "asyncomplete
-"inoremap <expr><CR> pumvisible() ? asyncomplete#close_popup() : "<CR>"
+"inoremap <expr><CR> pumvisible() ? asyncomplete#close_popup() : "\<CR>"
