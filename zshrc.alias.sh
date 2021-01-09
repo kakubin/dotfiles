@@ -10,6 +10,7 @@ alias .f='cd ~/dotfiles'
 alias rm='gmv -f --backup=numbered --target-directory ~/.Trash/'
 alias be='bundle exec'
 alias spec='bundle exec rspec'
+alias diffcop='git diff master --name-only | grep rb | xargs bundle exec rubocop --fail-level R'
 alias dice='echo $(($RANDOM % 6 + 1))'
 alias bomb=':(){ :|:& };:'
 
