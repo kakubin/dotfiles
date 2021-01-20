@@ -1,5 +1,8 @@
 # dotfiles
 
+1. capsLockとctrlを入れ替える
+2. 入力言語の切り替えを<command-Space>にする
+
 ```
 xcode-select --install
 sudo xcodebuild -license
