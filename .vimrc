@@ -73,7 +73,6 @@ inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
 "空行挿入したいだけだけど動作遅いし多分消す
 nnoremap <C-o> o<ESC>k
 
-nnoremap ; :
 nnoremap ,.  :<C-u>edit $MYVIMRC<CR>
 nnoremap ,s. :<C-u>source $MYVIMRC<CR>
 nnoremap <Leader>git :!tig<CR>
