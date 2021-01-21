@@ -1,3 +1,8 @@
+#!/bin/bash
+
+echo "Hello! This is a brew list file,"
+echo "which automatically install convenient applications"
+
 # latest home Homebrew
 brew update
 # update already-installed formula
