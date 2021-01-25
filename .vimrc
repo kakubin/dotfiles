@@ -54,6 +54,7 @@ set clipboard+=unnamed
 set noswapfile
 
 set number
+set foldmethod=indent
 syntax on
 let g:mapleader = "\<Space>"
 inoremap <silent> jj <ESC>
@@ -79,7 +80,29 @@ nnoremap <Leader>git :!tig<CR>
 
 cnoremap <C-p> <Up>
 
+function! s:copy_current_path()
+  let @* = expand('%:p')
+  echo 'Copy current path: ' . @*
+endfunction
 
+function! s:copy_current_path_from_root()
+  if empty(s:current_git())
+    return
+  else
+    call s:copy_current_path()
+    let @* = substitute(@*, s:current_git() . '/', '', 'g')
+    echo 'Copy current path: ' . @*
+  endif
+endfunction
+
+augroup MyAutoCmd
+  autocmd WinEnter <buffer> checktime
+augroup END
+
+nmap cp :call <SID>copy_current_path()<CR>
+nmap cpr :call <SID>copy_current_path_from_root()<CR>
+
+"PluginManager
 call plug#begin('~/.vim/plugged')
 
 "document
