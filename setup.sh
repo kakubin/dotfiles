@@ -2,13 +2,13 @@
 
 for f in .??*
 do
-    [[ "$f" == ".git" ]] && continue
-    [[ "$f" == ".DS_Store" ]] && continue
-    [[ "$f" == ".gitignore" ]] && continue
-    [[ "$f" == ".vscode" ]] && continue
+  [[ "$f" == ".git" ]] && continue
+  [[ "$f" == ".DS_Store" ]] && continue
+  [[ "$f" == ".gitignore" ]] && continue
+  [[ "$f" == ".vscode" ]] && continue
 
-    echo "$f"
-    eval "ln -sf ~/dotfiles/$f ~/$f"
+  echo "$f"
+  eval "ln -sf ~/dotfiles/$f ~/$f"
 done
 
 SCRIPT_DIR=$(cd $(dirname $0) && pwd)
