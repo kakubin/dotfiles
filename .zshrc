@@ -86,6 +86,18 @@ is_linux() {
   fi
 }
 
+# snippets
+# https://www.rasukarusan.com/entry/2020/04/19/193450
+show_snippets() {
+  local snippets=$(cat ~/dotfiles/zsh_snippets | fzf | cut -d':' -f2-)
+  LBUFFER="${LBUFFER}${snippets}"
+  zle reset-prompt
+}
+# 自作ウィジェットを登録
+zle -N show_snippets
+# 自作ウィジェットを`Ctrl-n`で呼び出す
+bindkey '^n' show_snippets
+
 command_not_found_handler() {
   echo -e "\\n███    ██  ██████  ████████ ███████  ██████  ██    ██ ███    ██ ██████\\n████   ██ ██    ██    ██    ██      ██    ██ ██    ██ ████   ██ ██   ██\\n██ ██  ██ ██    ██    ██    █████   ██    ██ ██    ██ ██ ██  ██ ██   ██\\n██  ██ ██ ██    ██    ██    ██      ██    ██ ██    ██ ██  ██ ██ ██   ██\\n██   ████  ██████     ██    ██       ██████   ██████  ██   ████ ██████\\n"
 }
