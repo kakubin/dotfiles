@@ -74,9 +74,6 @@ inoremap <C-l> <Right>
 inoremap <expr><Tab>   pumvisible() ? "\<Down>" : "\<Tab>"
 inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
 
-"空行挿入したいだけだけど動作遅いし多分消す
-nnoremap <C-o> o<ESC>k
-
 nnoremap ,.  :<C-u>edit $MYVIMRC<CR>
 nnoremap ,s. :<C-u>source $MYVIMRC<CR>
 nnoremap <Leader>git :!tig<CR>
@@ -178,10 +175,11 @@ nnoremap <silent><Leader>t :NERDTreeToggle<CR>
 let g:NERDTreeIgnore=['\.git$', '\.clean$', '\.swp$', '\.bak$', '\~$', '\.DS_Store']
 
 "FZF
-nnoremap <Leader>ff :GFiles<CR>
-nnoremap <Leader>fs :GFiles?<CR>
-nnoremap <Leader>fb :Buffers<CR>
-nnoremap <Leader>fl :Lines<CR>
+nnoremap ff :GFiles<CR>
+nnoremap fs :GFiles?<CR>
+nnoremap fb :Buffers<CR>
+nnoremap fl :Lines<CR>
+nnoremap fr :Rg<CR>
 
 "asyncomplete
 "inoremap <expr><CR> pumvisible() ? asyncomplete#close_popup() : "\<CR>"
