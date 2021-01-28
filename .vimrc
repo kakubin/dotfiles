@@ -45,16 +45,19 @@ augroup END
 
 augroup ReloadVimrc
   autocmd!
-  autocmd BufWritePost *vimrc source $MYVIMRC | set foldmethod=marker
+  autocmd BufWritePost *vimrc source $MYVIMRC
   autocmd BufWritePost *gvimrc if has('gui_running') source $MYGVIMRC
 augroup END
 
 set clipboard+=unnamed
 
 set noswapfile
-
 set number
+
+"fold by indent
 set foldmethod=indent
+set foldlevel=3
+
 syntax on
 let g:mapleader = "\<Space>"
 inoremap <silent> jj <ESC>
