@@ -120,8 +120,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdtree'
 Plug 'slim-template/vim-slim'
-"fzf brewを使ってインストールされている場合
-Plug '/usr/local/opt/fzf'
+
+"FZF
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 Plug 'airblade/vim-gitgutter'
