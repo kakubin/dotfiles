@@ -38,7 +38,6 @@ PROMPT="%F{220}%~%f:%1(v|%F{202}%1v%f|) $ "
 RPROMPT="%F{118}[%*]%f"
 
 ## PATH
-eval "$(direnv hook zsh)"
 eval "$(nodenv init -)"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
