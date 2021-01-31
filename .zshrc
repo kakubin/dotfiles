@@ -106,4 +106,4 @@ if [ $SHLVL = 1 ]; then
   tmux
 fi
 
-source ~/dotfiles/zshrc.alias.sh
+source ~/dotfiles/common_aliases
