@@ -3,7 +3,11 @@
 1. capsLockとctrlを入れ替える
 2. 入力言語の切り替えを<command-Space>にする
 
-```
+cd .ssh & ssh keygen -t rsa
+pbcopy < ~/.ssh/id_rsa.pub
+ssh -T git@github.com
+
+```Darwin
 xcode-select --install
 sudo xcodebuild -license
 
@@ -15,4 +19,10 @@ cd dotfiles
 
 sh ./brewfile.sh
 sh ./dotsetup.sh
+```
+
+```Linux
+sudo apt install curl
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+sudo apt install npm
 ```
