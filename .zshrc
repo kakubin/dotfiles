@@ -10,7 +10,7 @@ export DB_PASSWORD=''
 autoload -Uz colors && colors
 autoload -Uz vcs_info
 autoload -Uz is-at-least
-# autoload -Uz add-zsh-hook
+autoload -Uz add-zsh-hook
 setopt prompt_subst # PROMPT変数内で変数参照するのに必要
 
 # ref:http://tkengo.github.io/blog/2013/05/12/zsh-vcs-info/
@@ -106,4 +106,4 @@ if [ $SHLVL = 1 ]; then
   tmux
 fi
 
-source ~/dotfiles/zshrc.alias.sh
+source ~/dotfiles/common_aliases

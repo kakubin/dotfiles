@@ -22,3 +22,4 @@
   quotepath = false
   autocrlf = false
   excludesfile = $HOME/.gitignore_global
+  editor = vim -c \"set fenc=utf-8\"
