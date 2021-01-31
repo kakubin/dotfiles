@@ -28,8 +28,8 @@ set incsearch
 set hlsearch
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR><ESC>
 
-"set completeopt=menuone,noinsert
-set completeopt& completeopt+=menuone completeopt-=preview
+set complete=.,w,b,u,U,s,i,d,t
+set completeopt& completeopt+=menuone completeopt+=noinsert completeopt-=preview
 "for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
 "  exec "imap <expr> " . k . " pumvisible() ? '" . k . "' : '" . k . "\<C-X>\<C-P>\<C-N>'"
 "endfor
@@ -110,8 +110,9 @@ Plug 'vim-jp/vimdoc-ja'
 
 "completion
 Plug 'prabirshrestha/asyncomplete.vim'
-"Plug 'prabirshrestha/vim-lsp'
-"Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 "style
 Plug 'doums/darcula'
