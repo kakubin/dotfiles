@@ -138,6 +138,12 @@ Plug 'dense-analysis/ale'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
 
+"Vue
+Plug 'alvan/vim-closetag'
+
+"open browser
+Plug 'tyru/open-browser.vim'
+
 call plug#end()
 
 filetype plugin indent on
@@ -185,3 +191,12 @@ nnoremap fr :Rg<CR>
 
 "asyncomplete
 "inoremap <expr><CR> pumvisible() ? asyncomplete#close_popup() : "\<CR>"
+
+"close-tag
+let g:closetag_filenames = '*.html,*.vue'
+
+" カーソル下のURLをブラウザで開く
+nmap <Leader>o <Plug>(openbrowser-open)
+vmap <Leader>o <Plug>(openbrowser-open)
+" ググる
+nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>"
