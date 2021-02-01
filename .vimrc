@@ -146,6 +146,7 @@ Plug 'tpope/vim-endwise'
 
 "Vue
 Plug 'alvan/vim-closetag'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install'  }
 
 "open browser
 Plug 'tyru/open-browser.vim'
