@@ -119,42 +119,42 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'dense-analysis/ale'
 
 "style
 Plug 'doums/darcula'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install'  }
+Plug 'alvan/vim-closetag'
+Plug 'tpope/vim-endwise'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
+
+"operation
+Plug 'easymotion/vim-easymotion'
+Plug 'vim-scripts/vim-auto-save'
 Plug 'scrooloose/nerdtree'
-Plug 'slim-template/vim-slim'
 
 "FZF
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
+"browser
+Plug 'tyru/open-browser.vim'
+
+"git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'easymotion/vim-easymotion'
-Plug 'vim-scripts/vim-auto-save'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-surround'
-Plug 'dense-analysis/ale'
 
 "rails
 Plug 'tpope/vim-rails'
-Plug 'tpope/vim-endwise'
-
-"Vue
-Plug 'alvan/vim-closetag'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install'  }
-
-"open browser
-Plug 'tyru/open-browser.vim'
+Plug 'slim-template/vim-slim'
 
 call plug#end()
 
 filetype plugin indent on
-
 
 syntax enable
 colorscheme darcula
