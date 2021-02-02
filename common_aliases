@@ -18,13 +18,14 @@ alias bomb=':(){ :|:& };:'
 
 if is_osx; then
   alias ls='ls -G'
-  alias -g CP='| pbcopy'
-  alias -g CC='| tee /dev/tty | pbcopy'
 elif is_linux; then
   alias ls='ls --color=auto'
   # sudo apt-get install xsel
-  alias -g CP='| xsel --clipboard --input'
+  alias pbcopy='xsel --clipboard --input'
 fi
+
+alias -g CP='| pbcopy'
+alias -g CC='| tee /dev/tty | pbcopy'
 
 # Git
 # http://postd.cc/git-command-line-shortcuts/
