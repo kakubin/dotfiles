@@ -49,7 +49,7 @@ augroup ReloadVimrc
   autocmd BufWritePost *gvimrc if has('gui_running') source $MYGVIMRC
 augroup END
 
-set clipboard+=unnamed
+set clipboard=unnamedplus clipboard+=unnamed
 
 set noswapfile
 set number
@@ -85,27 +85,25 @@ nnoremap ,s. :<C-u>source $MYVIMRC<CR>
 
 cnoremap <C-p> <Up>
 
-function! s:copy_current_path()
+function! s:fetch_absolute_path()
   let @* = expand('%:p')
-  echo 'Copy current path: ' . @*
 endfunction
-
-function! s:copy_current_path_from_root()
-  if empty(s:current_git())
-    return
-  else
-    call s:copy_current_path()
-    let @* = substitute(@*, s:current_git() . '/', '', 'g')
-    echo 'Copy current path: ' . @*
-  endif
+function! s:copy_absolute_path()
+  call s:fetch_absolute_path()
+  echo 'Copy absolute path: ' . @*
+endfunction
+function! s:copy_relative_path_from_root()
+  call s:fetch_absolute_path()
+  let @* = substitute(@*, '/home/mrbigass/works/', '', 'g')
+  echo 'Copy relative path: ' . @*
 endfunction
 
 augroup MyAutoCmd
   autocmd WinEnter <buffer> checktime
 augroup END
 
-nmap cp :call <SID>copy_current_path()<CR>
-nmap cpr :call <SID>copy_current_path_from_root()<CR>
+nmap cp :call <SID>copy_absolute_path()<CR>
+nmap cpr :call <SID>copy_relative_path_from_root()<CR>
 
 "PluginManager
 call plug#begin('~/.vim/plugged')
