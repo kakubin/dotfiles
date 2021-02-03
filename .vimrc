@@ -82,7 +82,6 @@ inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
 
 nnoremap ,.  :<C-u>edit $MYVIMRC<CR>
 nnoremap ,s. :<C-u>source $MYVIMRC<CR>
-nnoremap <Leader>git :!tig<CR>
 
 cnoremap <C-p> <Up>
 
@@ -145,6 +144,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tyru/open-browser.vim'
 
 "git
+Plug 'iberianpig/tig-explorer.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
@@ -198,6 +198,12 @@ nnoremap fr :Rg<CR>
 
 "asyncomplete
 "inoremap <expr><CR> pumvisible() ? asyncomplete#close_popup() : "\<CR>"
+
+"fugitive
+nnoremap gd :Gvdiffsplit<CR>
+
+"tig-explorer
+nnoremap gt :TigOpenProjectRootDir<CR>
 
 "close-tag
 let g:closetag_filenames = '*.html,*.vue'
