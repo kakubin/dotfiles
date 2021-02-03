@@ -6,7 +6,6 @@ alias sz='source ~/.zshrc'
 alias zshrc='vim ~/.zshrc'
 alias e_alias='vim ~/dotfiles/common_aliases'
 alias .f='cd ~/dotfiles'
-alias rm='gmv -f --backup=numbered --target-directory ~/.Trash/'
 alias be='bundle exec'
 alias spec='bundle exec rspec'
 alias dfiles='git diff master --name-only'
@@ -18,6 +17,7 @@ alias bomb=':(){ :|:& };:'
 
 if is_osx; then
   alias ls='ls -G'
+  alias rm='gmv -f --backup=numbered --target-directory ~/.Trash/'
 elif is_linux; then
   alias ls='ls --color=auto'
   # sudo apt-get install xsel
