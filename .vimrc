@@ -57,13 +57,7 @@ set belloff=all
 
 "fold by indent
 set foldmethod=indent
-set foldlevel=3
-"augroup MyFold
-"  autocmd!
-"  autocmd BufWinLeave * mkview
-"  "初回のファイルを開いたときにファイルがないと怒られるのどうにかしたい
-"  autocmd BufWinEnter * silent loadview
-"augroup END
+set foldlevel=7
 
 syntax on
 let g:mapleader = "\<Space>"
