@@ -145,6 +145,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'slim-template/vim-slim'
 
+"vue
+Plug 'posva/vim-vue'
+
+
 call plug#end()
 
 filetype plugin indent on
