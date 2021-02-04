@@ -53,6 +53,7 @@ set clipboard=unnamedplus clipboard+=unnamed
 
 set noswapfile
 set number
+set belloff=all
 
 "fold by indent
 set foldmethod=indent
