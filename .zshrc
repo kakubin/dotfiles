@@ -3,9 +3,6 @@ export LANG=ja_JP.UTF-8
 setopt print_eight_bit # 日本語表示可能
 export EDITOR=vim
 
-export DB_USERNAME='root'
-export DB_PASSWORD=''
-
 ## PROMPT
 autoload -Uz colors && colors
 autoload -Uz vcs_info
