@@ -1,5 +1,7 @@
 curl
 git
+zsh
+npm
 vim
 fzf
 tig
