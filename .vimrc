@@ -118,7 +118,7 @@ Plug 'doums/darcula'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install'  }
+Plug 'mrbigass/vim-prettier', { 'do': 'yarn install'  }
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-endwise'
 Plug 'jiangmiao/auto-pairs'
@@ -205,6 +205,9 @@ nnoremap gt :TigOpenProjectRootDir<CR>
 
 "close-tag
 let g:closetag_filenames = '*.html,*.vue'
+
+"vim-prettier
+let g:prettier#autoformat_config_present = 1 "prettireの設定ファイルがあった場合、そちらを優先する
 
 " カーソル下のURLをブラウザで開く
 nmap <Leader>o <Plug>(openbrowser-open)
