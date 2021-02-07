@@ -17,7 +17,7 @@ do
 
   if [ $yn = "y" ]; then
     echo "make symbol $FILE"
-    ln -sf ~/dotfiles/$FILE ~/$FILE
+    ln -sf $HOME/dotfiles/$FILE $HOME/$FILE
   fi
 done
 
@@ -49,10 +49,10 @@ else # linux
   cat apt_list | xargs sudo apt-get install
 fi
 
-if [ -e ~/.vim/autoload/plug.vim ]; then
+if [ -e $HOME/.vim/autoload/plug.vim ]; then
   echo You have already installed vim-plug!
 else
-  curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
 # SCRIPT_DIR=$(cd $(dirname $0) && pwd)
@@ -70,7 +70,7 @@ fi
 
 # code --list-extensions > .vscode/extensions
 
-# source ~/.zshrc
+# source $HOME/.zshrc
 echo "==============================>>"
 echo "Installation completed"
 echo "You only have to DO execute :PlugInstall on vim :)"
