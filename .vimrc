@@ -114,6 +114,10 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'dense-analysis/ale'
 
+"snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 "style
 Plug 'doums/darcula'
 Plug 'vim-airline/vim-airline'
@@ -149,7 +153,6 @@ Plug 'slim-template/vim-slim'
 
 "vue
 Plug 'posva/vim-vue'
-
 
 call plug#end()
 
@@ -241,3 +244,8 @@ function! NERDCommenter_after()
     let g:ft = ''
   endif
 endfunction
+
+" snippets
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
