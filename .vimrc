@@ -72,9 +72,6 @@ inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
-inoremap <expr><Tab>   pumvisible() ? "\<Down>" : "\<Tab>"
-inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
-
 nnoremap ,.  :<C-u>edit $MYVIMRC<CR>
 nnoremap ,s. :<C-u>source $MYVIMRC<CR>
 
@@ -115,7 +112,10 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'dense-analysis/ale'
 
 "snippets
-Plug 'SirVer/ultisnips'
+if has('python3')
+  Plug 'SirVer/ultisnips'
+  Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
+endif
 Plug 'honza/vim-snippets'
 
 "style
@@ -200,6 +200,13 @@ nnoremap fr :Rg<CR>
 
 "asyncomplete
 "inoremap <expr><CR> pumvisible() ? asyncomplete#close_popup() : "\<CR>"
+inoremap <expr><Tab>   pumvisible() ? "\<Down>" : "\<Tab>"
+inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
+
+" snippets
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 "fugitive
 nnoremap gd :Gvdiffsplit<CR>
@@ -244,8 +251,3 @@ function! NERDCommenter_after()
     let g:ft = ''
   endif
 endfunction
-
-" snippets
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
