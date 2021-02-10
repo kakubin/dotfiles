@@ -105,8 +105,12 @@ call plug#begin('~/.vim/plugged')
 "document
 Plug 'vim-jp/vimdoc-ja'
 
+function! AsyncDefaultMap()
+  inoremap <expr><CR> pumvisible() ? asyncomplete#close_popup() : "\<CR>"
+endfunction
+
 "completion
-Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete.vim', { 'do': function('AsyncDefaultMap') }
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
@@ -200,9 +204,21 @@ nnoremap fl :Lines<CR>
 nnoremap fr :Rg<CR>
 
 "asyncomplete
-"inoremap <expr><CR> pumvisible() ? asyncomplete#close_popup() : "\<CR>"
 inoremap <expr><Tab>   pumvisible() ? "\<Down>" : "\<Tab>"
 inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
+
+if has('python3')
+  let g:UltiSnipsExpandTrigger="<c-e>"
+  call asyncomplete#register_source({
+        \ 'name': 'ultisnips',
+        \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
+        \ 'allowlist': ['*']})
+endif
+
+let g:asyncomplete_auto_popup = 1
+let g:asyncomplete_auto_completeopt = 0
+let g:asyncomplete_popup_delay = 200
+let g:lsp_text_edit_enabled = 1
 
 " snippets
 let g:UltiSnipsExpandTrigger="<tab>"
