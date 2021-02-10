@@ -77,6 +77,7 @@ nnoremap ,s. :<C-u>source $MYVIMRC<CR>
 
 cnoremap <C-p> <Up>
 noremap x "_x
+noremap ci( "_ci(
 
 function! s:fetch_absolute_path()
   let @* = expand('%:p')
