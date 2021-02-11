@@ -72,6 +72,9 @@ inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
+inoremap <expr><Tab>   pumvisible() ? "\<Down>" : "\<Tab>"
+inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
+
 nnoremap ,.  :<C-u>edit $MYVIMRC<CR>
 nnoremap ,s. :<C-u>source $MYVIMRC<CR>
 
@@ -210,23 +213,20 @@ nnoremap fl :Lines<CR>
 nnoremap fr :Rg<CR>
 
 "asyncomplete
-inoremap <expr><Tab>   pumvisible() ? "\<Down>" : "\<Tab>"
-inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
-
 if has('python3')
-  let g:UltiSnipsExpandTrigger="<c-e>"
   call asyncomplete#register_source({
         \ 'name': 'ultisnips',
         \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
         \ 'allowlist': ['*']})
 endif
 
+"lsp
 let g:lsp_diagnostics_echo_cursor = 1
 let g:asyncomplete_auto_popup = 1
 let g:asyncomplete_auto_completeopt = 0
 let g:lsp_text_edit_enabled = 1
 
-" snippets
+"snippets
 let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
