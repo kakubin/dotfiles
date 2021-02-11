@@ -161,6 +161,7 @@ Plug 'tyru/open-browser.vim'
 Plug 'iberianpig/tig-explorer.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'rhysd/ghpr-blame.vim'
 
 "rails
 Plug 'tpope/vim-rails'
