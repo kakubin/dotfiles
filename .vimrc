@@ -109,6 +109,12 @@ function! AsyncDefaultMap()
   inoremap <expr><CR> pumvisible() ? asyncomplete#close_popup() : "\<CR>"
 endfunction
 
+function! UltiBaseMap()
+  " end-wiseですでにCRがマッピングされているため以下のマッピングができない
+  " end-wiseを消してスニペットですべて完了させる？
+  " inoremap <expr><CR> UltiSnips#CanExpandSnippet() ? <C-R>=UltiSnips#ExpandSnippet()<CR> : pumvisible() ?  asyncomplete#close_popup() : "\<CR>"
+endfunction
+
 "completion
 Plug 'prabirshrestha/asyncomplete.vim', { 'do': function('AsyncDefaultMap') }
 Plug 'prabirshrestha/vim-lsp'
@@ -118,7 +124,7 @@ Plug 'dense-analysis/ale'
 
 "snippets
 if has('python3')
-  Plug 'SirVer/ultisnips'
+  Plug 'SirVer/ultisnips', { 'do': function('UltiBaseMap') }
   Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 endif
 Plug 'honza/vim-snippets'
@@ -215,13 +221,13 @@ if has('python3')
         \ 'allowlist': ['*']})
 endif
 
+let g:lsp_diagnostics_echo_cursor = 1
 let g:asyncomplete_auto_popup = 1
 let g:asyncomplete_auto_completeopt = 0
-let g:asyncomplete_popup_delay = 200
 let g:lsp_text_edit_enabled = 1
 
 " snippets
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
