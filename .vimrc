@@ -80,6 +80,7 @@ nnoremap ,s. :<C-u>source $MYVIMRC<CR>
 
 cnoremap <C-p> <Up>
 noremap x "_x
+noremap ci( "_ci(
 
 function! s:fetch_absolute_path()
   let @* = expand('%:p')
@@ -107,12 +108,29 @@ call plug#begin('~/.vim/plugged')
 "document
 Plug 'vim-jp/vimdoc-ja'
 
+function! AsyncDefaultMap()
+  inoremap <expr><CR> pumvisible() ? asyncomplete#close_popup() : "\<CR>"
+endfunction
+
+function! UltiBaseMap()
+  " end-wiseですでにCRがマッピングされているため以下のマッピングができない
+  " end-wiseを消してスニペットですべて完了させる？
+  " inoremap <expr><CR> UltiSnips#CanExpandSnippet() ? <C-R>=UltiSnips#ExpandSnippet()<CR> : pumvisible() ?  asyncomplete#close_popup() : "\<CR>"
+endfunction
+
 "completion
-Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete.vim', { 'do': function('AsyncDefaultMap') }
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'dense-analysis/ale'
+
+"snippets
+if has('python3')
+  Plug 'SirVer/ultisnips', { 'do': function('UltiBaseMap') }
+  Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
+endif
+Plug 'honza/vim-snippets'
 
 "style
 Plug 'doums/darcula'
@@ -149,7 +167,6 @@ Plug 'slim-template/vim-slim'
 
 "vue
 Plug 'posva/vim-vue'
-
 
 call plug#end()
 
@@ -196,7 +213,23 @@ nnoremap fl :Lines<CR>
 nnoremap fr :Rg<CR>
 
 "asyncomplete
-"inoremap <expr><CR> pumvisible() ? asyncomplete#close_popup() : "\<CR>"
+if has('python3')
+  call asyncomplete#register_source({
+        \ 'name': 'ultisnips',
+        \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
+        \ 'allowlist': ['*']})
+endif
+
+"lsp
+let g:lsp_diagnostics_echo_cursor = 1
+let g:asyncomplete_auto_popup = 1
+let g:asyncomplete_auto_completeopt = 0
+let g:lsp_text_edit_enabled = 1
+
+"snippets
+let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 "fugitive
 nnoremap gd :Gvdiffsplit<CR>
