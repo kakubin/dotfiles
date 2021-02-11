@@ -120,6 +120,7 @@ endfunction
 
 "completion
 Plug 'prabirshrestha/asyncomplete.vim', { 'do': function('AsyncDefaultMap') }
+Plug 'prabirshrestha/asyncomplete-buffer.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
@@ -218,6 +219,14 @@ if has('python3')
         \ 'name': 'ultisnips',
         \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
         \ 'allowlist': ['*']})
+
+  " buffer
+  call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+      \ 'name': 'buffer',
+      \ 'allowlist': ['*'],
+      \ 'blocklist': [''],
+      \ 'completor': function('asyncomplete#sources#buffer#completor'),
+      \ }))
 endif
 
 "lsp
