@@ -83,16 +83,16 @@ noremap x "_x
 noremap ci( "_ci(
 
 function! s:fetch_absolute_path()
-  let @* = expand('%:p')
+  let @+ = expand('%:p')
 endfunction
 function! s:copy_absolute_path()
   call s:fetch_absolute_path()
-  echo 'Copy absolute path: ' . @*
+  echo 'Copy absolute path: ' . @+
 endfunction
 function! s:copy_relative_path_from_root()
   call s:fetch_absolute_path()
-  let @* = substitute(@*, '/home/mrbigass/works/', '', 'g')
-  echo 'Copy relative path: ' . @*
+  let @+ = substitute(@+, '/home/mrbigass/works/', '', 'g')
+  echo 'Copy relative path: ' . @+
 endfunction
 
 augroup MyAutoCmd
