@@ -34,5 +34,6 @@ bash ./setup.sh
 ## Linux
 
 ```
-chsh -> zsh
+chsh -s /bin/zsh
+mysqlのソケットを/tmp/mysql.sockに切り替え
 ```
