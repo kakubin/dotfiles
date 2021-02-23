@@ -80,7 +80,7 @@ nnoremap ,s. :<C-u>source $MYVIMRC<CR>
 
 cnoremap <C-p> <Up>
 noremap x "_x
-noremap ci( "_ci(
+" noremap ci( "_ci(
 
 function! s:path2project_directory_git(path) abort
   let parent = a:path
@@ -129,11 +129,11 @@ function! AsyncDefaultMap()
   inoremap <expr><CR> pumvisible() ? asyncomplete#close_popup() : "\<CR>"
 endfunction
 
-function! UltiBaseMap()
-  " end-wiseですでにCRがマッピングされているため以下のマッピングができない
-  " end-wiseを消してスニペットですべて完了させる？
-  " inoremap <expr><CR> UltiSnips#CanExpandSnippet() ? <C-R>=UltiSnips#ExpandSnippet()<CR> : pumvisible() ?  asyncomplete#close_popup() : "\<CR>"
-endfunction
+" function! UltiBaseMap()
+"   end-wiseですでにCRがマッピングされているため以下のマッピングができない
+"   end-wiseを消してスニペットですべて完了させる？
+"   inoremap <expr><CR> UltiSnips#CanExpandSnippet() ? <C-R>=UltiSnips#ExpandSnippet()<CR> : pumvisible() ?  asyncomplete#close_popup() : "\<CR>"
+" endfunction
 
 "completion
 Plug 'prabirshrestha/asyncomplete.vim', { 'do': function('AsyncDefaultMap') }
@@ -145,7 +145,7 @@ Plug 'dense-analysis/ale'
 
 "snippets
 if has('python3')
-  Plug 'SirVer/ultisnips', { 'do': function('UltiBaseMap') }
+  Plug 'SirVer/ultisnips' ", { 'do': function('UltiBaseMap') }
   Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 endif
 Plug 'honza/vim-snippets'
@@ -158,7 +158,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'mrbigass/vim-prettier', { 'do': 'yarn install'  }
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-endwise'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
 Plug 'glidenote/memolist.vim'
@@ -251,7 +251,7 @@ endif
 "lsp
 let g:lsp_diagnostics_echo_cursor = 1
 let g:asyncomplete_auto_popup = 1
-let g:asyncomplete_auto_completeopt = 0
+" let g:asyncomplete_auto_completeopt = 0
 let g:lsp_text_edit_enabled = 1
 
 "snippets
