@@ -160,13 +160,13 @@ Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-endwise'
 " Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
-Plug 'preservim/nerdcommenter'
-Plug 'glidenote/memolist.vim'
+Plug 'scrooloose/nerdtree'
 
 "operation
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-scripts/vim-auto-save'
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdcommenter'
+Plug 'glidenote/memolist.vim'
 
 "FZF
 Plug 'junegunn/fzf'
@@ -263,7 +263,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 nnoremap gd :Gvdiffsplit<CR>
 
 "tig-explorer
-nnoremap gt :TigOpenProjectRootDir<CR>
+nnoremap <Leader>gt :TigOpenProjectRootDir<CR>
 
 "close-tag
 let g:closetag_filenames = '*.html,*.vue'
