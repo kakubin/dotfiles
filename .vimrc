@@ -161,6 +161,7 @@ Plug 'tpope/vim-endwise'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
+Plug 'glidenote/memolist.vim'
 
 "operation
 Plug 'easymotion/vim-easymotion'
@@ -301,3 +302,8 @@ function! NERDCommenter_after()
     let g:ft = ''
   endif
 endfunction
+
+"memolist
+nnoremap <Leader>mn :MemoNew<CR>
+nnoremap <Leader>mg :MemoGrep<CR>
+let g:memolist_fzf = 1
