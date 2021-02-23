@@ -55,6 +55,15 @@ else
   curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
+if [ -e $HOME/.rbenv ]; then
+  echo already installed rbenv! when have you done?
+else
+  git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+  cd ~/.rbenv && src/configure && make -C src
+  mkdir -p "$(rbenv root)"/plugins
+  git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+fi
+
 # SCRIPT_DIR=$(cd $(dirname $0) && pwd)
 # VSCODE_SETTING_DIR=~/Library/Application\ Support/Code/User
 # rm "$VSCODE_SETTING_DIR/settings.json"
