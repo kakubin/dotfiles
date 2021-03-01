@@ -13,10 +13,12 @@ brew install fzf
 brew install ripgrep
 brew install tree
 brew install docker
+brew install tmux
+brew install tig
 
-brew install rbenv
 brew install goenv
 brew install nodenv
+brew install yarn
 brew install ffmpeg
 brew install coreutils
 brew install graphviz
@@ -26,13 +28,9 @@ brew install mysql
 brew install postgresql
 brew install redis
 
-brew install brew-cask
-brew cask install visual-studio-code
-brew cask install git-gui
-brew cask install google-chrome
-brew cask install postman
-brew cask install slack
-# brew cask install skitch
+brew install --cask postman
+brew install --cask skitch
+brew install --cask wkhtmltopdf
 
 # regularly executed
 brew cleanup
