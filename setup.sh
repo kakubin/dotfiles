@@ -22,14 +22,14 @@ do
 done
 
 if [[ $OSTYPE = *darwin* ]]; then
-  # brewのインストール
-  xcode-select --install
-  sudo xcodebuild -license
-
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-  brew doctor
-  ./brew_list.sh
-
+#  # brewのインストール
+#  xcode-select --install
+#  sudo xcodebuild -license
+#
+#  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+#  brew doctor
+#  bash ./brew_list.sh
+#
   # finderで隠しファイルを表示する
   read -p "Do you wish to show hidden files with Finder? y/n " yn
   if [ $yn = "y" -o $yn = "Y" ]; then
