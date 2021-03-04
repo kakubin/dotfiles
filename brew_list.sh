@@ -24,13 +24,14 @@ brew install coreutils
 brew install graphviz
 brew install virtualbox
 
-brew install mysql
+brew install mysql@5.7
 brew install postgresql
 brew install redis
 
 brew install --cask postman
 brew install --cask skitch
 brew install --cask wkhtmltopdf
+brew install --cask mysqlworkbench
 
 # regularly executed
 brew cleanup
