@@ -108,7 +108,7 @@ endfunction
 function! s:copy_relative_path_from_root()
   call s:fetch_absolute_path()
   let git_root = s:path2project_directory_git(@+)
-  let @+ = substitute(@+, git_root, '', 'g')
+  let @+ = substitute(@+, git_root, '.', 'g')
   echo 'Copy relative path: ' . @+
 endfunction
 
@@ -154,7 +154,7 @@ Plug 'honza/vim-snippets'
 Plug 'doums/darcula'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 Plug 'mrbigass/vim-prettier', { 'do': 'yarn install'  }
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-endwise'
