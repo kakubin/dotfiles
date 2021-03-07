@@ -16,6 +16,7 @@ alias dice='echo $(($RANDOM % 6 + 1))'
 alias bomb=':(){ :|:& };:'
 
 if is_osx; then
+  export LSCOLORS=gxfxcxdxbxegedabagacad
   alias ls='ls -G'
   alias rm='gmv -f --backup=numbered --target-directory ~/.Trash/'
 elif is_linux; then
