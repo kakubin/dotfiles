@@ -64,6 +64,8 @@ else
   git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 fi
 
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # SCRIPT_DIR=$(cd $(dirname $0) && pwd)
 # VSCODE_SETTING_DIR=~/Library/Application\ Support/Code/User
 # rm "$VSCODE_SETTING_DIR/settings.json"
