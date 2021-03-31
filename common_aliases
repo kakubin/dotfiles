@@ -8,7 +8,10 @@ alias e_alias='vim ~/dotfiles/common_aliases'
 alias .f='cd ~/dotfiles'
 alias be='bundle exec'
 alias spec='bundle exec rspec'
-alias dfiles='git diff master --name-only'
+# alias dfiles='git diff master --name-only'
+dfiles() {
+  git remote show origin | grep 'HEAD branch' | awk '{print $3}' | xargs -I@ git diff @ --name-only
+}
 alias drg='dfiles | xargs rg -l'
 alias dspec='dfiles | rg spec.rb | xargs bundle exec rspec'
 alias dcop='dfiles | rg rb | xargs bundle exec rubocop --fail-level R'
