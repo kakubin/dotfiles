@@ -15,6 +15,7 @@ brew install tree
 brew install docker
 brew install tmux
 brew install tig
+brew install ghq
 
 brew install goenv
 brew install nodenv

@@ -99,6 +99,19 @@ zle -N show_snippets
 # 自作ウィジェットを`Ctrl-n`で呼び出す
 bindkey '^n' show_snippets
 
+
+fzf-src() {
+  local selected=$(ghq list --full-path | fzf)
+  if [ -n "$selected" ]; then
+    LBUFFER="builtin cd $selected"
+    zle accept-line
+  fi
+  zle reset-prompt
+}
+
+zle -N fzf-src
+bindkey '^Xs' fzf-src
+
 command_not_found_handler() {
   echo -e "\\n███    ██  ██████  ████████ ███████  ██████  ██    ██ ███    ██ ██████\\n████   ██ ██    ██    ██    ██      ██    ██ ██    ██ ████   ██ ██   ██\\n██ ██  ██ ██    ██    ██    █████   ██    ██ ██    ██ ██ ██  ██ ██   ██\\n██  ██ ██ ██    ██    ██    ██      ██    ██ ██    ██ ██  ██ ██ ██   ██\\n██   ████  ██████     ██    ██       ██████   ██████  ██   ████ ██████\\n"
 }
