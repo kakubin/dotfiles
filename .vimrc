@@ -169,8 +169,8 @@ Plug 'preservim/nerdcommenter'
 Plug 'glidenote/memolist.vim'
 
 "FZF
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 
 "browser
 Plug 'tyru/open-browser.vim'
@@ -226,11 +226,13 @@ nnoremap <silent><Leader>t :NERDTreeToggle<CR>
 let g:NERDTreeIgnore=['\.git$', '\.clean$', '\.swp$', '\.bak$', '\~$', '\.DS_Store']
 
 "FZF
-nnoremap ff :GFiles<CR>
-nnoremap fs :GFiles?<CR>
-nnoremap fb :Buffers<CR>
-nnoremap fl :Lines<CR>
-nnoremap fr :Rg<CR>
+let g:fzf_preview_git_files_command   = 'git ls-files --exclude-standard | while read line; do if [[ ! -L $line ]] && [[ -f $line ]]; then echo $line; fi; done'
+let g:fzf_preview_grep_cmd = 'rg --line-number --no-heading --color=never --sort=path'
+nnoremap ff :FzfPreviewGitFilesRpc<CR>
+nnoremap fs :FzfPreviewGitStatusRpc<CR>
+nnoremap fb :FzfPreviewBuffersRpc<CR>
+nnoremap fg :FzfPreviewGitFilesRpc<CR>
+nnoremap fr :FzfPreviewProjectGrepRpc<Space>
 
 "asyncomplete
 if has('python3')
