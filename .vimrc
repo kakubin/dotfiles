@@ -231,6 +231,7 @@ nnoremap fs :GFiles?<CR>
 nnoremap fb :Buffers<CR>
 nnoremap fl :Lines<CR>
 nnoremap fr :Rg<CR>
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 
 "asyncomplete
 if has('python3')
