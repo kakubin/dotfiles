@@ -167,6 +167,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'vim-scripts/vim-auto-save'
 Plug 'preservim/nerdcommenter'
 Plug 'glidenote/memolist.vim'
+Plug 'thinca/vim-quickrun'
 
 "FZF
 Plug 'junegunn/fzf'
@@ -254,6 +255,7 @@ let g:lsp_diagnostics_echo_cursor = 1
 let g:asyncomplete_auto_popup = 1
 " let g:asyncomplete_auto_completeopt = 0
 let g:lsp_text_edit_enabled = 1
+nnoremap df :<C-u>LspPeekDefinition<CR>
 
 "snippets
 let g:UltiSnipsExpandTrigger="<c-e>"
