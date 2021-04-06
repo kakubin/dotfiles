@@ -23,7 +23,7 @@ alias pump='ps aux | grep puma'
 if is_osx; then
   export LSCOLORS=gxfxcxdxbxegedabagacad
   alias ls='ls -G'
-  alias rm='gmv -f --backup=numbered --target-directory ~/.Trash/'
+  alias rm='gmv -f --backup=numbered --target-directory ~/.Trash'
 elif is_linux; then
   alias ls='ls --color=auto'
   # sudo apt-get install xsel
