@@ -168,6 +168,7 @@ Plug 'vim-scripts/vim-auto-save'
 Plug 'preservim/nerdcommenter'
 Plug 'glidenote/memolist.vim'
 Plug 'thinca/vim-quickrun'
+Plug 'markonm/traces.vim'
 
 "FZF
 Plug 'junegunn/fzf'
