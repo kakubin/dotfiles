@@ -78,6 +78,11 @@ inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
 nnoremap ,.  :<C-u>edit $MYVIMRC<CR>
 nnoremap ,s. :<C-u>source $MYVIMRC<CR>
 
+nnoremap <silent> bp :<C-u>bprevious<CR>
+nnoremap <silent> bn :<C-u>bnext<CR>
+nnoremap <C-H> gT
+nnoremap <C-L> gt
+
 cnoremap <C-p> <Up>
 noremap x "_x
 " noremap ci( "_ci(
