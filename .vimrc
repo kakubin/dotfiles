@@ -158,7 +158,7 @@ Plug 'honza/vim-snippets'
 "style
 Plug 'doums/darcula'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline-themes'
 " Plug 'Yggdroot/indentLine'
 Plug 'mrbigass/vim-prettier', { 'do': 'yarn install'  }
 Plug 'alvan/vim-closetag'
@@ -186,7 +186,6 @@ Plug 'tyru/open-browser.vim'
 Plug 'iberianpig/tig-explorer.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'rhysd/ghpr-blame.vim'
 
 "rails
 Plug 'tpope/vim-rails'
