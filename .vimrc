@@ -190,6 +190,7 @@ Plug 'tpope/vim-fugitive'
 "rails
 Plug 'tpope/vim-rails'
 Plug 'slim-template/vim-slim'
+Plug 'vim-scripts/ruby-matchit'
 
 "vue
 Plug 'posva/vim-vue'
