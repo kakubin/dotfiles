@@ -24,6 +24,7 @@ set expandtab
 set ignorecase
 set smartcase
 set wrapscan
+set nowrap
 set incsearch
 set hlsearch
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR><ESC>
@@ -129,6 +130,11 @@ call plug#begin('~/.vim/plugged')
 
 "document
 Plug 'vim-jp/vimdoc-ja'
+" $ brew install lynx
+" $ gem install refe2 #refeをインストール
+" $ bitclust setup #refeのセットアップ
+Plug 'thinca/vim-ref'
+let g:ref_refe_cmd = $HOME.'/.rbenv/shims/refe'
 
 function! AsyncDefaultMap()
   inoremap <expr><CR> pumvisible() ? asyncomplete#close_popup() : "\<CR>"
