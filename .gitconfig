@@ -23,3 +23,12 @@
   autocrlf = false
   excludesfile = $HOME/.gitignore_global
   editor = vim -c \"set fenc=utf-8\"
+
+[ghq]
+	root = ~/ghq
+
+[rebase]
+	autostash = true
+
+[pull]
+	rebase = true
