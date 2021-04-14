@@ -166,6 +166,7 @@ Plug 'tpope/vim-endwise'
 " Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
+Plug 'simeji/winresizer'
 
 "operation
 Plug 'easymotion/vim-easymotion'
