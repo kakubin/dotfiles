@@ -29,6 +29,10 @@ set incsearch
 set hlsearch
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR><ESC>
 
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
 set complete=.,w,b,u,U,s,i,d,t
 set completeopt& completeopt+=menuone completeopt+=noinsert completeopt-=preview
 "for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
