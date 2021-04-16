@@ -205,6 +205,9 @@ Plug 'vim-scripts/ruby-matchit'
 "vue
 Plug 'posva/vim-vue'
 
+"rust
+Plug 'rust-lang/rust.vim'
+
 call plug#end()
 
 filetype plugin indent on
