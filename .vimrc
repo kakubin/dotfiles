@@ -364,3 +364,11 @@ augroup QRunRSpec
   autocmd!
   autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
 augroup END
+
+nmap <Leader>r [quickrun]
+nnoremap <silent> [quickrun]r :call QuickRunRspecCurrentLine()<CR>
+
+function QuickRunRspecCurrentLine()
+  let line = line('.')
+  exec ":QuickRun -exec 'bundle exec %c %s%o' -cmdopt ':" . line . "'"
+endfunction
