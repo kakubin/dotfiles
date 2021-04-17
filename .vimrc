@@ -368,8 +368,7 @@ augroup QRunRSpec
   autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
 augroup END
 
-nmap <Leader>r [quickrun]
-nnoremap <silent> [quickrun]r :call QuickRunRspecCurrentLine()<CR>
+nnoremap <silent> <Leader>rr :call QuickRunRspecCurrentLine()<CR>
 
 function QuickRunRspecCurrentLine()
   let line = line('.')
