@@ -85,8 +85,8 @@ nnoremap ,s. :<C-u>source $MYVIMRC<CR>
 
 nnoremap <silent> bp :<C-u>bprevious<CR>
 nnoremap <silent> bn :<C-u>bnext<CR>
-nnoremap <C-H> gT
-nnoremap <C-L> gt
+nnoremap <C-H> :<C-u>tabprev<CR>
+nnoremap <C-L> :<C-u>tabnext<CR>
 
 cnoremap <C-p> <Up>
 noremap x "_x
@@ -176,6 +176,7 @@ Plug 'tpope/vim-endwise'
 " Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
+Plug 'simeji/winresizer'
 
 "operation
 Plug 'easymotion/vim-easymotion'
@@ -197,6 +198,9 @@ Plug 'tyru/open-browser.vim'
 Plug 'iberianpig/tig-explorer.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+
+"html
+Plug 'mattn/emmet-vim'
 
 "rails
 Plug 'tpope/vim-rails'
