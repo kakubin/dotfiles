@@ -352,6 +352,8 @@ aug END
 "quickrun
 let g:quickrun_config = {}
 let g:quickrun_config._ = { 'runner' : 'vimproc' }
+nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
+
 let g:quickrun_config['ruby.rspec'] = {
       \ 'exec' : 'bundle exec %c %s%o',
       \ 'command': 'rspec',
