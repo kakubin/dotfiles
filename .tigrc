@@ -7,8 +7,8 @@ color   cursor                  231      241
 color   title-focus             242     221
 color   title-blur              242     221
 color   delimiter               213     default
-color   author                  156     default
-color   date                    81      default
+color   author                  145     default
+color   date                    172      default
 color   line-number             221     default
 color   mode                    255     default
 
@@ -19,7 +19,7 @@ color   main-remote             221     default
 color   main-replace            81      default
 color   main-tracked            221     default     bold
 color   main-ref                81      default
-color   main-head               213     default     bold
+color   main-head               124     default     bold
 color   graph-commit            226     default
 
 # status
