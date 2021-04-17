@@ -183,6 +183,7 @@ Plug 'vim-scripts/vim-auto-save'
 Plug 'preservim/nerdcommenter'
 Plug 'glidenote/memolist.vim'
 Plug 'thinca/vim-quickrun'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'markonm/traces.vim'
 
 "FZF
@@ -347,3 +348,17 @@ aug END
 aug RailsDictSetting
   au!
 aug END
+
+"quickrun
+let g:quickrun_config = {}
+let g:quickrun_config._ = { 'runner' : 'vimproc' }
+let g:quickrun_config['ruby.rspec'] = {
+      \ 'exec' : 'bundle exec %c %s%o',
+      \ 'command': 'rspec',
+      \ 'cmdopt': ':' . line('.'),
+      \ }
+
+augroup QRunRSpec
+  autocmd!
+  autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
+augroup END
