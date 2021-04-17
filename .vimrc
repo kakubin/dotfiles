@@ -188,6 +188,9 @@ Plug 'iberianpig/tig-explorer.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
+"html
+Plug 'mattn/emmet-vim'
+
 "rails
 Plug 'tpope/vim-rails'
 Plug 'slim-template/vim-slim'
