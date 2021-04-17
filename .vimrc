@@ -333,12 +333,12 @@ let g:memolist_fzf = 1
 
 " vim-rails
 function! SetUpRailsSetting()
-  nnoremap <buffer><Space>r :R<CR>
+  " nnoremap <buffer><Space>r :R<CR>
   nnoremap <buffer><Space>a :A<CR>
   nnoremap <buffer><Space>m :Rmodel<Space>
   nnoremap <buffer><Space>c :Rcontroller<Space>
   nnoremap <buffer><Space>v :Rview<Space>
-  nnoremap <buffer><Space>p :Rpreview<CR>
+  " nnoremap <buffer><Space>p :Rpreview<CR>
 endfunction
 
 aug MyAutoCmd
@@ -357,7 +357,6 @@ nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() 
 let g:quickrun_config['ruby.rspec'] = {
       \ 'exec' : 'bundle exec %c %s%o',
       \ 'command': 'rspec',
-      \ 'cmdopt': ':' . line('.'),
       \ }
 
 augroup QRunRSpec
