@@ -80,8 +80,8 @@ nnoremap ,s. :<C-u>source $MYVIMRC<CR>
 
 nnoremap <silent> bp :<C-u>bprevious<CR>
 nnoremap <silent> bn :<C-u>bnext<CR>
-nnoremap <C-H> gT
-nnoremap <C-L> gt
+nnoremap <C-H> :<C-u>tabprev<CR>
+nnoremap <C-L> :<C-u>tabnext<CR>
 
 cnoremap <C-p> <Up>
 noremap x "_x
