@@ -62,7 +62,7 @@ set belloff=all
 
 "fold by indent
 set foldmethod=indent
-set foldlevel=7
+set foldlevel=9
 
 syntax on
 let g:mapleader = "\<Space>"
@@ -83,8 +83,8 @@ inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
 nnoremap ,.  :<C-u>edit $MYVIMRC<CR>
 nnoremap ,s. :<C-u>source $MYVIMRC<CR>
 
-nnoremap <silent> bp :<C-u>bprevious<CR>
-nnoremap <silent> bn :<C-u>bnext<CR>
+nnoremap <silent> <Leader>bp :<C-u>bprevious<CR>
+nnoremap <silent> <Leader>bn :<C-u>bnext<CR>
 nnoremap <C-H> :<C-u>tabprev<CR>
 nnoremap <C-L> :<C-u>tabnext<CR>
 
@@ -300,6 +300,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 "fugitive
 nnoremap gd :Gvdiffsplit<CR>
+nnoremap gb :Gblame<CR>
 
 "tig-explorer
 nnoremap <Leader>gt :TigOpenProjectRootDir<CR>
