@@ -46,6 +46,11 @@ export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
 export PATH="$PATH:$GOPATH/bin"
+PYENV_ROOT="${HOME}/.pyenv"
+PATH="${PYENV_ROOT}/bin:${PATH}"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 if [ -e $HOME/.deno/bin ]; then
   export DENO_INSTALL="$HOME/.deno"

@@ -19,6 +19,7 @@ brew install ghq
 
 brew install goenv
 brew install nodenv
+brew install pyenv
 brew install yarn
 brew install ffmpeg
 brew install coreutils
