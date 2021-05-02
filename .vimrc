@@ -130,6 +130,17 @@ augroup END
 nmap cp :call <SID>copy_absolute_path()<CR>
 nmap cpr :call <SID>copy_relative_path_from_root()<CR>
 
+" Make sure pasting in visual mode doesn't replace paste buffer
+function! RestoreRegister()
+  let @+ = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @+
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
+
 "PluginManager
 call plug#begin('~/.vim/plugged')
 
