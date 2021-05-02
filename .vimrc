@@ -91,6 +91,7 @@ nnoremap <C-L> :<C-u>tabnext<CR>
 cnoremap <C-p> <Up>
 noremap x "_x
 " noremap ci( "_ci(
+noremap <expr> 0 getline('.')[0 : col('.') - 2] =~# '^\s\+$' ? '0' : '^'
 
 function! s:path2project_directory_git(path) abort
   let parent = a:path
