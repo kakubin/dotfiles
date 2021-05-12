@@ -10,6 +10,7 @@ set wildmenu
 "set wildmode=list:longest
 set autoread
 set hidden
+set mouse=a
 
 "Indent
 set autoindent
@@ -40,7 +41,7 @@ set completeopt& completeopt+=menuone completeopt+=noinsert completeopt-=preview
 "endfor
 
 "set laststatus
-set nocursorline
+set cursorline
 autocmd InsertEnter,InsertLeave * set cursorline!
 
 augroup DeleteSpace
@@ -71,6 +72,7 @@ nnoremap j gj
 nnoremap k gk
 nnoremap <C-w>v <C-w>v<C-w>l
 nnoremap <C-w>s <C-w>s<C-w>j
+nnoremap Y y$ "普通に考えてYは行末までヤンクして欲しいもの
 
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
