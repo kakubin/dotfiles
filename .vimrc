@@ -81,6 +81,7 @@ inoremap <C-l> <Right>
 
 inoremap <expr><Tab>   pumvisible() ? "\<Down>" : "\<Tab>"
 inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
+nnoremap <CR> o<ESC>
 
 nnoremap ,.  :<C-u>edit $MYVIMRC<CR>
 nnoremap ,s. :<C-u>source $MYVIMRC<CR>
