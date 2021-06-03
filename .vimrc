@@ -81,7 +81,6 @@ inoremap <C-l> <Right>
 
 inoremap <expr><Tab>   pumvisible() ? "\<Down>" : "\<Tab>"
 inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
-nnoremap <CR> o<ESC>
 
 nnoremap ,.  :<C-u>edit $MYVIMRC<CR>
 nnoremap ,s. :<C-u>source $MYVIMRC<CR>
@@ -95,6 +94,7 @@ cnoremap <C-p> <Up>
 noremap x "_x
 " noremap ci( "_ci(
 noremap <expr> 0 getline('.')[0 : col('.') - 2] =~# '^\s\+$' ? '0' : '^'
+nnoremap q: :q
 
 function! s:path2project_directory_git(path) abort
   let parent = a:path
