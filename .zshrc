@@ -51,6 +51,10 @@ PATH="${PYENV_ROOT}/bin:${PATH}"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+#java
+export PATH="/usr/local/opt/sbt@0.13/bin:$PATH"
+
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 # 基本ここにあると思う
 export BUNDLE_BUILD__MYSQL2='--with-ldflags=-L/usr/local/opt/openssl@1.1/lib'
