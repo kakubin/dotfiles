@@ -52,6 +52,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+# 基本ここにあると思う
+export BUNDLE_BUILD__MYSQL2='--with-ldflags=-L/usr/local/opt/openssl@1.1/lib'
+
 if [ -e $HOME/.deno/bin ]; then
   export DENO_INSTALL="$HOME/.deno"
   export PATH="$DENO_INSTALL/bin:$PATH"
