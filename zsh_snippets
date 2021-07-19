@@ -2,4 +2,7 @@ awk:'{print $1}'
 fzf:--prompt ""
 fzf:--preview
 fzf:--preview-window=down:40%
+rails:db:migrate:status
+rails:db:migrate
+rails:db:rollback
 printf:printf "\e[33m${1}\e[m\n"
