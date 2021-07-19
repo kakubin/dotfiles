@@ -115,10 +115,12 @@ endfunction
 function! s:fetch_absolute_path()
   let @+ = expand('%:p')
 endfunction
+
 function! s:copy_absolute_path()
   call s:fetch_absolute_path()
   echo 'Copy absolute path: ' . @+
 endfunction
+
 function! s:copy_relative_path_from_root()
   call s:fetch_absolute_path()
   let git_root = s:path2project_directory_git(@+)
@@ -294,7 +296,7 @@ let g:lsp_diagnostics_echo_cursor = 1
 let g:asyncomplete_auto_popup = 1
 " let g:asyncomplete_auto_completeopt = 0
 let g:lsp_text_edit_enabled = 1
-nnoremap df :<C-u>LspPeekDefinition<CR>
+nnoremap <Leader>df :<C-u>LspPeekDefinition<CR>
 
 "snippets
 let g:UltiSnipsExpandTrigger="<c-e>"
