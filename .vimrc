@@ -11,6 +11,7 @@ set wildmenu
 set autoread
 set hidden
 set mouse=a
+set ttimeoutlen=150
 
 "Indent
 set autoindent
