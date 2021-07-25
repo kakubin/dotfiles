@@ -97,6 +97,10 @@ noremap x "_x
 noremap <expr> 0 getline('.')[0 : col('.') - 2] =~# '^\s\+$' ? '0' : '^'
 nnoremap q: :q
 
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
 function! s:path2project_directory_git(path) abort
   let parent = a:path
 
