@@ -69,7 +69,7 @@ export PATH="$HOME/.pub-cache/bin:$PATH"
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --hidden --files --follow -g "!.git/*"'
-export FZF_DEFAULT_OPTS='--height 60% --layout=reverse --border'
+export FZF_DEFAULT_OPTS='--height 60% --layout=reverse --border --bind up:preview-up,down:preview-down'
 
 ostype() {
   echo ${(L):-$(uname)}
