@@ -14,6 +14,7 @@
   line-log = "!git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
   today = "!f () { git log --oneline --reverse --branches --since=midnight --date=iso --author=\"$(git config user.name)\" --format=\" - %C(auto)%h%Creset : %s %C(green)(%ad)%Creset\"; }; f"
   yesterday = "!f () { git log --oneline --reverse --branches --since=yesterday --date=iso --author=\"$(git config user.name)\" --format=\" - %C(auto)%h%Creset : %s %C(green)(%ad)%Creset\"; }; f"
+  ignore = "!f() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}; f"
 
 [url "git@github.com:"]
   insteadOf = https://github.com/
