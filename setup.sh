@@ -66,6 +66,13 @@ else
   curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
+# install Deno version manager
+if [ -e $HOME/.dvm ]; then
+  echo You have already installed dvm!
+else
+  curl -fsSL https://deno.land/x/dvm/install.sh | sh
+fi
+
 if [ -e $HOME/.rbenv ]; then
   echo already installed rbenv! when have you done?
 else

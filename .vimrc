@@ -172,6 +172,8 @@ endfunction
 "   inoremap <expr><CR> UltiSnips#CanExpandSnippet() ? <C-R>=UltiSnips#ExpandSnippet()<CR> : pumvisible() ?  asyncomplete#close_popup() : "\<CR>"
 " endfunction
 
+Plug 'vim-denops/denops.vim'
+
 "completion
 Plug 'prabirshrestha/asyncomplete.vim', { 'do': function('AsyncDefaultMap') }
 Plug 'prabirshrestha/asyncomplete-buffer.vim'

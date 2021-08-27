@@ -137,3 +137,5 @@ if [ $SHLVL = 1 ]; then
 fi
 
 source ~/dotfiles/common_aliases
+export DVM_DIR="/home/mrbigass/.dvm"
+export PATH="$DVM_DIR/bin:$PATH"
