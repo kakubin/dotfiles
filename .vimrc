@@ -162,30 +162,14 @@ Plug 'vim-jp/vimdoc-ja'
 Plug 'thinca/vim-ref'
 let g:ref_refe_cmd = $HOME.'/.rbenv/shims/refe'
 
-function! AsyncDefaultMap()
-  inoremap <expr><CR> pumvisible() ? asyncomplete#close_popup() : "\<CR>"
-endfunction
-
-" function! UltiBaseMap()
-"   end-wiseですでにCRがマッピングされているため以下のマッピングができない
-"   end-wiseを消してスニペットですべて完了させる？
-"   inoremap <expr><CR> UltiSnips#CanExpandSnippet() ? <C-R>=UltiSnips#ExpandSnippet()<CR> : pumvisible() ?  asyncomplete#close_popup() : "\<CR>"
-" endfunction
-
 Plug 'vim-denops/denops.vim'
 
 "completion
-Plug 'prabirshrestha/asyncomplete.vim', { 'do': function('AsyncDefaultMap') }
-Plug 'prabirshrestha/asyncomplete-buffer.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'dense-analysis/ale'
 
 "snippets
 if has('python3')
   Plug 'SirVer/ultisnips' ", { 'do': function('UltiBaseMap') }
-  Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 endif
 Plug 'honza/vim-snippets'
 
@@ -281,29 +265,6 @@ nnoremap fb :Buffers<CR>
 nnoremap fl :Lines<CR>
 nnoremap fr :Rg<CR>
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
-
-"asyncomplete
-if has('python3')
-  call asyncomplete#register_source({
-        \ 'name': 'ultisnips',
-        \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
-        \ 'allowlist': ['*']})
-
-  " buffer
-  call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
-      \ 'name': 'buffer',
-      \ 'allowlist': ['*'],
-      \ 'blocklist': [''],
-      \ 'completor': function('asyncomplete#sources#buffer#completor'),
-      \ }))
-endif
-
-"lsp
-let g:lsp_diagnostics_echo_cursor = 1
-let g:asyncomplete_auto_popup = 1
-" let g:asyncomplete_auto_completeopt = 0
-let g:lsp_text_edit_enabled = 1
-nnoremap <Leader>df :<C-u>LspPeekDefinition<CR>
 
 "snippets
 let g:UltiSnipsExpandTrigger="<c-e>"
