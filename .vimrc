@@ -162,9 +162,14 @@ Plug 'vim-jp/vimdoc-ja'
 Plug 'thinca/vim-ref'
 let g:ref_refe_cmd = $HOME.'/.rbenv/shims/refe'
 
+" completion
 Plug 'vim-denops/denops.vim'
+Plug 'Shougo/ddc.vim'
+Plug 'Shougo/ddc-around'
+Plug 'Shougo/ddc-matcher_head'
+Plug 'Shougo/ddc-sorter_rank'
+Plug 'matsui54/ddc-ultisnips'
 
-"completion
 Plug 'dense-analysis/ale'
 
 "snippets
@@ -233,6 +238,16 @@ colorscheme darcula
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
+
+call ddc#custom#patch_global('sources', ['around', 'ultisnips'])
+call ddc#custom#patch_global('sourceOptions', {
+      \ 'around': {'mark': 'Around'},
+      \ 'ultisnips': {'mark': 'Snip'},
+      \ '_': {
+      \   'matchers': ['matcher_head'],
+      \   'sorters': ['sorter_rank'],
+      \ }})
+call ddc#enable()
 
 "indentline"
 "let g:indentLine_color_term =239
