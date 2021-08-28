@@ -240,6 +240,7 @@ let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
 
+" ddc
 call ddc#custom#patch_global('sources', ['around', 'nextword', 'ultisnips'])
 call ddc#custom#patch_global('sourceOptions', {
       \ 'around': {'mark': 'Around'},
