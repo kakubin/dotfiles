@@ -57,7 +57,7 @@ export PATH="/usr/local/opt/sbt@0.13/bin:$PATH"
 
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 # 基本ここにあると思う
-export BUNDLE_BUILD__MYSQL2='--with-ldflags=-L/usr/local/opt/openssl@1.1/lib'
+# export BUNDLE_BUILD__MYSQL2='--with-ldflags=-L/usr/local/opt/openssl@1.1/lib'
 
 if [ -e $HOME/.deno/bin ]; then
   export DENO_INSTALL="$HOME/.deno"
@@ -137,3 +137,5 @@ if [ $SHLVL = 1 ]; then
 fi
 
 source ~/dotfiles/common_aliases
+export DVM_DIR="/home/mrbigass/.dvm"
+export PATH="$DVM_DIR/bin:$PATH"
