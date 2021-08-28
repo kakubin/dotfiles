@@ -257,9 +257,10 @@ call ddc#enable()
 
 "ale
 " 保存時のみ実行
-let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_enabled = 1
 " 表示に関する設定
-let g:ale_sign_error = '>>'
+let g:ale_sign_error = '!!'
 let g:ale_sign_warning = '>>'
 let g:airline#extensions#ale#open_lnum_symbol = '('
 let g:airline#extensions#ale#close_lnum_symbol = ')'
