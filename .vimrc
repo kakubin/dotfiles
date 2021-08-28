@@ -184,7 +184,6 @@ Plug 'honza/vim-snippets'
 Plug 'mrbigass/darcula'
 Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
-" Plug 'Yggdroot/indentLine'
 Plug 'mrbigass/vim-prettier', { 'do': 'yarn install'  }
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-endwise'
@@ -251,11 +250,6 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'sorters': ['sorter_rank'],
       \ }})
 call ddc#enable()
-
-"indentline"
-"let g:indentLine_color_term =239
-"let g:indentLine_color_gui = '#708090'
-"let g:indentLine_char = '¦'
 
 "ale
 " 保存時のみ実行
