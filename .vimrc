@@ -170,6 +170,7 @@ Plug 'Shougo/ddc-matcher_head'
 Plug 'Shougo/ddc-sorter_rank'
 Plug 'matsui54/ddc-ultisnips'
 
+" lint engine
 Plug 'dense-analysis/ale'
 
 "snippets
