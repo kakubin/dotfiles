@@ -284,6 +284,7 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+nnoremap <Leader>sn :UltiSnipsEdit<CR>
 
 "fugitive
 nnoremap gd :Gvdiffsplit<CR>

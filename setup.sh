@@ -66,6 +66,9 @@ else
   curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
+# snippetsのリンクを作成
+ln -sf $HOME/dotfiles/UltiSnips $HOME/.vim
+
 # install Deno version manager
 if [ -e $HOME/.dvm ]; then
   echo You have already installed dvm!
