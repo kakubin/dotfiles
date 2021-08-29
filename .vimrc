@@ -176,7 +176,7 @@ Plug 'dense-analysis/ale'
 
 "snippets
 if has('python3')
-  Plug 'SirVer/ultisnips' ", { 'do': function('UltiBaseMap') }
+  Plug 'SirVer/ultisnips'
 endif
 Plug 'honza/vim-snippets'
 
@@ -284,6 +284,7 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+nnoremap <Leader>sn :UltiSnipsEdit<CR>
 
 "fugitive
 nnoremap gd :Gvdiffsplit<CR>
