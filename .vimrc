@@ -176,7 +176,7 @@ Plug 'dense-analysis/ale'
 
 "snippets
 if has('python3')
-  Plug 'SirVer/ultisnips' ", { 'do': function('UltiBaseMap') }
+  Plug 'SirVer/ultisnips'
 endif
 Plug 'honza/vim-snippets'
 
