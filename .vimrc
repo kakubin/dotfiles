@@ -166,7 +166,7 @@ let g:ref_refe_cmd = $HOME.'/.rbenv/shims/refe'
 Plug 'vim-denops/denops.vim'
 Plug 'Shougo/ddc.vim'
 Plug 'Shougo/ddc-around'
-Plug 'Shougo/ddc-matcher_head'
+Plug 'matsui54/ddc-matcher_fuzzy'
 Plug 'Shougo/ddc-sorter_rank'
 Plug 'matsui54/ddc-ultisnips'
 Plug 'Shougo/ddc-nextword'
@@ -247,9 +247,12 @@ call ddc#custom#patch_global('sourceOptions', {
       \ 'nextword': {'mark': 'nextword'},
       \ 'ultisnips': {'mark': 'Snip'},
       \ '_': {
-      \   'matchers': ['matcher_head'],
+      \   'matchers': ['ddc-matcher_fuzzy'],
       \   'sorters': ['sorter_rank'],
       \ }})
+call ddc#custom#patch_global('filterParams', {
+      \ 'matcher_fuzzy': {'camelcase': v:true},
+      \ })
 call ddc#enable()
 
 "ale
