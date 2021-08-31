@@ -354,24 +354,23 @@ aug RailsDictSetting
   au!
 aug END
 
-"quickrun
-let g:quickrun_config = {}
-let g:quickrun_config._ = { 'runner' : 'vimproc' }
-nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
-
-let g:quickrun_config['ruby.rspec'] = {
-      \ 'exec' : 'bundle exec %c %s%o',
-      \ 'command': 'rspec',
+" quickrun
+let g:quickrun_config = {
+      \ '_': { 'runner' : 'vimproc' },
+      \ 'ruby.rspec': {
+      \   'command': 'rspec',
+      \   'exec' : 'bundle exec %c %s',}
       \ }
 
-augroup QRunRSpec
+augroup SetRSpecFileType
   autocmd!
   autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
 augroup END
 
-nnoremap <silent> <Leader>rr :call QuickRunRspecCurrentLine()<CR>
-
 function QuickRunRspecCurrentLine()
   let line = line('.')
-  exec ":QuickRun -exec 'bundle exec %c %s%o' -cmdopt ':" . line . "'"
+  exec ":QuickRun -exec 'bundle exec %c %s:%o' -cmdopt " . line
 endfunction
+nnoremap <silent> <Leader>rr :call QuickRunRspecCurrentLine()<CR>
+
+nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
