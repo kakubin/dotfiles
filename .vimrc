@@ -172,7 +172,7 @@ Plug 'matsui54/ddc-ultisnips'
 Plug 'Shougo/ddc-nextword'
 
 " lint engine
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 
 "snippets
 if has('python3')
@@ -252,20 +252,20 @@ call ddc#custom#patch_global('sourceOptions', {
       \ }})
 call ddc#enable()
 
-"ale
+" ale
 " 保存時のみ実行
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_enabled = 1
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_enabled = 1
 " 表示に関する設定
-let g:ale_sign_error = '!!'
-let g:ale_sign_warning = '>>'
-let g:airline#extensions#ale#open_lnum_symbol = '('
-let g:airline#extensions#ale#close_lnum_symbol = ')'
-let g:ale_echo_msg_format = '[%linter%]%code: %%s'
-highlight link ALEErrorSign Tag
-highlight link ALEWarningSign StorageClass
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" let g:ale_sign_error = '!!'
+" let g:ale_sign_warning = '>>'
+" let g:airline#extensions#ale#open_lnum_symbol = '('
+" let g:airline#extensions#ale#close_lnum_symbol = ')'
+" let g:ale_echo_msg_format = '[%linter%]%code: %%s'
+" highlight link ALEErrorSign Tag
+" highlight link ALEWarningSign StorageClass
+" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 "NERDTree
 let g:NERDTreeShowHidden=1
