@@ -133,9 +133,9 @@ function! s:copy_relative_path_from_root()
   echo 'Copy relative path: ' . @+
 endfunction
 
-augroup MyAutoCmd
-  autocmd WinEnter <buffer> checktime
-augroup END
+" augroup MyAutoCmd
+"   autocmd WinEnter <buffer> checktime
+" augroup END
 
 nmap cp :call <SID>copy_absolute_path()<CR>
 nmap cpr :call <SID>copy_relative_path_from_root()<CR>
