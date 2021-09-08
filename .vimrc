@@ -371,8 +371,10 @@ augroup SetRSpecFileType
 augroup END
 
 function QuickRunRspecCurrentLine()
-  let line = line('.')
-  exec ":QuickRun -exec 'bundle exec %c %s:%o' -cmdopt " . line
+  if &ft == 'ruby.rspec'
+    let line = line('.')
+    exec ":QuickRun -exec 'bundle exec %c %s:%o' -cmdopt " . line
+  endif
 endfunction
 nnoremap <silent> <Leader>rr :call QuickRunRspecCurrentLine()<CR>
 

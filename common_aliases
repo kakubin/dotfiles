@@ -9,6 +9,7 @@ alias .f='cd ~/dotfiles'
 alias rr='bin/rails runner'
 alias be='bundle exec'
 alias spec='bundle exec rspec'
+alias dk='docker-compose'
 # alias dfiles='git diff master --name-only'
 dfiles() {
   git remote show origin | grep 'HEAD branch' | awk '{print $3}' | xargs -I@ git diff @ --name-only
