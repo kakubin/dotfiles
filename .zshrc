@@ -59,13 +59,18 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 # 基本ここにあると思う
 # export BUNDLE_BUILD__MYSQL2='--with-ldflags=-L/usr/local/opt/openssl@1.1/lib'
 
-if [ -e $HOME/.deno/bin ]; then
-  export DENO_INSTALL="$HOME/.deno"
-  export PATH="$DENO_INSTALL/bin:$PATH"
-fi
+export DVM_DIR="/home/mrbigass/.dvm"
+export PATH="$DVM_DIR/bin:$PATH"
+
+# if [ -e $HOME/.deno/bin ]; then
+#   export DENO_INSTALL="$HOME/.deno"
+#   export PATH="$DENO_INSTALL/bin:$PATH"
+# fi
 
 export PATH="$HOME/fvm/default/bin:$PATH"
 export PATH="$HOME/.pub-cache/bin:$PATH"
+
+export PATH="$HOME/.tfenv/bin:$PATH"
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --hidden --files --follow -g "!.git/*"'
@@ -137,5 +142,3 @@ if [ $SHLVL = 1 ]; then
 fi
 
 source ~/dotfiles/common_aliases
-export DVM_DIR="/home/mrbigass/.dvm"
-export PATH="$DVM_DIR/bin:$PATH"
