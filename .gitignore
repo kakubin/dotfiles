@@ -2,4 +2,6 @@
 *.swg
 *.swo
 .netrwhist
-
+.vim/plugged
+.vim/view
+.vim/autoload/plug.vim

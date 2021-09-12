@@ -30,6 +30,8 @@ do
     echo "make symbol $FILE"
     ln -sf $HOME/dotfiles/$FILE $HOME/$FILE
   fi
+
+  ln -sh $HOME/dotfiles/.vim $HOME
 done
 
 if [[ $OSTYPE = *darwin* ]]; then
