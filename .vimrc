@@ -16,6 +16,13 @@ set ttimeoutlen=150
 "Indent
 set autoindent
 set smartindent
+augroup FTIndent
+  autocmd!
+  autocmd BufRead, BufNewFile *.py setlocal tabstop=4
+  autocmd BufRead, BufNewFile *.go setlocal shiftwidth=4
+  autocmd BufRead, BufNewFile *.tf setlocal smartindent
+augroup END
+
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -43,7 +50,9 @@ set completeopt& completeopt+=menuone completeopt+=noinsert completeopt-=preview
 
 "set laststatus
 set cursorline
-autocmd InsertEnter,InsertLeave * set cursorline!
+augroup CursorLine
+  autocmd InsertEnter,InsertLeave * set cursorline!
+augroup END
 
 augroup DeleteSpace
   autocmd!
@@ -90,6 +99,7 @@ nnoremap <silent> <Leader>bp :<C-u>bprevious<CR>
 nnoremap <silent> <Leader>bn :<C-u>bnext<CR>
 nnoremap <C-H> :<C-u>tabprev<CR>
 nnoremap <C-L> :<C-u>tabnext<CR>
+nnoremap <C-B> <C-^>
 
 cnoremap <C-p> <Up>
 noremap x "_x
