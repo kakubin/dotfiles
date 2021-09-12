@@ -396,3 +396,6 @@ nnoremap <silent> <Leader>rr :<C-u>call QuickRunRspecCurrentLine()<CR>
 nnoremap <silent> <Leader>r  :<C-u>QuickRun<CR>
 
 nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
+
+" rails locale
+nnoremap <silent><Leader>l :<C-u>call rails_locale#open_locale_file_from_path(expand('%:p'))<CR>
