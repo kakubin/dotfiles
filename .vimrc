@@ -82,7 +82,8 @@ nnoremap j gj
 nnoremap k gk
 nnoremap <C-w>v <C-w>v<C-w>l
 nnoremap <C-w>s <C-w>s<C-w>j
-nnoremap Y y$ "普通に考えてYは行末までヤンクして欲しいもの
+nnoremap Y y$
+nnoremap $ g_
 
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
