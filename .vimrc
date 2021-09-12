@@ -391,6 +391,7 @@ function QuickRunRspecCurrentLine()
     exec ":QuickRun -exec 'bundle exec %c %s:%o' -cmdopt " . line
   endif
 endfunction
-nnoremap <silent> <Leader>rr :call QuickRunRspecCurrentLine()<CR>
+nnoremap <silent> <Leader>rr :<C-u>call QuickRunRspecCurrentLine()<CR>
+nnoremap <silent> <Leader>r  :<C-u>QuickRun<CR>
 
 nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
