@@ -169,7 +169,6 @@ Plug 'Shougo/ddc-around'
 Plug 'Shougo/ddc-matcher_head'
 Plug 'Shougo/ddc-sorter_rank'
 Plug 'matsui54/ddc-ultisnips'
-Plug 'Shougo/ddc-nextword'
 
 " lsp
 Plug 'prabirshrestha/vim-lsp'
@@ -246,11 +245,10 @@ let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
 
 " ddc
-call ddc#custom#patch_global('sources', ['around', 'ddc-vim-lsp', 'nextword', 'ultisnips'])
+call ddc#custom#patch_global('sources', ['around', 'ddc-vim-lsp', 'ultisnips'])
 call ddc#custom#patch_global('sourceOptions', {
       \ 'around': {'mark': 'Around'},
       \ 'ddc-vim-lsp': {'mark': 'LS'},
-      \ 'nextword': {'mark': 'nextword'},
       \ 'ultisnips': {'mark': 'Snip'},
       \ '_': {
       \   'matchers': ['matcher_head'],
