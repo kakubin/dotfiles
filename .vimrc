@@ -180,10 +180,14 @@ Plug 'Shougo/ddc-around'
 Plug 'Shougo/ddc-matcher_head'
 Plug 'Shougo/ddc-sorter_rank'
 Plug 'matsui54/ddc-ultisnips'
-Plug 'Shougo/ddc-nextword'
+
+" lsp
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'shun/ddc-vim-lsp'
 
 " lint engine
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 
 "snippets
 if has('python3')
@@ -252,10 +256,10 @@ let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
 
 " ddc
-call ddc#custom#patch_global('sources', ['around', 'nextword', 'ultisnips'])
+call ddc#custom#patch_global('sources', ['around', 'ddc-vim-lsp', 'ultisnips'])
 call ddc#custom#patch_global('sourceOptions', {
       \ 'around': {'mark': 'Around'},
-      \ 'nextword': {'mark': 'nextword'},
+      \ 'ddc-vim-lsp': {'mark': 'LS'},
       \ 'ultisnips': {'mark': 'Snip'},
       \ '_': {
       \   'matchers': ['matcher_head'],
@@ -266,20 +270,20 @@ call ddc#custom#patch_global('sourceOptions', {
 "       \ })
 call ddc#enable()
 
-"ale
+" ale
 " 保存時のみ実行
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_enabled = 1
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_enabled = 1
 " 表示に関する設定
-let g:ale_sign_error = '!!'
-let g:ale_sign_warning = '>>'
-let g:airline#extensions#ale#open_lnum_symbol = '('
-let g:airline#extensions#ale#close_lnum_symbol = ')'
-let g:ale_echo_msg_format = '[%linter%]%code: %%s'
-highlight link ALEErrorSign Tag
-highlight link ALEWarningSign StorageClass
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" let g:ale_sign_error = '!!'
+" let g:ale_sign_warning = '>>'
+" let g:airline#extensions#ale#open_lnum_symbol = '('
+" let g:airline#extensions#ale#close_lnum_symbol = ')'
+" let g:ale_echo_msg_format = '[%linter%]%code: %%s'
+" highlight link ALEErrorSign Tag
+" highlight link ALEWarningSign StorageClass
+" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 "NERDTree
 let g:NERDTreeShowHidden=1
