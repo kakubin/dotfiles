@@ -16,13 +16,6 @@ set ttimeoutlen=150
 "Indent
 set autoindent
 set smartindent
-augroup FTIndent
-  autocmd!
-  autocmd BufRead, BufNewFile *.py setlocal tabstop=4
-  autocmd BufRead, BufNewFile *.go setlocal shiftwidth=4
-  autocmd BufRead, BufNewFile *.tf setlocal smartindent
-augroup END
-
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -242,6 +235,9 @@ Plug 'posva/vim-vue'
 
 "rust
 Plug 'rust-lang/rust.vim'
+
+"terraform
+Plug 'hashivim/vim-terraform'
 
 call plug#end()
 
