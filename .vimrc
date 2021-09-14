@@ -239,6 +239,9 @@ Plug 'rust-lang/rust.vim'
 "terraform
 Plug 'hashivim/vim-terraform'
 
+"go
+Plug 'mattn/vim-goimports'
+
 call plug#end()
 
 filetype plugin indent on
@@ -266,6 +269,12 @@ call ddc#custom#patch_global('sourceOptions', {
 "       \ 'matcher_fuzzy': {'camelcase': v:true},
 "       \ })
 call ddc#enable()
+
+" lsp
+let g:lsp_diagnostics_echo_cursor = 1
+nnoremap <C-J> :<C-u>LspNextDiagnostic<CR>
+nnoremap <C-K> :<C-u>LspPreviousDiagnostic<CR>
+nnoremap <Leader>sd :<C-u>LspDefinition<CR>
 
 " ale
 " 保存時のみ実行
