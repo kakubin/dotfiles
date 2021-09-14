@@ -1,4 +1,4 @@
-"Encoding
+" Encoding
 set encoding=utf-8
 scriptencoding utf-8
 set fileencoding=utf-8 " 保存時の文字コード
@@ -7,22 +7,22 @@ set fileformats=unix,dos,mac " 改行コードの自動判別. 左側が優先�
 set ambiwidth=double " □や○文字が崩れる問題を解決
 
 set wildmenu
-"set wildmode=list:longest
+" set wildmode=list:longest
 set autoread
 set hidden
 set mouse=a
 set ttimeoutlen=150
 
-"Indent
+" Indent
 set autoindent
 set smartindent
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-"set smarttab
+" set smarttab
 set expandtab
 
-"Search
+" Search
 set ignorecase
 set smartcase
 set wrapscan
@@ -37,11 +37,11 @@ set splitright
 
 set complete=.,w,b,u,U,s,i,d,t
 set completeopt& completeopt+=menuone completeopt+=noinsert completeopt-=preview
-"for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
+" for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
 "  exec "imap <expr> " . k . " pumvisible() ? '" . k . "' : '" . k . "\<C-X>\<C-P>\<C-N>'"
-"endfor
+" endfor
 
-"set laststatus
+" set laststatus
 set cursorline
 augroup CursorLine
   autocmd InsertEnter,InsertLeave * set cursorline!
@@ -64,7 +64,7 @@ set noswapfile
 set number
 set belloff=all
 
-"fold by indent
+" fold by indent
 set foldmethod=indent
 set foldlevel=9
 
@@ -141,7 +141,7 @@ endfunction
 "   autocmd WinEnter <buffer> checktime
 " augroup END
 
-nmap cp :call <SID>copy_absolute_path()<CR>
+nmap cp  :call <SID>copy_absolute_path()<CR>
 nmap cpr :call <SID>copy_relative_path_from_root()<CR>
 
 " Make sure pasting in visual mode doesn't replace paste buffer
@@ -155,10 +155,10 @@ function! s:Repl()
 endfunction
 vmap <silent> <expr> p <sid>Repl()
 
-"PluginManager
+" PluginManager
 call plug#begin('~/.vim/plugged')
 
-"document
+" document
 Plug 'vim-jp/vimdoc-ja'
 " $ brew install lynx
 " $ gem install refe2 #refeをインストール
@@ -183,13 +183,13 @@ Plug 'shun/ddc-vim-lsp'
 " lint engine
 " Plug 'dense-analysis/ale'
 
-"snippets
+" snippets
 if has('python3')
   Plug 'SirVer/ultisnips'
 endif
 Plug 'honza/vim-snippets'
 
-"style
+" style
 Plug 'mrbigass/darcula'
 Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
@@ -201,7 +201,7 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'simeji/winresizer'
 
-"operation
+" operation
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-scripts/vim-auto-save'
 Plug 'preservim/nerdcommenter'
@@ -210,36 +210,36 @@ Plug 'thinca/vim-quickrun'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'markonm/traces.vim'
 
-"FZF
+" FZF
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
-"browser
+" browser
 Plug 'tyru/open-browser.vim'
 
-"git
+" git
 Plug 'iberianpig/tig-explorer.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
-"html
+" html
 Plug 'mattn/emmet-vim'
 
-"rails
+" rails
 Plug 'tpope/vim-rails'
 Plug 'slim-template/vim-slim'
 Plug 'vim-scripts/ruby-matchit'
 
-"vue
+" vue
 Plug 'posva/vim-vue'
 
-"rust
+" rust
 Plug 'rust-lang/rust.vim'
 
-"terraform
+" terraform
 Plug 'hashivim/vim-terraform'
 
-"go
+" go
 Plug 'mattn/vim-goimports'
 
 call plug#end()
@@ -249,8 +249,8 @@ filetype plugin indent on
 syntax enable
 colorscheme darcula
 
-"plugin config================================
-"vim-auto-save
+" plugin config================================
+" vim-auto-save
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
@@ -291,12 +291,12 @@ nnoremap <Leader>sd :<C-u>LspDefinition<CR>
 " nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 " nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-"NERDTree
+" NERDTree
 let g:NERDTreeShowHidden=1
 nnoremap <silent><Leader>t :NERDTreeToggle<CR>
 let g:NERDTreeIgnore=['\.git$', '\.clean$', '\.swp$', '\.bak$', '\~$', '\.DS_Store']
 
-"FZF
+" FZF
 nnoremap ff :GFiles<CR>
 nnoremap fs :GFiles?<CR>
 nnoremap fb :Buffers<CR>
@@ -304,32 +304,32 @@ nnoremap fl :Lines<CR>
 nnoremap fr :Rg<CR>
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 
-"snippets
+" snippets
 let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 nnoremap <Leader>sn :UltiSnipsEdit<CR>
 
-"fugitive
+" fugitive
 nnoremap gd :Gvdiffsplit<CR>
 nnoremap gb :Gblame<CR>
 
-"tig-explorer
+" tig-explorer
 nnoremap <Leader>gt :TigOpenProjectRootDir<CR>
 
-"close-tag
+" close-tag
 let g:closetag_filenames = '*.html,*.vue'
 
-"vim-prettier
-let g:prettier#autoformat_config_present = 1 "prettireの設定ファイルがあった場合、そちらを優先する
+" vim-prettier
+let g:prettier#autoformat_config_present = 1 " prettireの設定ファイルがあった場合、そちらを優先する
 
 " カーソル下のURLをブラウザで開く
 nmap <Leader>o <Plug>(openbrowser-open)
 vmap <Leader>o <Plug>(openbrowser-open)
 " ググる
-nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>"
+nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
 
-"nerdcommenter
+" nerdcommenter
 let g:NERDSpaceDelims=1
 let g:NERDDefaultAlign='left'
 nmap <C-_>   <Plug>NERDCommenterToggle
@@ -355,7 +355,7 @@ function! NERDCommenter_after()
   endif
 endfunction
 
-"memolist
+" memolist
 nnoremap <Leader>mn :MemoNew<CR>
 nnoremap <Leader>mg :MemoGrep<CR>
 let g:memolist_fzf = 1
