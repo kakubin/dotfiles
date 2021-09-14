@@ -242,6 +242,9 @@ Plug 'hashivim/vim-terraform'
 " go
 Plug 'mattn/vim-goimports'
 
+" latex
+Plug 'lervag/vimtex'
+
 call plug#end()
 
 filetype plugin indent on
