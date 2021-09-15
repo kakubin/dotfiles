@@ -275,8 +275,8 @@ call ddc#enable()
 
 " lsp
 let g:lsp_diagnostics_echo_cursor = 1
-nnoremap <C-J> :<C-u>LspNextDiagnostic<CR>
-nnoremap <C-K> :<C-u>LspPreviousDiagnostic<CR>
+nnoremap <silent><C-J> :<C-u>LspNextDiagnostic<CR>
+nnoremap <silent><C-K> :<C-u>LspPreviousDiagnostic<CR>
 nnoremap <Leader>sd :<C-u>LspDefinition<CR>
 
 " ale
@@ -315,7 +315,7 @@ nnoremap <Leader>sn :UltiSnipsEdit<CR>
 
 " fugitive
 nnoremap gd :Gvdiffsplit<CR>
-nnoremap gb :Gblame<CR>
+nnoremap gb :Git blame<CR>
 
 " tig-explorer
 nnoremap <Leader>gt :TigOpenProjectRootDir<CR>
