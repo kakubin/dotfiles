@@ -53,19 +53,19 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 #java
-export PATH="/usr/local/opt/sbt@0.13/bin:$PATH"
+# export PATH="/usr/local/opt/sbt@0.13/bin:$PATH"
 
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 # 基本ここにあると思う
 # export BUNDLE_BUILD__MYSQL2='--with-ldflags=-L/usr/local/opt/openssl@1.1/lib'
 
-export DVM_DIR="/home/mrbigass/.dvm"
+export DVM_DIR="$HOME/.dvm"
 export PATH="$DVM_DIR/bin:$PATH"
 
-# if [ -e $HOME/.deno/bin ]; then
-#   export DENO_INSTALL="$HOME/.deno"
-#   export PATH="$DENO_INSTALL/bin:$PATH"
-# fi
+if [ -e $HOME/.deno/bin ]; then
+  export DENO_INSTALL="$HOME/.deno"
+  export PATH="$DENO_INSTALL/bin:$PATH"
+fi
 
 export PATH="$HOME/fvm/default/bin:$PATH"
 export PATH="$HOME/.pub-cache/bin:$PATH"
