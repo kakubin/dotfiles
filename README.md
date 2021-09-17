@@ -30,10 +30,3 @@ bash ./setup.sh
 ## Darwin
 1. capsLockとctrlを入れ替える
 2. 入力言語の切り替えを<⌘-Space>にする
-
-## Linux
-
-```
-chsh -s /bin/zsh
-mysqlのソケットを/tmp/mysql.sockに切り替え
-```

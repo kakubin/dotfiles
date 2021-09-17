@@ -10,6 +10,7 @@ alias rr='bin/rails runner'
 alias be='bundle exec'
 alias spec='bundle exec rspec'
 alias dk='docker-compose'
+alias dke='dk exec'
 alias tf='terraform'
 # alias dfiles='git diff master --name-only'
 dfiles() {
