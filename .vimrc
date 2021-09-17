@@ -155,6 +155,14 @@ function! s:Repl()
 endfunction
 vmap <silent> <expr> p <sid>Repl()
 
+" plug section
+let s:plug_manager_path = expand('$HOME/.vim/autoload/plug.vim')
+if !filereadable(s:plug_manager_path)
+  execute '!curl -fLo ' . s:plug_manager_path .
+        \ ' --create-dirs' .
+        \ ' https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+endif
+
 " PluginManager
 call plug#begin('~/.vim/plugged')
 
