@@ -1,5 +1,46 @@
 #!/bin/bash
 
+not_installed_yet() {
+  if type $1 > /dev/null 2>&1; then
+    return 1
+  else
+    return 0
+  fi
+}
+
+# cd $HOME/.ssh & ssh-keygen -t ed25519
+if [[ $OSTYPE = *darwin* ]]; then
+  pbcopy < $HOME/.ssh/id_ed25519.pub
+else # for Debian
+  if not_installed_yet xsel;then
+    sudo apt-get install xsel
+  fi
+  xsel --clipboard --input < $HOME/.ssh/id_ed25519.pub
+fi
+
+while true; do
+  read -p "Input 'Yes' if you have registered your ssh pub-key to GitHub " registered
+
+  if [ -z $registered ]; then
+    continue
+  fi
+  if [ $registered != "Yes" ]; then
+    continue
+  fi
+
+  break
+done
+
+ssh -T git@github.com
+
+if not_installed_yet git; then
+  # TODO: install git
+fi
+
+if [ -f $HOME/dotfiles ]; then
+  git clone git@github.com:mrbigass/dotfiles.git $HOME/dotfiles
+fi
+
 readonly HEADER='
     .__       __    _____.__.__
   __| | _____/  |__/ ____\__|  |   ____   ______
@@ -10,7 +51,8 @@ readonly HEADER='
 '
 echo "${HEADER}"
 
-exit
+cd $HOME/dotfiles
+
 for FILE in .??*
 do
   # 無視するファイル
@@ -30,19 +72,20 @@ do
     echo "make symbol $FILE"
     ln -sf $HOME/dotfiles/$FILE $HOME/$FILE
   fi
-
-  ln -sh $HOME/dotfiles/.vim $HOME
 done
 
 if [[ $OSTYPE = *darwin* ]]; then
-#  # brewのインストール
-#  xcode-select --install
-#  sudo xcodebuild -license
-#
-#  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-#  brew doctor
-#  bash ./brew_list.sh
-#
+  # brewのインストール
+  xcode-select --install
+  sudo xcodebuild -license
+
+  if not_installed_yet brew; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  fi
+
+  brew doctor
+  bash ./brew_list.sh
+
   # finderで隠しファイルを表示する
   read -p "Do you wish to show hidden files with Finder? y/n " yn
   if [ $yn = "y" -o $yn = "Y" ]; then
@@ -68,9 +111,6 @@ else
   curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
-# snippetsのリンクを作成
-ln -sf $HOME/dotfiles/UltiSnips $HOME/.vim
-
 # install Deno version manager
 if [ -e $HOME/.dvm ]; then
   echo You have already installed dvm!
@@ -78,13 +118,16 @@ else
   curl -fsSL https://deno.land/x/dvm/install.sh | sh
 fi
 
+DENO_MOST_RECENT_VERSION="$(dvm list-remote | grep \*)"
+echo ${DENO_MOST_RECENT_VERSION:8} | dvm install $1
+
 if [ -e $HOME/.rbenv ]; then
   echo already installed rbenv! when have you done?
 else
-  git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-  cd ~/.rbenv && src/configure && make -C src
-  mkdir -p "$(rbenv root)"/plugins
-  git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+  git clone https://github.com/rbenv/rbenv.git $HOME/.rbenv
+  cd $HOME/.rbenv && src/configure && make -C src
+  mkdir -p $HOME/.rbenv/plugins
+  git clone https://github.com/rbenv/ruby-build.git $HOME/rbenv/plugins/ruby-build
 fi
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

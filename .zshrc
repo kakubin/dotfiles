@@ -59,6 +59,7 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 # 基本ここにあると思う
 # export BUNDLE_BUILD__MYSQL2='--with-ldflags=-L/usr/local/opt/openssl@1.1/lib'
 
+# TODO: dvm入れるたびに環境変数がzshrc一番下に追加されちゃう
 export DVM_DIR="$HOME/.dvm"
 export PATH="$DVM_DIR/bin:$PATH"
 
