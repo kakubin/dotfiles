@@ -12,7 +12,6 @@ brew install vim
 brew install fzf
 brew install ripgrep
 brew install tree
-brew install docker
 brew install tmux
 brew install tig
 brew install ghq
@@ -27,16 +26,18 @@ brew install coreutils
 brew install graphviz
 brew install virtualbox
 
-brew install mysql@5.7
 brew install postgresql
-brew install redis
+# version切り替えあるのでdockerで管理する
+# brew install mysql@5.7
+# brew install redis
 
-brew install --cask postman
+brew install --cask docker
+brew install --cask slack
 brew install --cask skitch
+brew install --cask postman
 brew install --cask wkhtmltopdf
 brew install --cask mysqlworkbench
 brew install --cask yt-music
 
 # regularly executed
 brew cleanup
-
