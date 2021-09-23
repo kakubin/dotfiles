@@ -8,7 +8,7 @@ not_installed_yet() {
   fi
 }
 
-# cd $HOME/.ssh & ssh-keygen -t ed25519
+cd $HOME/.ssh & ssh-keygen -t ed25519
 if [[ $OSTYPE = *darwin* ]]; then
   pbcopy < $HOME/.ssh/id_ed25519.pub
 else # for Debian
@@ -19,7 +19,7 @@ else # for Debian
 fi
 
 while true; do
-  read -p "Input 'Yes' if you have registered your ssh pub-key to GitHub " registered
+  read -p "Input 'Yes' if you have registered your ssh pub-key to GitHub: " registered
 
   if [ -z $registered ]; then
     continue
@@ -32,10 +32,6 @@ while true; do
 done
 
 ssh -T git@github.com
-
-if not_installed_yet git; then
-  # TODO: install git
-fi
 
 if [ -f $HOME/dotfiles ]; then
   git clone git@github.com:mrbigass/dotfiles.git $HOME/dotfiles
@@ -75,10 +71,10 @@ do
 done
 
 if [[ $OSTYPE = *darwin* ]]; then
-  # brewのインストール
   xcode-select --install
   sudo xcodebuild -license
 
+  # brewのインストール
   if not_installed_yet brew; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   fi
@@ -89,10 +85,10 @@ if [[ $OSTYPE = *darwin* ]]; then
   # finderで隠しファイルを表示する
   read -p "Do you wish to show hidden files with Finder? y/n " yn
   if [ $yn = "y" -o $yn = "Y" ]; then
-      defaults write com.apple.finder AppleShowAllFiles TRUE
-      echo "done!!"
-      echo "...restart finder\n"
-      killall Finder
+    defaults write com.apple.finder AppleShowAllFiles TRUE
+    echo "done!!"
+    echo "...restart finder\n"
+    killall Finder
   fi
 
   # DS_Storeを作るか確認
