@@ -244,6 +244,14 @@ Plug 'posva/vim-vue'
 " rust
 Plug 'rust-lang/rust.vim'
 
+" javascript
+" just in case
+Plug 'othree/yajs.vim'
+
+" typescript
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+
 " terraform
 Plug 'hashivim/vim-terraform'
 
