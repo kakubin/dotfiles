@@ -91,8 +91,8 @@ nnoremap ,s. :<C-u>source $MYVIMRC<CR>
 
 nnoremap <silent> <Leader>bp :<C-u>bprevious<CR>
 nnoremap <silent> <Leader>bn :<C-u>bnext<CR>
-nnoremap <C-H> :<C-u>tabprev<CR>
-nnoremap <C-L> :<C-u>tabnext<CR>
+nnoremap <silent> <C-H> :<C-u>tabprev<CR>
+nnoremap <silent> <C-L> :<C-u>tabnext<CR>
 nnoremap <C-B> <C-^>
 
 cnoremap <C-p> <Up>
