@@ -1,8 +1,7 @@
 # dotfiles
 
 ```sh
-<!-- curl -OL https://raw.githubusercontent.com/mrbigass/dotfiles/master/setup.sh ~/setup.sh && sh ~/setup.sh -->
-curl -fsSL https://raw.githubusercontent.com/mrbigass/dotfiles/master/setup.sh | sh
+curl -fsSL https://raw.githubusercontent.com/kakubin/dotfiles/master/setup.sh | sh
 ```
 
 

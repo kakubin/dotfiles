@@ -34,7 +34,7 @@ done
 ssh -T git@github.com
 
 if [ -f $HOME/dotfiles ]; then
-  git clone git@github.com:mrbigass/dotfiles.git $HOME/dotfiles
+  git clone git@github.com:kakubin/dotfiles.git $HOME/dotfiles
 fi
 
 readonly HEADER='
@@ -43,7 +43,7 @@ readonly HEADER='
  / __ |/  _ \   __\   __\|  |  | _/ __ \ /  ___/
 / /_/ (  <_> )  |  |  |  |  |  |_\  ___/ \___ \
 \_____|\____/|__|  |__|  |__|____/\___/  /_____>
-                                                   @mrbigass
+                                                   @kakubin
 '
 echo "${HEADER}"
 
