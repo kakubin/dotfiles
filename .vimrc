@@ -200,6 +200,9 @@ Plug 'honza/vim-snippets'
 " style
 Plug 'mrbigass/darcula'
 Plug 'vim-airline/vim-airline'
+Plug 'osyo-manga/vim-brightest'
+Plug 't9md/vim-quickhl'
+
 " Plug 'vim-airline/vim-airline-themes'
 Plug 'mrbigass/vim-prettier', { 'do': 'yarn install'  }
 Plug 'alvan/vim-closetag'
@@ -261,6 +264,9 @@ Plug 'mattn/vim-goimports'
 " latex
 Plug 'lervag/vimtex'
 
+" SQL
+Plug 'vim-scripts/SQLUtilities'
+
 call plug#end()
 
 filetype plugin indent on
@@ -269,6 +275,19 @@ syntax enable
 colorscheme darcula
 
 " plugin config================================
+" vim-brightest'
+let g:brightest#highlight = {
+      \ "group" : "BrightestUnderline"
+      \ }
+let g:brightest#enable_filetypes = {
+      \ "_": 1,
+      \ }
+
+nmap <Space>m <Plug>(quickhl-manual-this)
+xmap <Space>m <Plug>(quickhl-manual-this)
+nmap <Space>M <Plug>(quickhl-manual-reset)
+xmap <Space>M <Plug>(quickhl-manual-reset)
+
 " vim-auto-save
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
