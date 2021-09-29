@@ -44,6 +44,7 @@ set completeopt& completeopt+=menuone completeopt+=noinsert completeopt-=preview
 " set laststatus
 set cursorline
 augroup CursorLine
+  autocmd!
   autocmd InsertEnter,InsertLeave * set cursorline!
 augroup END
 
@@ -409,11 +410,12 @@ function! SetUpRailsSetting()
 endfunction
 
 aug MyAutoCmd
-  au User Rails call SetUpRailsSetting()
+  autocmd!
+  autocmd User Rails call SetUpRailsSetting()
 aug END
 
 aug RailsDictSetting
-  au!
+  autocmd!
 aug END
 
 " quickrun
