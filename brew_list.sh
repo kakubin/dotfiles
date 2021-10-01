@@ -16,6 +16,7 @@ brew install tmux
 brew install tig
 brew install ghq
 
+brew install asdf
 brew install goenv
 brew install nodenv
 brew install direnv

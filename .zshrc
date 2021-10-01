@@ -116,9 +116,8 @@ show_snippets() {
   LBUFFER="${LBUFFER}${snippets}"
   zle reset-prompt
 }
-# 自作ウィジェットを登録
+
 zle -N show_snippets
-# 自作ウィジェットを`Ctrl-n`で呼び出す
 bindkey '^n' show_snippets
 
 
