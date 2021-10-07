@@ -295,9 +295,9 @@ let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
 
 " ddc
-call ddc#custom#patch_global('sources', ['ddc-vim-lsp', 'around', 'ultisnips'])
+call ddc#custom#patch_global('sources', ['vim-lsp', 'around', 'ultisnips'])
 call ddc#custom#patch_global('sourceOptions', {
-      \ 'ddc-vim-lsp': {'mark': 'LS'},
+      \ 'vim-lsp': {'mark': 'LS'},
       \ 'around': {'mark': 'Around'},
       \ 'ultisnips': {'mark': 'Snip'},
       \ '_': {
