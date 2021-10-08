@@ -265,6 +265,9 @@ Plug 'mattn/vim-goimports'
 " latex
 Plug 'lervag/vimtex'
 
+" markdown
+Plug 'kat0h/bufpreview.vim'
+
 " SQL
 Plug 'vim-scripts/SQLUtilities'
 
@@ -444,3 +447,6 @@ nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() 
 
 " rails locale
 nnoremap <silent><Leader>l :<C-u>call rails_locale#open_locale_file_from_path(expand('%:p'))<CR>
+
+" markdown
+nnoremap <silent> <Leader>pm :<C-u>PreviewMarkdownToggle<CR>
