@@ -426,12 +426,17 @@ let g:quickrun_config = {
       \ '_': { 'runner' : 'vimproc' },
       \ 'ruby.rspec': {
       \   'command': 'rspec',
-      \   'exec' : 'bundle exec %c %s',}
+      \   'exec' : 'bundle exec %c %s' },
+      \
+      \ 'typescript.jest': {
+      \   'command': 'jest',
+      \   'exec': 'yarn %c %s' },
       \ }
 
-augroup SetRSpecFileType
+augroup SetFileType
   autocmd!
   autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
+  autocmd BufWinEnter,BufNewFile *test.ts set filetype=typescript.jest
 augroup END
 
 function QuickRunRspecCurrentLine()
