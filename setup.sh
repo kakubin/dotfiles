@@ -70,6 +70,9 @@ do
   fi
 done
 
+# mkdir $HOME/.config/nvim/
+# ln -sf $HOME/.vimrc $HOME/.config/nvim/init.vim
+
 if [[ $OSTYPE = *darwin* ]]; then
   xcode-select --install
   sudo xcodebuild -license
