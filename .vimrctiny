@@ -1,0 +1,129 @@
+" set for remote workspace
+" wget https://raw.githubusercontent.com/kakubin/dotfiles/master/.vimrctiny -O .vimrc
+
+set encoding=utf-8
+scriptencoding utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8,iso-2022-jp,euc-jp
+set ambiwidth=double
+
+set autoread
+set hidden
+set wildmenu
+
+set autoindent
+set smartindent
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+
+set ignorecase
+set smartcase
+set wrapscan
+set nowrap
+set incsearch
+set hlsearch
+
+set noswapfile
+set splitbelow
+set splitright
+set number
+
+set belloff=all
+set complete=.,w,b,u,U,s,i,d,t
+set completeopt& completeopt+=menuone completeopt+=noinsert  completeopt-=preview
+
+set foldmethod=indent
+augroup DefaultOpen
+  au BufRead * normal zR
+augroup END
+
+set cursorline
+augroup CursorLine
+  autocmd InsertEnter,InsertLeave * set cursorline!
+augroup END
+
+augroup DeleteSpace
+  autocmd!
+  autocmd BufWritePre * :%s/\s\+$//e
+augroup END
+
+let g:mapleader = "\<Space>"
+
+nnoremap <silent> <ESC><ESC> :nohlsearch<CR><ESC>
+inoremap <expr><Tab>   pumvisible() ? "\<Down>" : "\<Tab>"
+inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<Tab>"
+
+inoremap <silent> jj <ESC>
+nnoremap ,. :<C-u>edit $MYVIMRC<CR>
+nnoremap ,s. :<C-u>source $MYVIMRC<CR>
+
+nnoremap Y y$
+nnoremap $ g_
+nnoremap Y y$
+nnoremap $ g_
+
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+nnoremap <C-B> <C-^>
+
+function! s:fetch_absolute_path()
+  let @+ = expand('%:p')
+endfunction
+nmap cp  :call <SID>fetch_absolute_path()<CR>
+
+function! RestoreRegister()
+  let @+ = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @+
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
+
+function! AutoSave()
+  if g:auto_save >= 1
+    let was_modified = &modified
+    silent! wa
+    if was_modified && !&modified
+      if g:auto_save_silent == 0
+        echo "(AutoSaved at " . strftime("%H:%M:%S") . ")"
+      endif
+    endif
+  endif
+endfunction
+
+augroup AutoSave
+  autocmd!
+  au CursorHold,InsertLeave * nested call AutoSave()
+augroup END
+let g:auto_save = 1
+let g:auto_save_silent = 0
+
+
+" PluginManager
+let s:plug_manager_path = expand('$HOME/.vim/autoload/plug.vim')
+if !filereadable(s:plug_manager_path)
+  execute '!curl -fLo ' . s:plug_manager_path .
+        \ ' --create-dirs' .
+        \ ' https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'vim-jp/vimdoc-ja'
+Plug 'mrbigass/darcula'
+Plug 'scrooloose/nerdtree'
+call plug#end()
+
+filetype plugin indent on
+
+syntax enable
+colorscheme darcula
+
+" NerdTree
+let g:NERDTreeShowHidden=1
+nnoremap <silent><Leader>t :NERDTreeToggle<CR>
+let g:NERDTreeIgnore=['\.git$', '\.clean$', '\.swp$', '\.bak$', '\~$', '\.DS_Store']
