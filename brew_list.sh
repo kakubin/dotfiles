@@ -40,6 +40,7 @@ brew install --cask postman
 brew install --cask wkhtmltopdf
 brew install --cask mysqlworkbench
 brew install --cask yt-music
+# brew install --cask visual-studio-code
 
 # regularly executed
 brew cleanup
