@@ -228,6 +228,7 @@ Plug 'junegunn/fzf.vim'
 
 " browser
 Plug 'tyru/open-browser.vim'
+Plug 'alpaca-tc/alpaca_github.vim'
 
 " git
 Plug 'iberianpig/tig-explorer.vim'
@@ -370,6 +371,11 @@ nmap <Leader>o <Plug>(openbrowser-open)
 vmap <Leader>o <Plug>(openbrowser-open)
 " ググる
 nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
+
+" Open current file on github
+nmap gO :GhFile<CR>
+" Open pull request of last commit on github
+nmap gP :GhPullRequestCurrentLine<CR>
 
 " nerdcommenter
 let g:NERDSpaceDelims=1
