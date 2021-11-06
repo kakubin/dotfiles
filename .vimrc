@@ -228,6 +228,7 @@ Plug 'junegunn/fzf.vim'
 
 " browser
 Plug 'tyru/open-browser.vim'
+Plug 'alpaca-tc/alpaca_github.vim'
 
 " git
 Plug 'iberianpig/tig-explorer.vim'
@@ -264,6 +265,9 @@ Plug 'mattn/vim-goimports'
 
 " latex
 Plug 'lervag/vimtex'
+
+" markdown
+Plug 'kat0h/bufpreview.vim'
 
 " SQL
 Plug 'vim-scripts/SQLUtilities'
@@ -368,6 +372,11 @@ vmap <Leader>o <Plug>(openbrowser-open)
 " ググる
 nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
 
+" Open current file on github
+nmap gO :GhFile<CR>
+" Open pull request of last commit on github
+nmap gP :GhPullRequestCurrentLine<CR>
+
 " nerdcommenter
 let g:NERDSpaceDelims=1
 let g:NERDDefaultAlign='left'
@@ -423,12 +432,17 @@ let g:quickrun_config = {
       \ '_': { 'runner' : 'vimproc' },
       \ 'ruby.rspec': {
       \   'command': 'rspec',
-      \   'exec' : 'bundle exec %c %s',}
+      \   'exec' : 'bundle exec %c %s' },
+      \
+      \ 'typescript.jest': {
+      \   'command': 'jest',
+      \   'exec': 'yarn %c %s' },
       \ }
 
-augroup SetRSpecFileType
+augroup SetFileType
   autocmd!
   autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
+  autocmd BufWinEnter,BufNewFile *test.ts set filetype=typescript.jest
 augroup END
 
 function QuickRunRspecCurrentLine()
@@ -444,3 +458,6 @@ nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() 
 
 " rails locale
 nnoremap <silent><Leader>l :<C-u>call rails_locale#open_locale_file_from_path(expand('%:p'))<CR>
+
+" markdown
+nnoremap <silent> <Leader>pm :<C-u>PreviewMarkdownToggle<CR>
