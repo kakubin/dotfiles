@@ -46,11 +46,11 @@ export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
 export PATH="$PATH:$GOPATH/bin"
-PYENV_ROOT="${HOME}/.pyenv"
-PATH="${PYENV_ROOT}/bin:${PATH}"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+# PYENV_ROOT="${HOME}/.pyenv"
+# PATH="${PYENV_ROOT}/bin:${PATH}"
+# if command -v pyenv 1>/dev/null 2>&1; then
+#   eval "$(pyenv init -)"
+# fi
 
 #java
 # export PATH="/usr/local/opt/sbt@0.13/bin:$PATH"
