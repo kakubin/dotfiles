@@ -8,4 +8,5 @@ rails:db:rollback
 env_dev:RAILS_ENV=development
 env_test:RAILS_ENV=test
 env_prod:RAILS_ENV=production
+docker_bundle:dke web bundle exec
 printf:printf "\e[33m${1}\e[m\n"
