@@ -41,6 +41,7 @@ brew install --cask wkhtmltopdf
 brew install --cask mysqlworkbench
 brew install --cask yt-music
 # brew install --cask visual-studio-code
+# brew install --cask android-studio
 
 # regularly executed
 brew cleanup

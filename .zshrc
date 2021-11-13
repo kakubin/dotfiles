@@ -68,8 +68,8 @@ if [ -e $HOME/.deno/bin ]; then
   export PATH="$DENO_INSTALL/bin:$PATH"
 fi
 
-export PATH="$HOME/fvm/default/bin:$PATH"
-export PATH="$HOME/.pub-cache/bin:$PATH"
+# export PATH="$HOME/fvm/default/bin:$PATH"
+# export PATH="$HOME/.pub-cache/bin:$PATH"
 
 export PATH="$HOME/.tfenv/bin:$PATH"
 
@@ -142,3 +142,5 @@ if [ $SHLVL = 1 ]; then
 fi
 
 source ~/dotfiles/common_aliases
+
+. /usr/local/opt/asdf/libexec/asdf.sh

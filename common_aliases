@@ -1,5 +1,6 @@
 # common alias
-alias vi='vim'
+alias v='vim'
+alias nv='nvim'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ll='ls -AlF'
