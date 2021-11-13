@@ -179,9 +179,7 @@ let g:ref_refe_cmd = $HOME.'/.rbenv/shims/refe'
 Plug 'vim-denops/denops.vim'
 Plug 'Shougo/ddc.vim'
 Plug 'Shougo/ddc-around'
-" Plug 'matsui54/ddc-matcher_fuzzy'
-Plug 'Shougo/ddc-matcher_head'
-Plug 'Shougo/ddc-sorter_rank'
+Plug 'tani/ddc-fuzzy'
 Plug 'matsui54/ddc-ultisnips'
 
 " lsp
@@ -305,12 +303,13 @@ call ddc#custom#patch_global('sourceOptions', {
       \ 'around': {'mark': 'Around'},
       \ 'ultisnips': {'mark': 'Snip'},
       \ '_': {
-      \   'matchers': ['matcher_head'],
-      \   'sorters': ['sorter_rank'],
+      \   'matchers': ['matcher_fuzzy'],
+      \   'sorters': ['sorter_fuzzy'],
+      \   'converters': ['converter_fuzzy'],
       \ }})
-" call ddc#custom#patch_global('filterParams', {
-"       \ 'matcher_fuzzy': {'camelcase': v:true},
-"       \ })
+call ddc#custom#patch_global('filterParams', {
+      \ 'converter_fuzzy': {'hlGroup': 'SpellBad'},
+      \ })
 call ddc#enable()
 
 " lsp
