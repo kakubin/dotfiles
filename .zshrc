@@ -31,8 +31,9 @@ add-zsh-hook precmd _update_vcs_info_msg
 
 # for c in {000..255}; do echo -n "\e[38;5;${c}m $c" ; [ $(($c%16)) -eq 15 ] && echo;done;echo
 # PROMPT="%F{140}%~%f:%1(v|%F{160}%1v%f|) $ "
-PROMPT="%F{220}%~%f:%1(v|%F{202}%1v%f|) $ "
-RPROMPT="%F{118}[%*]%f"
+# PROMPT="%F{220}%~%f:%1(v|%F{202}%1v%f|) %F{001}》%f"
+PROMPT="%F{246}%~%f:%1(v|%F{065}%1v%f|) %F{001}♨ %f"
+RPROMPT="%F{115}[%*]%f"
 
 ## PATH
 eval "$(nodenv init -)"
@@ -68,8 +69,8 @@ if [ -e $HOME/.deno/bin ]; then
   export PATH="$DENO_INSTALL/bin:$PATH"
 fi
 
-export PATH="$HOME/fvm/default/bin:$PATH"
-export PATH="$HOME/.pub-cache/bin:$PATH"
+# export PATH="$HOME/fvm/default/bin:$PATH"
+# export PATH="$HOME/.pub-cache/bin:$PATH"
 
 export PATH="$HOME/.tfenv/bin:$PATH"
 
@@ -142,3 +143,5 @@ if [ $SHLVL = 1 ]; then
 fi
 
 source ~/dotfiles/common_aliases
+
+. /usr/local/opt/asdf/libexec/asdf.sh
