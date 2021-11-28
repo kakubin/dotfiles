@@ -144,4 +144,4 @@ fi
 
 source ~/dotfiles/common_aliases
 
-. /usr/local/opt/asdf/libexec/asdf.sh
+# . /usr/local/opt/asdf/libexec/asdf.sh
