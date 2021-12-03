@@ -33,7 +33,7 @@ add-zsh-hook precmd _update_vcs_info_msg
 # PROMPT="%F{140}%~%f:%1(v|%F{160}%1v%f|) $ "
 # PROMPT="%F{220}%~%f:%1(v|%F{202}%1v%f|) %F{001}》%f"
 # PROMPT="%F{246}%~%f:%1(v|%F{065}%1v%f|)%F{001}ᚩ %f"
-PROMPT=%F{246}%~%f:%1(v|%F{065}%1v%f|)%F{001}$'%{\e[5m%}❯❯❯ %{\e[0m%}'%f
+PROMPT=%F{208}%~%f:%1(v|%F{065}%1v%f|)%F{001}$'%{\e[5m%}❯❯❯ %{\e[0m%}'%f
 RPROMPT=%F{115}[%*]%f
 
 ## PATH
@@ -42,6 +42,7 @@ eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.nodenv/bin:$PATH"
+export PATH="$HOME/dotfiles/bin:$PATH"
 # export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export GOPATH="$HOME/go"
 export GOENV_ROOT="$HOME/.goenv"
@@ -145,4 +146,13 @@ fi
 
 source ~/dotfiles/common_aliases
 
-# . /usr/local/opt/asdf/libexec/asdf.sh
+function pssh() {
+  local host=$(grep -r 'Host ' $HOME/.ssh/* | cut -d' ' -f2 | sort | peco)
+
+  if [ ! -z "$host" ]; then
+    ssh "$host"
+  fi
+}
+
+. /usr/local/opt/asdf/libexec/asdf.sh
+eval "$(direnv hook zsh)"
