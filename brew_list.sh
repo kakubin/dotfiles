@@ -27,6 +27,7 @@ brew install ffmpeg
 brew install coreutils
 brew install graphviz
 brew install virtualbox
+brew install mariadb-connector-c
 
 brew install postgresql
 # version切り替えあるのでdockerで管理する
