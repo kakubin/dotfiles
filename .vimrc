@@ -71,7 +71,6 @@ set foldlevel=9
 
 syntax on
 let g:mapleader = "\<Space>"
-inoremap <silent> jj <ESC>
 nnoremap j gj
 nnoremap k gk
 nnoremap <C-w>v <C-w>v<C-w>l
