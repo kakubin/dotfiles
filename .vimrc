@@ -180,6 +180,7 @@ Plug 'Shougo/ddc.vim'
 Plug 'Shougo/ddc-around'
 Plug 'tani/ddc-fuzzy'
 Plug 'matsui54/ddc-ultisnips'
+Plug 'vim-skk/denops-skkeleton.vim'
 
 " lsp
 Plug 'prabirshrestha/vim-lsp'
@@ -296,6 +297,14 @@ xmap <Space>M <Plug>(quickhl-manual-reset)
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
+
+" skk
+imap <C-j> <Plug>(skkeleton-toggle)
+cmap <C-j> <Plug>(skkeleton-toggle)
+
+call skkeleton#config({
+\'eggLikeNewline':v:true
+\})
 
 " ddc
 call ddc#custom#patch_global('sources', ['vim-lsp', 'around', 'ultisnips'])
