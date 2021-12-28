@@ -346,7 +346,7 @@ nnoremap <Leader>sd :<C-u>LspDefinition<CR>
 " NERDTree
 let g:NERDTreeShowHidden=1
 nnoremap <silent><Leader>t :NERDTreeToggle<CR>
-let g:NERDTreeIgnore=['\.git$', '\.clean$', '\.swp$', '\.bak$', '\~$', '\.DS_Store']
+let g:NERDTreeIgnore=['\.git$', '\.clean$', '\.swp$', '\.bak$', '\~$', '\.DS_Store', '__pycache__$']
 
 " FZF
 nnoremap ff :GFiles<CR>
