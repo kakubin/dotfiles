@@ -154,5 +154,8 @@ function pssh() {
   fi
 }
 
-. /usr/local/opt/asdf/libexec/asdf.sh
+if is_osx; then
+  . /usr/local/opt/asdf/libexec/asdf.sh
+fi
+
 eval "$(direnv hook zsh)"
