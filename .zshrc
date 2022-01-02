@@ -43,22 +43,10 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.nodenv/bin:$PATH"
 export PATH="$HOME/dotfiles/bin:$PATH"
-# export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-export GOPATH="$HOME/go"
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-eval "$(goenv init -)"
-export PATH="$PATH:$GOPATH/bin"
-# PYENV_ROOT="${HOME}/.pyenv"
-# PATH="${PYENV_ROOT}/bin:${PATH}"
-# if command -v pyenv 1>/dev/null 2>&1; then
-#   eval "$(pyenv init -)"
-# fi
+export GOROOT="/usr/local/go"
+export PATH="$GOROOT/bin:$PATH"
 
-#java
-# export PATH="/usr/local/opt/sbt@0.13/bin:$PATH"
-
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+# export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 # 基本ここにあると思う
 # export BUNDLE_BUILD__MYSQL2='--with-ldflags=-L/usr/local/opt/openssl@1.1/lib'
 
