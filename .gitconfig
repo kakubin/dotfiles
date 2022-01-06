@@ -26,13 +26,13 @@
   editor = vim -c \"set fenc=utf-8\"
 
 [ghq]
-	root = ~/ghq
+  root = ~/ghq
 
 [rebase]
-	autostash = true
+  autostash = true
 
 [pull]
-	rebase = true
+  rebase = true
 
 [init]
   defaultBranch = main
