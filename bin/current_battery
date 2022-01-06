@@ -20,8 +20,7 @@ else
   charging=$(echo $battery_info | sed -r 's/, [0-9]{2,3}\.?[0-9]{0,2}//' | awk '{print ($0=="Charging")}')
 
   if [ $charging -eq 1 ]; then
-    # fg=232
-    battery_color="#[bg=colour190,fg=colour242,bold]"
+    battery_color="#[bg=colour190,fg=colour232,bold]"
   else
     battery_color=$(echo | awk -v quantity=$battery_quantity '{ print (quantity>10 ? "#[bg=colour29]" : "#[bg=colour1]") }')
   fi
