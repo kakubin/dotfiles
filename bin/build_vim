@@ -3,6 +3,7 @@
 cd $HOME/vim
 git pull origin master
 ./configure --with-features=huge \
+  --disable-gui \
   --enable-python3interp \
   --enable-fail-if-missing
 make

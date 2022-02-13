@@ -30,10 +30,10 @@ _update_vcs_info_msg () {
 add-zsh-hook precmd _update_vcs_info_msg
 
 # for c in {000..255}; do echo -n "\e[38;5;${c}m $c" ; [ $(($c%16)) -eq 15 ] && echo;done;echo
-# PROMPT="%F{140}%~%f:%1(v|%F{160}%1v%f|) $ "
-# PROMPT="%F{220}%~%f:%1(v|%F{202}%1v%f|) %F{001}》%f"
-# PROMPT="%F{246}%~%f:%1(v|%F{065}%1v%f|)%F{001}ᚩ %f"
-PROMPT=%F{208}%~%f:%1(v|%F{065}%1v%f|)%F{001}$'%{\e[5m%}❯❯❯ %{\e[0m%}'%f
+# PROMPT="%F{220}%~%f:%1(v|%F{208}%1v%f|) %F{001}》%f"
+# PROMPT="%F{248}%~%f:%1(v|%F{065}%1v%f|)%F{001}ᚩ %f"
+# PROMPT=%F{208}%~%f:%1(v|%F{065}%1v%f|)%F{001}$'%{\e[5m%}❯❯❯ %{\e[0m%}'%f
+PROMPT=%F{208}%~%f:%1(v|%F{110}%1v%f|)%F{001}$'%{\e[5m%}❯❯❯ %{\e[0m%}'%f
 RPROMPT=%F{115}[%*]%f
 
 ## PATH
@@ -49,10 +49,6 @@ export PATH="$GOROOT/bin:$PATH"
 # export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 # 基本ここにあると思う
 # export BUNDLE_BUILD__MYSQL2='--with-ldflags=-L/usr/local/opt/openssl@1.1/lib'
-
-# TODO: dvm入れるたびに環境変数がzshrc一番下に追加されちゃう
-export DVM_DIR="$HOME/.dvm"
-export PATH="$DVM_DIR/bin:$PATH"
 
 if [ -e $HOME/.deno/bin ]; then
   export DENO_INSTALL="$HOME/.deno"
@@ -134,13 +130,12 @@ fi
 
 source ~/dotfiles/common_aliases
 
-function pssh() {
-  local host=$(grep -r 'Host ' $HOME/.ssh/* | cut -d' ' -f2 | sort | peco)
-
-  if [ ! -z "$host" ]; then
-    ssh "$host"
-  fi
-}
+# function pssh() {
+#   local host=$(grep -r 'Host ' $HOME/.ssh/* | cut -d' ' -f2 | sort | peco)
+#   if [ ! -z "$host" ]; then
+#     ssh "$host"
+#   fi
+# }
 
 if is_osx; then
   . /usr/local/opt/asdf/libexec/asdf.sh

@@ -470,3 +470,6 @@ nnoremap <silent><Leader>l :<C-u>call rails_locale#open_locale_file_from_path(ex
 
 " markdown
 nnoremap <silent> <Leader>pm :<C-u>PreviewMarkdownToggle<CR>
+
+" tex
+let g:vimtex_view_general_viewer = 'evince'

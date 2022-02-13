@@ -101,7 +101,7 @@ if [[ $OSTYPE = *darwin* ]]; then
     echo "...success"
   fi
 else # linux
-  cat apt_list | xargs sudo apt-get install
+  cat apt_list | xargs sudo apt-get install -y
 fi
 
 if [ -e $HOME/.vim/autoload/plug.vim ]; then
@@ -110,15 +110,11 @@ else
   curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
-# install Deno version manager
-if [ -e $HOME/.dvm ]; then
-  echo You have already installed dvm!
+if [ -e $HOME/.deno ]; then
+  echo You have already installed deno
 else
-  curl -fsSL https://deno.land/x/dvm/install.sh | sh
+  curl -fsSL https://deno.land/install.sh | sh
 fi
-
-DENO_MOST_RECENT_VERSION="$(dvm list-remote | grep \*)"
-echo ${DENO_MOST_RECENT_VERSION:8} | dvm install $1
 
 if [ -e $HOME/.rbenv ]; then
   echo already installed rbenv! when have you done?

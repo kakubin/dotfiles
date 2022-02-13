@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+git clone https://github.com/nodenv/nodenv
+cd ~/.nodenv && src/configure && make -C src
