@@ -336,21 +336,6 @@ nnoremap <silent><C-J> :<C-u>LspNextDiagnostic<CR>
 nnoremap <silent><C-K> :<C-u>LspPreviousDiagnostic<CR>
 nnoremap <Leader>sd :<C-u>LspDefinition<CR>
 
-" ale
-" 保存時のみ実行
-" let g:ale_lint_on_text_changed = 'never'
-" let g:ale_enabled = 1
-" 表示に関する設定
-" let g:ale_sign_error = '!!'
-" let g:ale_sign_warning = '>>'
-" let g:airline#extensions#ale#open_lnum_symbol = '('
-" let g:airline#extensions#ale#close_lnum_symbol = ')'
-" let g:ale_echo_msg_format = '[%linter%]%code: %%s'
-" highlight link ALEErrorSign Tag
-" highlight link ALEWarningSign StorageClass
-" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-" nmap <silent> <C-j> <Plug>(ale_next_wrap)
-
 " NERDTree
 let g:NERDTreeShowHidden=1
 nnoremap <silent><Leader>t :NERDTreeToggle<CR>
@@ -370,13 +355,6 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 nnoremap <Leader>sn :UltiSnipsEdit<CR>
 
-" fugitive
-nnoremap gd :Gvdiffsplit<CR>
-nnoremap gb :Git blame<CR>
-
-" tig-explorer
-nnoremap <Leader>gt :TigOpenProjectRootDir<CR>
-
 " close-tag
 let g:closetag_filenames = '*.html,*.vue'
 
@@ -394,90 +372,17 @@ nmap gO :GhFile<CR>
 " Open pull request of last commit on github
 nmap gP :GhPullRequestCurrentLine<CR>
 
-" nerdcommenter
-let g:NERDSpaceDelims=1
-let g:NERDDefaultAlign='left'
-nmap <C-_>   <Plug>NERDCommenterToggle
-vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
-
-let g:ft = ''
-function! NERDCommenter_before()
-  if &ft == 'vue'
-    let g:ft = 'vue'
-    let stack = synstack(line('.'), col('.'))
-    if len(stack) > 0
-      let syn = synIDattr((stack)[0], 'name')
-      if len(syn) > 0
-        exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
-      endif
-    endif
-  endif
-endfunction
-function! NERDCommenter_after()
-  if g:ft == 'vue'
-    setf vue
-    let g:ft = ''
-  endif
-endfunction
-
 " memolist
 nnoremap <Leader>mn :MemoNew<CR>
 nnoremap <Leader>mg :MemoGrep<CR>
 let g:memolist_fzf = 1
-
-" vim-rails
-function! SetUpRailsSetting()
-  " nnoremap <buffer><Space>r :R<CR>
-  nnoremap <buffer><Space>a :A<CR>
-  nnoremap <buffer><Space>m :Rmodel<Space>
-  nnoremap <buffer><Space>c :Rcontroller<Space>
-  nnoremap <buffer><Space>v :Rview<Space>
-  " nnoremap <buffer><Space>p :Rpreview<CR>
-endfunction
-
-aug MyAutoCmd
-  autocmd!
-  autocmd User Rails call SetUpRailsSetting()
-aug END
-
-aug RailsDictSetting
-  autocmd!
-aug END
-
-" quickrun
-let g:quickrun_config = {
-      \ '_': { 'runner' : 'vimproc' },
-      \ 'ruby.rspec': {
-      \   'command': 'rspec',
-      \   'exec' : 'bundle exec %c %s' },
-      \
-      \ 'typescript.jest': {
-      \   'command': 'jest',
-      \   'exec': 'yarn %c %s' },
-      \ }
-
-augroup SetFileType
-  autocmd!
-  autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
-  autocmd BufWinEnter,BufNewFile *test.ts set filetype=typescript.jest
-augroup END
-
-function QuickRunRspecCurrentLine()
-  if &ft == 'ruby.rspec'
-    let line = line('.')
-    exec ":QuickRun -exec 'bundle exec %c %s:%o' -cmdopt " . line
-  endif
-endfunction
-nnoremap <silent> <Leader>rr :<C-u>call QuickRunRspecCurrentLine()<CR>
-nnoremap <silent> <Leader>r  :<C-u>QuickRun<CR>
-
-nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
-
-" rails locale
-nnoremap <silent><Leader>l :<C-u>call rails_locale#open_locale_file_from_path(expand('%:p'))<CR>
 
 " markdown
 nnoremap <silent> <Leader>pm :<C-u>PreviewMarkdownToggle<CR>
 
 " tex
 let g:vimtex_view_general_viewer = 'evince'
+
+for file in split(glob('./.vim/_config/*.vim'), '\n')
+    exe 'source' file
+endfor
