@@ -180,6 +180,10 @@ Plug 'Shougo/ddc.vim'
 Plug 'Shougo/ddc-around'
 Plug 'tani/ddc-fuzzy'
 Plug 'matsui54/ddc-ultisnips'
+
+Plug 'editorconfig/editorconfig-vim'
+
+" skk
 Plug 'vim-skk/skkeleton'
 
 " lsp
@@ -255,6 +259,9 @@ Plug 'othree/yajs.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 
+" graphql
+Plug 'jparise/vim-graphql'
+
 " terraform
 Plug 'hashivim/vim-terraform'
 
@@ -303,7 +310,8 @@ imap <C-j> <Plug>(skkeleton-toggle)
 cmap <C-j> <Plug>(skkeleton-toggle)
 
 call skkeleton#config({
-      \ 'eggLikeNewline':v:true
+      \ 'globalJisyo': '/usr/share/skk/SKK-JISYO.L',
+      \ 'eggLikeNewline': v:true
       \ })
 
 " ddc

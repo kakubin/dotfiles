@@ -10,11 +10,12 @@
   show-commit = !"f() { git log --reverse --ancestry-path $1^...master; }; f"
   find-comment = !"f() { git log --all --grep=$1; }; f"
   remove-merged-branch = "!git branch -d $(git branch --merged | grep -v master | grep -v 'mile' | grep -v '*')"
-  fuzzy-checkout = !"f() { git branch -vv | grep -v '*' | fzf +m | git checkout $(awk '{print $1}'); }; f"
-  line-log = "!git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
-  today = "!f () { git log --oneline --reverse --branches --since=midnight --date=iso --author=\"$(git config user.name)\" --format=\" - %C(auto)%h%Creset : %s %C(green)(%ad)%Creset\"; }; f"
-  yesterday = "!f () { git log --oneline --reverse --branches --since=yesterday --date=iso --author=\"$(git config user.name)\" --format=\" - %C(auto)%h%Creset : %s %C(green)(%ad)%Creset\"; }; f"
+  fuzzy-checkout = "!f() { git branch -vv | grep -v '*' | fzf +m | git checkout $(awk '{print $1}'); }; f"
+  line-log = "log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+  today = "!f() { git log --oneline --reverse --branches --since=midnight --date=iso --author=\"$(git config user.name)\" --format=\" - %C(auto)%h%Creset : %s %C(green)(%ad)%Creset\"; }; f"
+  yesterday = "!f() { git log --oneline --reverse --branches --since=yesterday --date=iso --author=\"$(git config user.name)\" --format=\" - %C(auto)%h%Creset : %s %C(green)(%ad)%Creset\"; }; f"
   ignore = "!f() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}; f"
+  pr-checkout="!gh pr list --json number,title --jq '.[] | [.number, .title] | @tsv' | fzf | awk '{print $1}' | xargs -I{} gh pr checkout {}"
 
 [url "git@github.com:"]
   insteadOf = https://github.com/
@@ -36,3 +37,11 @@
 
 [init]
   defaultBranch = main
+
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential

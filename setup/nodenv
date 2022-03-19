@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
 
-git clone https://github.com/nodenv/nodenv
+git clone https://github.com/nodenv/nodenv ~/.nodenv
 cd ~/.nodenv && src/configure && make -C src
+
+sudo npm install --global yarn
