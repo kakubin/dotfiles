@@ -383,6 +383,6 @@ nnoremap <silent> <Leader>pm :<C-u>PreviewMarkdownToggle<CR>
 " tex
 let g:vimtex_view_general_viewer = 'evince'
 
-for file in split(glob('./.vim/_config/*.vim'), '\n')
-    exe 'source' file
+for file in split(glob('$HOME/.vim/_config/*.vim'), '\n')
+  exe 'source' file
 endfor

@@ -4,7 +4,6 @@ let g:quickrun_config = {
       \ 'ruby.rspec': {
       \   'command': 'rspec',
       \   'exec' : 'bundle exec %c %s' },
-      \
       \ 'typescript.jest': {
       \   'command': 'jest',
       \   'exec': 'yarn %c %s' },

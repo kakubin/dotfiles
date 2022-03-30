@@ -15,6 +15,7 @@ alias dk='docker-compose'
 alias dke='dk exec'
 alias de='docker exec'
 alias tf='terraform'
+alias tfaa='terraform apply -auto-approve'
 # alias dfiles='git diff master --name-only'
 dfiles() {
   git remote show origin | grep 'HEAD branch' | awk '{print $3}' | xargs -I@ git diff @ --name-only
