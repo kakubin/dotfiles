@@ -36,35 +36,6 @@ add-zsh-hook precmd _update_vcs_info_msg
 PROMPT=%F{208}%~%f:%1(v|%F{110}%1v%f|)%F{001}$'%{\e[5m%}❯❯❯ %{\e[0m%}'%f
 RPROMPT=%F{115}[%*]%f
 
-## PATH
-eval "$(nodenv init -)"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH="$HOME/.nodenv/bin:$PATH"
-export PATH="$HOME/dotfiles/bin:$PATH"
-export PATH="/usr/local/go/bin:$PATH"
-export GOPATH="$HOME/go"
-export PATH="$PATH:$GOPATH/bin"
-
-# export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-# 基本ここにあると思う
-# export BUNDLE_BUILD__MYSQL2='--with-ldflags=-L/usr/local/opt/openssl@1.1/lib'
-
-if [ -e $HOME/.deno/bin ]; then
-  export DENO_INSTALL="$HOME/.deno"
-  export PATH="$DENO_INSTALL/bin:$PATH"
-fi
-
-# export PATH="$HOME/fvm/default/bin:$PATH"
-# export PATH="$HOME/.pub-cache/bin:$PATH"
-
-export PATH="$HOME/.tfenv/bin:$PATH"
-
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='rg --hidden --files --follow -g "!.git/*"'
-export FZF_DEFAULT_OPTS='--height 60% --layout=reverse --border --bind up:preview-up,down:preview-down'
-
 ostype() {
   echo ${(L):-$(uname)}
 }
@@ -96,6 +67,38 @@ is_linux() {
     return 1
   fi
 }
+
+## PATH
+eval "$(nodenv init -)"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.nodenv/bin:$PATH"
+export PATH="$HOME/dotfiles/bin:$PATH"
+export PATH="/usr/local/go/bin:$PATH"
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
+
+# export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+# 基本ここにあると思う
+# export BUNDLE_BUILD__MYSQL2='--with-ldflags=-L/usr/local/opt/openssl@1.1/lib'
+
+if [ -e $HOME/.deno/bin ]; then
+  export DENO_INSTALL="$HOME/.deno"
+  export PATH="$DENO_INSTALL/bin:$PATH"
+fi
+
+# export PATH="$HOME/fvm/default/bin:$PATH"
+# export PATH="$HOME/.pub-cache/bin:$PATH"
+if is_linux; then
+  export PATH="$PATH:$HOME/snap/flutter/common/flutter/bin"
+fi
+
+export PATH="$HOME/.tfenv/bin:$PATH"
+
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='rg --hidden --files --follow -g "!.git/*"'
+export FZF_DEFAULT_OPTS='--height 60% --layout=reverse --border --bind up:preview-up,down:preview-down'
 
 # snippets
 # https://www.rasukarusan.com/entry/2020/04/19/193450
