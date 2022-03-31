@@ -342,6 +342,16 @@ nnoremap <silent><C-J> :<C-u>LspNextDiagnostic<CR>
 nnoremap <silent><C-K> :<C-u>LspPreviousDiagnostic<CR>
 nnoremap <Leader>sd :<C-u>LspDefinition<CR>
 
+" for textlint on tex. no more no less.
+" augroup LspEFM
+"   au!
+"   autocmd User lsp_setup call lsp#register_server({
+"       \ 'name': 'efm-langserver',
+"       \ 'cmd': {server_info->['efm-langserver', '-c=~/.config/efm-langserver/config.yaml']},
+"       \ 'allowlist': ['tex'],
+"       \ })
+" augroup END
+
 " NERDTree
 let g:NERDTreeShowHidden=1
 nnoremap <silent><Leader>t :NERDTreeToggle<CR>

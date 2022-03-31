@@ -1,0 +1,12 @@
+version: 2
+root-markers:
+  - .git/
+lint-debounce: 1s
+commands:
+  - command: vim
+    arguments:
+      - ${INPUT}
+    title: エディター
+
+languages:
+  tex:
