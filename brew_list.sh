@@ -25,6 +25,7 @@ brew install mariadb-connector-c
 
 brew install postgresql
 brew install redis
+brew install lynx
 
 brew install --cask docker
 brew install --cask slack

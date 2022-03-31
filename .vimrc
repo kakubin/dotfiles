@@ -97,7 +97,6 @@ nnoremap <C-B> <C-^>
 
 cnoremap <C-p> <Up>
 noremap x "_x
-" noremap ci( "_ci(
 noremap <expr> 0 getline('.')[0 : col('.') - 2] =~# '^\s\+$' ? '0' : '^'
 nnoremap q: :q
 
@@ -191,9 +190,6 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'shun/ddc-vim-lsp'
 
-" lint engine
-" Plug 'dense-analysis/ale'
-
 " snippets
 if has('python3')
   Plug 'SirVer/ultisnips'
@@ -269,7 +265,7 @@ Plug 'hashivim/vim-terraform'
 Plug 'mattn/vim-goimports'
 
 " latex
-Plug 'lervag/vimtex'
+" Plug 'lervag/vimtex'
 
 " markdown
 Plug 'kat0h/bufpreview.vim'
@@ -397,7 +393,7 @@ let g:memolist_fzf = 1
 nnoremap <silent> <Leader>pm :<C-u>PreviewMarkdownToggle<CR>
 
 " tex
-let g:vimtex_view_general_viewer = 'evince'
+" let g:vimtex_view_general_viewer = 'evince'
 
 for file in split(glob('$HOME/.vim/_config/*.vim'), '\n')
   exe 'source' file
