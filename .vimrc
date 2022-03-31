@@ -315,8 +315,14 @@ call skkeleton#config({
       \ })
 
 " ddc
-call ddc#custom#patch_global('sources', ['vim-lsp', 'around', 'ultisnips'])
+call ddc#custom#patch_global('sources', ['skkeleton', 'vim-lsp', 'around', 'ultisnips'])
 call ddc#custom#patch_global('sourceOptions', {
+      \ 'skkeleton': {
+      \   'mark': 'skk',
+      \   'matchers': ['skkeleton'],
+      \   'sorters': [],
+      \   'minAutoCompleteLength': 2,
+      \ },
       \ 'vim-lsp': {'mark': 'LS'},
       \ 'around': {'mark': 'Around'},
       \ 'ultisnips': {'mark': 'Snip'},
