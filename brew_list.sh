@@ -13,10 +13,10 @@ brew install tig
 brew install ghq
 
 brew install asdf
-brew install nodenv
+# brew install nodenv
 brew install direnv
-brew install fvm
-brew install yarn
+# brew install fvm
+# brew install yarn
 brew install ffmpeg
 brew install coreutils
 brew install graphviz

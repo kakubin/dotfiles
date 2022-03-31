@@ -119,10 +119,18 @@ fi
 if [ -e $HOME/.rbenv ]; then
   echo already installed rbenv! when have you done?
 else
-  git clone https://github.com/rbenv/rbenv.git $HOME/.rbenv
-  cd $HOME/.rbenv && src/configure && make -C src
-  mkdir -p $HOME/.rbenv/plugins
-  git clone https://github.com/rbenv/ruby-build.git $HOME/rbenv/plugins/ruby-build
+  $HOME/dotfiles/setup/rbenv
+  # TODO: remove
+  # git clone https://github.com/rbenv/rbenv.git $HOME/.rbenv
+  # cd $HOME/.rbenv && src/configure && make -C src
+  # mkdir -p $HOME/.rbenv/plugins
+  # git clone https://github.com/rbenv/ruby-build.git $HOME/rbenv/plugins/ruby-build
+fi
+
+if [ -e $HOME/.nodenv ]; then
+  echo already installed nodenv! when have you done?
+else
+  $HOME/dotfiles/setup/nodenv
 fi
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

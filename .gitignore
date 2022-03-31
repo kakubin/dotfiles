@@ -1,6 +1,4 @@
 .cache
-*.swg
-*.swo
 .netrwhist
 .vim/plugged
 .vim/view
