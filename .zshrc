@@ -92,6 +92,8 @@ fi
 # export PATH="$HOME/.pub-cache/bin:$PATH"
 if is_linux; then
   export PATH="$PATH:$HOME/snap/flutter/common/flutter/bin"
+else
+  export PATH="$PATH:$HOME/flutter/bin"
 fi
 
 export PATH="$HOME/.tfenv/bin:$PATH"

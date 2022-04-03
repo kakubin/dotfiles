@@ -8,34 +8,34 @@ not_installed_yet() {
   fi
 }
 
-cd $HOME/.ssh & ssh-keygen -t ed25519
-if [[ $OSTYPE = *darwin* ]]; then
-  pbcopy < $HOME/.ssh/id_ed25519.pub
-else # for Debian
-  if not_installed_yet xsel;then
-    sudo apt-get install xsel
-  fi
-  xsel --clipboard --input < $HOME/.ssh/id_ed25519.pub
-fi
-
-while true; do
-  read -p "Input 'Yes' if you have registered your ssh pub-key to GitHub: " registered
-
-  if [ -z $registered ]; then
-    continue
-  fi
-  if [ $registered != "Yes" ]; then
-    continue
-  fi
-
-  break
-done
-
-ssh -T git@github.com
-
-if [ -f $HOME/dotfiles ]; then
-  git clone git@github.com:kakubin/dotfiles.git $HOME/dotfiles
-fi
+# cd $HOME/.ssh & ssh-keygen -t ed25519
+# if [[ $OSTYPE = *darwin* ]]; then
+#   pbcopy < $HOME/.ssh/id_ed25519.pub
+# else # for Debian
+#   if not_installed_yet xsel;then
+#     sudo apt-get install xsel
+#   fi
+#   xsel --clipboard --input < $HOME/.ssh/id_ed25519.pub
+# fi
+#
+# while true; do
+#   read -p "Input 'Yes' if you have registered your ssh pub-key to GitHub: " registered
+#
+#   if [ -z $registered ]; then
+#     continue
+#   fi
+#   if [ $registered != "Yes" ]; then
+#     continue
+#   fi
+#
+#   break
+# done
+#
+# ssh -T git@github.com
+#
+# if [ -f $HOME/dotfiles ]; then
+#   git clone git@github.com:kakubin/dotfiles.git $HOME/dotfiles
+# fi
 
 readonly HEADER='
     .__       __    _____.__.__

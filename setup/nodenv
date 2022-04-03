@@ -3,4 +3,11 @@
 git clone https://github.com/nodenv/nodenv ~/.nodenv
 cd ~/.nodenv && src/configure && make -C src
 
-sudo npm install --global yarn
+mkdir -p $HOME/.nodenv/plugins
+git clone https://github.com/nodenv/node-build.git $HOME/.nodenv/plugins/node-build
+
+NODE_VERSION=$(nodenv install --list | grep ^16 | tail -n 1)
+nodenv install $NODE_VERSION
+nodenv global $NODE_VERSION
+
+npm install --global yarn

@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-if [ "$OSTYPE" = *darwin* ]; then
   # TODO: Mac手に入ったら書く
+if [[ "$OSTYPE" = *darwin* ]]; then
   # if battery_info=$(/usr/bin/pmset -g ps | awk '{ if (NR == 2) print $2 " " $3 }' | sed -e "s/;//g" -e "s/%//") ; then
   #   battery_quantity=$(echo $battery_info | awk '{print $1}')
   # if [[ ! $battery_info =~ "discharging" ]]; then
