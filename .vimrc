@@ -338,6 +338,11 @@ nnoremap <silent><C-J> :<C-u>LspNextDiagnostic<CR>
 nnoremap <silent><C-K> :<C-u>LspPreviousDiagnostic<CR>
 nnoremap <Leader>sd :<C-u>LspDefinition<CR>
 
+augroup lsp_deno
+  au!
+  au BufWritePre *.ts *.tsx LspDocumentFormatSync
+augroup END
+
 " for textlint on tex. no more no less.
 " augroup LspEFM
 "   au!
