@@ -403,3 +403,8 @@ nnoremap <silent> <Leader>pm :<C-u>PreviewMarkdownToggle<CR>
 for file in split(glob('$HOME/.vim/_config/*.vim'), '\n')
   exe 'source' file
 endfor
+
+augroup Flutter
+  au!
+  autocmd BufRead,BufNewFile,BufEnter *.dart UltiSnipsAddFiletypes dart-flutter
+augroup Flutter

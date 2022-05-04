@@ -88,10 +88,10 @@ if [ -e $HOME/.deno/bin ]; then
   export PATH="$DENO_INSTALL/bin:$PATH"
 fi
 
-# export PATH="$HOME/fvm/default/bin:$PATH"
-# export PATH="$HOME/.pub-cache/bin:$PATH"
 if is_linux; then
   export PATH="$PATH:$HOME/snap/flutter/common/flutter/bin"
+else
+  export PATH="$PATH:$HOME/flutter/bin"
 fi
 
 export PATH="$HOME/.tfenv/bin:$PATH"
@@ -143,6 +143,7 @@ source ~/dotfiles/common_aliases
 
 if is_osx; then
   . /usr/local/opt/asdf/libexec/asdf.sh
+  export PATH="/usr/local/opt/sbt@0.13/bin:$PATH"
 fi
 
 eval "$(direnv hook zsh)"

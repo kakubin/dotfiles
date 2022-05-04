@@ -22,6 +22,7 @@ brew install coreutils
 brew install graphviz
 brew install virtualbox
 brew install mariadb-connector-c
+brew install openssl@1.1
 
 brew install postgresql
 brew install redis

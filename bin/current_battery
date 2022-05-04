@@ -1,19 +1,16 @@
 #!/usr/bin/env sh
 
-if [ "$OSTYPE" = *darwin* ]; then
-  # TODO: Mac手に入ったら書く
-  # if battery_info=$(/usr/bin/pmset -g ps | awk '{ if (NR == 2) print $2 " " $3 }' | sed -e "s/;//g" -e "s/%//") ; then
-  #   battery_quantity=$(echo $battery_info | awk '{print $1}')
-  # if [[ ! $battery_info =~ "discharging" ]]; then
-  #   battery="#[bg=cyan,fg=black] ⚡ $battery_quantity% #[default]"
-  # elif (( $battery_quantity < 16 )); then
-  #   battery="#[bg=red,fg=white] $battery_quantity% #[default]"
-  # else
-  #   battery="#[bg=cyan,fg=black] $battery_quantity% #[default]"
-  # fi
-  #   echo $battery
-  # fi
-  echo "#[bg=red,fg=white] TODO #[default]"
+if [[ "$OSTYPE" = *darwin* ]]; then
+  battery_quantity=$(pmset -g batt | sed -E "/Now/d" | sed -E "/Warning/d" | sed -E "s/\(no estimate\)//" | sed  -E "s/^.*\)//g" | sed  -E "s/\%;.*$//g" | xargs echo)
+  charging=$(pmset -g batt | sed -E "/Inter/d" | sed -r "s/.*'(.*)'/\1/" | awk '{print ($0=="AC Power")}')
+
+  if [[ $charging -eq 1 ]]; then
+    battery_color="#[bg=colour190,fg=colour232,bold]"
+  else
+    battery_color=$(echo | awk -v quantity=$battery_quantity '{ print (quantity>10 ? "#[bg=colour29]" : "#[bg=colour1]") }')
+  fi
+
+  echo "${battery_color} ${battery_quantity}% #[default]"
 else
   battery_info=$(acpitool -b | sed -r 's/.*(((C|Disc)harging|Full), [0-9]{1,3}\.?[0-9]{1,2})%.*/\1/')
   battery_quantity=$(echo $battery_info | sed -r 's/((C|Disc)harging|Full), //')
