@@ -18,6 +18,7 @@ brew install yarn
 brew install ffmpeg
 brew install coreutils
 brew install gnu-sed
+brew install gpg
 brew install graphviz
 brew install virtualbox
 brew install mariadb-connector-c
@@ -37,6 +38,9 @@ brew install --cask mysqlworkbench
 brew install --cask yt-music
 # brew install --cask visual-studio-code
 brew install --cask android-studio
+
+brew tap unused-code/formulae
+brew install unused
 
 # regularly executed
 brew cleanup
