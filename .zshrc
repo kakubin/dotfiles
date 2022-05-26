@@ -1,3 +1,6 @@
+# set -eu
+set -o pipefail
+
 autoload -Uz compinit && compinit
 export LANG=ja_JP.UTF-8
 setopt print_eight_bit # 日本語表示可能
@@ -52,7 +55,7 @@ os_detect() {
 
 is_osx() {
   os_detect
-  if [ "$PLATFORM" = "osx" ]; then
+  if [[ "$PLATFORM" = "osx" ]]; then
     return 0
   else
     return 1
@@ -83,7 +86,7 @@ export PATH="$PATH:$GOPATH/bin"
 # 基本ここにあると思う
 # export BUNDLE_BUILD__MYSQL2='--with-ldflags=-L/usr/local/opt/openssl@1.1/lib'
 
-if [ -e $HOME/.deno/bin ]; then
+if [[ -e $HOME/.deno/bin ]]; then
   export DENO_INSTALL="$HOME/.deno"
   export PATH="$DENO_INSTALL/bin:$PATH"
 fi
@@ -128,7 +131,7 @@ command_not_found_handler() {
   echo -e "\\n███    ██  ██████  ████████ ███████  ██████  ██    ██ ███    ██ ██████\\n████   ██ ██    ██    ██    ██      ██    ██ ██    ██ ████   ██ ██   ██\\n██ ██  ██ ██    ██    ██    █████   ██    ██ ██    ██ ██ ██  ██ ██   ██\\n██  ██ ██ ██    ██    ██    ██      ██    ██ ██    ██ ██  ██ ██ ██   ██\\n██   ████  ██████     ██    ██       ██████   ██████  ██   ████ ██████\\n"
 }
 
-if [ $SHLVL = 1 ]; then
+if [[ $SHLVL = 1 ]]; then
   tmux
 fi
 
@@ -147,3 +150,4 @@ if is_osx; then
 fi
 
 eval "$(direnv hook zsh)"
+export DIRENV_LOG_FORMAT=""

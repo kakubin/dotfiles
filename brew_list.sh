@@ -13,12 +13,11 @@ brew install tig
 brew install ghq
 
 brew install asdf
-# brew install nodenv
 brew install direnv
-# brew install fvm
-# brew install yarn
+brew install yarn
 brew install ffmpeg
 brew install coreutils
+brew install gnu-sed
 brew install graphviz
 brew install virtualbox
 brew install mariadb-connector-c
@@ -27,6 +26,7 @@ brew install openssl@1.1
 brew install postgresql
 brew install redis
 brew install lynx
+brew install gh
 
 brew install --cask docker
 brew install --cask slack
