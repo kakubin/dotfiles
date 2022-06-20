@@ -3,3 +3,4 @@
 .vim/plugged
 .vim/view
 .vim/autoload/plug.vim
+.irb_history

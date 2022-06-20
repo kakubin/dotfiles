@@ -402,4 +402,4 @@ endfor
 augroup Flutter
   au!
   autocmd BufRead,BufNewFile,BufEnter *.dart UltiSnipsAddFiletypes dart-flutter
-augroup Flutter
+augroup END
