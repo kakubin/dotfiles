@@ -13,6 +13,21 @@ autoload -Uz is-at-least
 autoload -Uz add-zsh-hook
 setopt prompt_subst # PROMPT変数内で変数参照するのに必要
 
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt append_history
+setopt share_history
+setopt hist_ignore_all_dups
+
+stty -ixon
+
+bindkey -e
+bindkey '^R' history-incremental-search-backward
+bindkey '^S' history-incremental-search-forward
+bindkey '^P' history-beginning-search-backward
+bindkey '^N' history-beginning-search-forward
+
 # ref:http://tkengo.github.io/blog/2013/05/12/zsh-vcs-info/
 # ref:https://qiita.com/knao124/items/04e3625eb12237de5743
 if is-at-least 4.3.10; then
@@ -112,7 +127,7 @@ show_snippets() {
 }
 
 zle -N show_snippets
-bindkey '^n' show_snippets
+bindkey '^B' show_snippets
 
 
 fzf-src() {
