@@ -374,9 +374,6 @@ let g:closetag_filenames = '*.html,*.vue'
 " vim-prettier
 let g:prettier#autoformat_config_present = 1 " prettireの設定ファイルがあった場合、そちらを優先する
 
-" カーソル下のURLをブラウザで開く
-nmap <Leader>o <Plug>(openbrowser-open)
-vmap <Leader>o <Plug>(openbrowser-open)
 " ググる
 nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
 
