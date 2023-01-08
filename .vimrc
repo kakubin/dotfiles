@@ -240,6 +240,7 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-rails'
 Plug 'slim-template/vim-slim'
 Plug 'vim-scripts/ruby-matchit'
+Plug 'pocke/rbs.vim'
 
 " vue
 Plug 'posva/vim-vue'
