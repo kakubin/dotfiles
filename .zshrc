@@ -1,4 +1,4 @@
-# set -eu
+set -u
 set -o pipefail
 
 autoload -Uz compinit && compinit
@@ -96,6 +96,8 @@ export PATH="$HOME/dotfiles/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
+# mysql-build
+# export PATH="$HOME/mysql-build/bin:$PATH"
 
 # export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 # 基本ここにあると思う
@@ -104,6 +106,11 @@ export PATH="$PATH:$GOPATH/bin"
 if [[ -e $HOME/.deno/bin ]]; then
   export DENO_INSTALL="$HOME/.deno"
   export PATH="$DENO_INSTALL/bin:$PATH"
+fi
+
+if [[ -d $HOME/.wasmtime ]]; then
+  export WASMTIME_HOME="$HOME/.wasmtime"
+  export PATH="$WASMTIME_HOME/bin:$PATH"
 fi
 
 if is_linux; then
@@ -160,7 +167,7 @@ source ~/dotfiles/common_aliases
 # }
 
 if is_osx; then
-  . /usr/local/opt/asdf/libexec/asdf.sh
+  # . /usr/local/opt/asdf/libexec/asdf.sh
   export PATH="/usr/local/opt/sbt@0.13/bin:$PATH"
 fi
 
