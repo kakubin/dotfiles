@@ -1,4 +1,58 @@
-snippet dsc "described_class"
+snippet dsc described_class
 	described_class
-snippet jp "JSON parse"
+snippet jp JSON parse
 	JSON.parse(${0:response.body})
+snippet st
+	sign_in_as_client_suser[1]
+snippet dt
+	sign_in_as_driver
+snippet ct
+	sign_in_as_normal_client
+snippet eac extend ActiveSupport::Concern
+	extend ActiveSupport::Concern
+snippet ise is_expected
+	is_expected
+snippet head
+	let(:headers) { { Authorization: "Bearer #{token}" } }
+snippet suser create(:m_client_suser)
+	let(:suser) { create(:m_client_suser) }
+snippet il bundler/inline
+	require 'bundler/inline'
+
+	gemfile(true) do
+		ruby '${1:RUBY_VERSION}'
+		source 'https://rubygems.org'
+	end
+snippet ilar bundler/inline with AR
+	require 'bundler/inline'
+
+	gemfile(true) do
+		ruby '${1:RUBY_VERSION}'
+		source 'https://rubygems.org'
+
+		gem 'activerecord', '= 5.1.6.2'
+		gem 'mysql2', '= 0.4.9'
+	end
+
+	require 'active_record'
+	require 'logger'
+
+	ActiveRecord::Base.establish_connection(
+		adapter: 'mysql2',
+		host: '127.0.0.1',
+		port: 3306,
+		username: 'root',
+		password: 'password',
+		database: '${2:}'
+	)
+
+	ActiveRecord::Schema.define do
+		create_table :${3:model} do |t|
+			t.${4:}
+		end
+	end
+
+	class ${5:} < ActiveRecord::Base
+	end
+snippet al "stdout query"
+	ActiveRecord::Base.logger = Logger.new($stdout)
