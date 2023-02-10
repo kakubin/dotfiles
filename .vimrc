@@ -298,6 +298,14 @@ nmap <Space>M <Plug>(quickhl-manual-reset)
 xmap <Space>M <Plug>(quickhl-manual-reset)
 
 " vim-auto-save
+augroup DisableAutoSave
+  au!
+  autocmd BufEnter *.vue let g:auto_save = 0
+  autocmd BufLeave *.vue let g:auto_save = 1
+augroup END
+
+nmap <C-s> :w<CR>
+
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
