@@ -159,12 +159,12 @@ fi
 
 source ~/dotfiles/common_aliases
 
-# function pssh() {
-#   local host=$(grep -r 'Host ' $HOME/.ssh/* | cut -d' ' -f2 | sort | peco)
-#   if [ ! -z "$host" ]; then
-#     ssh "$host"
-#   fi
-# }
+function fssh() {
+  local host=$(grep -r '^Host ' $HOME/.ssh/* | cut -d' ' -f2 | sort | fzf)
+  if [ ! -z "$host" ]; then
+    ssh "$host"
+  fi
+}
 
 if is_osx; then
   # . /usr/local/opt/asdf/libexec/asdf.sh
