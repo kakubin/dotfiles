@@ -292,8 +292,8 @@ let g:brightest#enable_filetypes = {
       \ "_": 1,
       \ }
 
-nmap <Space>m <Plug>(quickhl-manual-this)
-xmap <Space>m <Plug>(quickhl-manual-this)
+nmap <Space>q <Plug>(quickhl-manual-this)
+xmap <Space>q <Plug>(quickhl-manual-this)
 nmap <Space>M <Plug>(quickhl-manual-reset)
 xmap <Space>M <Plug>(quickhl-manual-reset)
 
@@ -302,6 +302,8 @@ augroup DisableAutoSave
   au!
   autocmd BufEnter *.vue let g:auto_save = 0
   autocmd BufLeave *.vue let g:auto_save = 1
+  autocmd BufEnter *.ts let g:auto_save = 0
+  autocmd BufLeave *.ts let g:auto_save = 1
 augroup END
 
 nmap <C-s> :w<CR>
