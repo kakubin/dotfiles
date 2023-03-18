@@ -5,11 +5,11 @@
 # end
 
 IRB.conf[:PROMPT][:DEFAULT] = {
-  :PROMPT_I=>"%N(%m):%03n:%i> ",
-  :PROMPT_N=>"%N(%m):%03n:%i> ",
-  :PROMPT_S=>"%N(%m):%03n:%i%l ",
-  :PROMPT_C=>"%N(%m):%03n:%i* ",
-  :RETURN=>"=> %s\n"
+  :PROMPT_I => "%N(%m):%03n:%i> ",
+  :PROMPT_N => "%N(%m):%03n:%i> ",
+  :PROMPT_S => "%N(%m):%03n:%i%l ",
+  :PROMPT_C => "%N(%m):%03n:%i* ",
+  :RETURN => "=> %s\n"
 }
 
 class Object
