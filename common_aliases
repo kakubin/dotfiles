@@ -1,4 +1,5 @@
 # common alias
+alias sudo='sudo -E '
 alias v='vim'
 alias nv='nvim'
 alias ..='cd ..'

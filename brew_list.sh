@@ -14,6 +14,7 @@ brew install ghq
 
 brew install asdf
 brew install direnv
+brew install tfenv
 brew install yarn
 brew install ffmpeg
 brew install coreutils
@@ -23,6 +24,10 @@ brew install graphviz
 brew install virtualbox
 brew install mariadb-connector-c
 brew install openssl@1.1
+brew install nkf
+brew install jq
+
+brew install awscli
 
 brew install postgresql
 brew install redis

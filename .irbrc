@@ -1,3 +1,9 @@
+# unless RUBY_VERSION.match?(/^3\.1\.\d/)
+#   require 'irb/completion'
+#   require 'wirb'
+#   Wirb.start
+# end
+
 IRB.conf[:PROMPT][:DEFAULT] = {
   :PROMPT_I=>"%N(%m):%03n:%i> ",
   :PROMPT_N=>"%N(%m):%03n:%i> ",

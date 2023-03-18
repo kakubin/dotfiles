@@ -240,6 +240,7 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-rails'
 Plug 'slim-template/vim-slim'
 Plug 'vim-scripts/ruby-matchit'
+Plug 'pocke/rbs.vim'
 
 " vue
 Plug 'posva/vim-vue'
@@ -291,12 +292,22 @@ let g:brightest#enable_filetypes = {
       \ "_": 1,
       \ }
 
-nmap <Space>m <Plug>(quickhl-manual-this)
-xmap <Space>m <Plug>(quickhl-manual-this)
+nmap <Space>q <Plug>(quickhl-manual-this)
+xmap <Space>q <Plug>(quickhl-manual-this)
 nmap <Space>M <Plug>(quickhl-manual-reset)
 xmap <Space>M <Plug>(quickhl-manual-reset)
 
 " vim-auto-save
+augroup DisableAutoSave
+  au!
+  autocmd BufEnter *.vue let g:auto_save = 0
+  autocmd BufLeave *.vue let g:auto_save = 1
+  autocmd BufEnter *.ts let g:auto_save = 0
+  autocmd BufLeave *.ts let g:auto_save = 1
+augroup END
+
+nmap <C-s> :w<CR>
+
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
@@ -378,9 +389,6 @@ let g:closetag_filenames = '*.html,*.vue'
 " vim-prettier
 let g:prettier#autoformat_config_present = 1 " prettireの設定ファイルがあった場合、そちらを優先する
 
-" カーソル下のURLをブラウザで開く
-nmap <Leader>o <Plug>(openbrowser-open)
-vmap <Leader>o <Plug>(openbrowser-open)
 " ググる
 nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
 
@@ -390,8 +398,8 @@ nmap gO :GhFile<CR>
 nmap gP :GhPullRequestCurrentLine<CR>
 
 " memolist
-nnoremap <Leader>mn :MemoNew<CR>
-nnoremap <Leader>mg :MemoGrep<CR>
+" nnoremap <Leader>mn :MemoNew<CR>
+" nnoremap <Leader>mg :MemoGrep<CR>
 let g:memolist_fzf = 1
 
 " markdown
@@ -408,3 +416,26 @@ augroup Flutter
   au!
   autocmd BufRead,BufNewFile,BufEnter *.dart UltiSnipsAddFiletypes dart-flutter
 augroup END
+function! s:format_file() abort
+  if &filetype == 'xml'
+    call s:format_xml()
+  elseif &filetype == 'svg'
+    call s:format_xml()
+  elseif &filetype == 'json'
+    call s:format_json()
+  else
+    return
+    " ggVG=
+  endif
+  return
+endfunction
+
+function! s:format_xml()
+  %s/></>\r</g | filetype indent on | setf xml | normal gg=G
+endfunction
+
+function! s:format_json()
+  echo 'not yet'
+endfunction
+
+nnoremap <silent> fmt :call <SID>format_file()<CR>
