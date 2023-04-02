@@ -10,4 +10,4 @@ NODE_VERSION=$(nodenv install --list | grep ^16 | tail -n 1)
 nodenv install $NODE_VERSION
 nodenv global $NODE_VERSION
 
-npm install --global yarn
+# npm install --global yarn
