@@ -171,5 +171,6 @@ if is_osx; then
   export PATH="/usr/local/opt/sbt@0.13/bin:$PATH"
 fi
 
+eval `dircolors -b .colorrc`
 eval "$(direnv hook zsh)"
 export DIRENV_LOG_FORMAT=""
