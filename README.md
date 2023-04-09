@@ -1,7 +1,7 @@
 # dotfiles
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/kakubin/dotfiles/master/setup.sh | sh
+curl -fsSL https://raw.githubusercontent.com/kakubin/dotfiles/master/install.sh | sh
 ```
 
 

@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/sh
+
+set -eu
 
 not_installed_yet() {
   if type $1 > /dev/null 2>&1; then
@@ -34,5 +36,12 @@ done
 ssh -T git@github.com
 
 if [ -f $HOME/dotfiles ]; then
+  if [[ $OSTYPE = *darwin* ]]; then
+    xcode-select --install
+    sudo xcodebuild -license
+  else
+    sudo apt-get install git
+  fi
+
   git clone git@github.com:kakubin/dotfiles.git $HOME/dotfiles
 fi

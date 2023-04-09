@@ -1,12 +1,6 @@
-curl
-git
 zsh
-npm
-vim
 fzf
 tig
 ripgrep
 xsel
-cmatrix
-sl
 acpitool

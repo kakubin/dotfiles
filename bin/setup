@@ -45,9 +45,6 @@ do
 done
 
 if [[ $OSTYPE = *darwin* ]]; then
-  xcode-select --install
-  sudo xcodebuild -license
-
   # brewのインストール
   if not_installed_yet brew; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
