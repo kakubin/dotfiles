@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -eu
+set -o pipefail
+
+if [ -e $HOME/.tmux ]; then
+  echo You have already installed Tmux Plugins!
+  exit 0
+fi
+
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm

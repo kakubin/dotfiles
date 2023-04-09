@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
 
-git clone https://github.com/nodenv/nodenv ~/.nodenv
-cd ~/.nodenv && src/configure && make -C src
+set -eu
+set -o pipefail
+
+if [ -e $HOME/.nodenv ]; then
+  echo You have already installed nodenv!
+  exit 0
+fi
+
+git clone https://github.com/nodenv/nodenv $HOME/.nodenv
+cd $HOME/.nodenv && src/configure && make -C src
 
 mkdir -p $HOME/.nodenv/plugins
 git clone https://github.com/nodenv/node-build.git $HOME/.nodenv/plugins/node-build

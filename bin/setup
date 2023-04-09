@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+set -eu
+set -o pipefail
+
 not_installed_yet() {
   if type $1 > /dev/null 2>&1; then
     return 1
@@ -41,9 +44,6 @@ do
   fi
 done
 
-# mkdir $HOME/.config/nvim/
-# ln -sf $HOME/.vimrc $HOME/.config/nvim/init.vim
-
 if [[ $OSTYPE = *darwin* ]]; then
   xcode-select --install
   sudo xcodebuild -license
@@ -77,56 +77,13 @@ else # linux
   cat apt_list | xargs sudo apt-get install -y
 fi
 
-if [ -e $HOME/.vim/autoload/plug.vim ]; then
-  echo You have already installed vim-plug!
-else
-  curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
-
-if [ -e $HOME/.deno ]; then
-  echo You have already installed deno
-else
-  curl -fsSL https://deno.land/install.sh | sh
-fi
-
-if [ -e $HOME/.rbenv ]; then
-  echo already installed rbenv! when have you done?
-else
-  $HOME/dotfiles/setup/rbenv
-  # TODO: remove
-  # git clone https://github.com/rbenv/rbenv.git $HOME/.rbenv
-  # cd $HOME/.rbenv && src/configure && make -C src
-  # mkdir -p $HOME/.rbenv/plugins
-  # git clone https://github.com/rbenv/ruby-build.git $HOME/rbenv/plugins/ruby-build
-fi
-
-if [ -e $HOME/.nodenv ]; then
-  echo already installed nodenv! when have you done?
-else
-  $HOME/dotfiles/setup/nodenv
-fi
-
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-# SCRIPT_DIR=$(cd $(dirname $0) && pwd)
-# VSCODE_SETTING_DIR=~/Library/Application\ Support/Code/User
-# rm "$VSCODE_SETTING_DIR/settings.json"
-# ln -s "$SCRIPT_DIR/.vscode/settings.json" "$VSCODE_SETTING_DIR/settings.json"
-
-# rm "$VSCODE_SETTING_DIR/keybindings.json"
-# ln -s "$SCRIPT_DIR/keybindings.json" "${VSCODE_SETTING_DIR}/keybindings.json"
-
-# cat .vscode/extensions | while read line
-# do
-#   code --install-extension $line
-# done
-
-# code --list-extensions > .vscode/extensions
+$HOME/dotfiles/setup/deno
+$HOME/dotfiles/setup/rbenv
+$HOME/dotfiles/setup/nodenv
+$HOME/dotfiles/setup/tmux
+# $HOME/dotfiles/setup/vscode
 
 source $HOME/.zshrc
-
-git clone https://github.com/vim/vim.git ~/vim
-build_vim
 
 echo "==============================>>"
 echo "Installation completed"

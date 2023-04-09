@@ -1,4 +1,12 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
+
+set -eu
+set -o pipefail
+
+if [ -e $HOME/.rbenv ]; then
+  echo You have already installed rbenv!
+  exit 0
+fi
 
 git clone https://github.com/rbenv/rbenv.git $HOME/.rbenv
 cd $HOME/.rbenv && src/configure && make -C src
