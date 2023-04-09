@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -eu
+set -o pipefail
+
+if type "go" > /dev/null 2>&1; then
+  echo You have already installed Go!
+  exit 0
+fi
+
+open https://go.dev/dl/

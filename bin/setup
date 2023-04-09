@@ -78,6 +78,8 @@ $HOME/dotfiles/setup/deno
 $HOME/dotfiles/setup/rbenv
 $HOME/dotfiles/setup/nodenv
 $HOME/dotfiles/setup/tmux
+$HOME/dotfiles/setup/go
+$HOME/dotfiles/setup/rust
 # $HOME/dotfiles/setup/vscode
 
 source $HOME/.zshrc

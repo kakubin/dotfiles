@@ -4,11 +4,6 @@
 curl -fsSL https://raw.githubusercontent.com/kakubin/dotfiles/master/install.sh | sh
 ```
 
-
-## common
-go
-ghq
-
 ## Darwin
 1. capsLockとctrlを入れ替える
 2. 入力言語の切り替えを<⌘-Space>にする

@@ -1088,6 +1088,12 @@
         "options": {
           "full_name": "clipy"
         }
+      },
+      "flutter": {
+        "version": "3.7.10",
+        "options": {
+          "full_name": "flutter"
+        }
       }
     }
   },
