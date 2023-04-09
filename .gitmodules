@@ -1,0 +1,3 @@
+[submodule "secret"]
+  path = secret
+  url = http://github.com/kakubin/secret.git

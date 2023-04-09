@@ -43,5 +43,5 @@ if [ -f $HOME/dotfiles ]; then
     sudo apt-get install git
   fi
 
-  git clone git@github.com:kakubin/dotfiles.git $HOME/dotfiles
+  git clone --recursive git@github.com:kakubin/dotfiles.git $HOME/dotfiles
 fi
