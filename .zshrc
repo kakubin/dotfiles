@@ -93,9 +93,8 @@ export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/dotfiles/bin:$PATH"
-export PATH="/usr/local/go/bin:$PATH"
-export GOPATH="$HOME/go"
-export PATH="$PATH:$GOPATH/bin"
+# export GOPATH="$HOME/go"
+# export PATH="/usr/local/go/bin:$GOPATH/bin:$PATH"
 # mysql-build
 # export PATH="$HOME/mysql-build/bin:$PATH"
 
