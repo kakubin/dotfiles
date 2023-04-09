@@ -15,10 +15,10 @@ jobs:
       - name: Install required packages
         run: apt-get update && apt-get install -y git sudo curl
       - name: Install dotfiles
-        run: bash ./setup.sh
+        run: bin/setup
   osx:
     runs-on: macos-10.15
     steps:
       - uses: actions/checkout@v1
       - name: Install dotfiles
-        run: bash ./setup.sh
+        run: bin/setup

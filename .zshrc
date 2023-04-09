@@ -87,11 +87,11 @@ is_linux() {
 }
 
 ## PATH
-eval "$(nodenv init -)"
-eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+eval "$(rbenv init -)"
 export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/dotfiles/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 export GOPATH="$HOME/go"
@@ -153,6 +153,10 @@ command_not_found_handler() {
   echo -e "\\n███    ██  ██████  ████████ ███████  ██████  ██    ██ ███    ██ ██████\\n████   ██ ██    ██    ██    ██      ██    ██ ██    ██ ████   ██ ██   ██\\n██ ██  ██ ██    ██    ██    █████   ██    ██ ██    ██ ██ ██  ██ ██   ██\\n██  ██ ██ ██    ██    ██    ██      ██    ██ ██    ██ ██  ██ ██ ██   ██\\n██   ████  ██████     ██    ██       ██████   ██████  ██   ████ ██████\\n"
 }
 
+eval "$(direnv hook zsh)"
+export DIRENV_LOG_FORMAT=""
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 if [[ $SHLVL = 1 ]]; then
   tmux
 fi
@@ -165,11 +169,3 @@ function fssh() {
     ssh "$host"
   fi
 }
-
-if is_osx; then
-  # . /usr/local/opt/asdf/libexec/asdf.sh
-  export PATH="/usr/local/opt/sbt@0.13/bin:$PATH"
-fi
-
-eval "$(direnv hook zsh)"
-export DIRENV_LOG_FORMAT=""

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# latest home Homebrew
+brew update
+
+# update already-installed formula
+brew upgrade
+
+# bundle from Brewfile
+brew bundle
+
+# regularly executed
+brew cleanup

@@ -176,6 +176,7 @@ let g:ref_refe_cmd = $HOME.'/.rbenv/shims/refe'
 " completion
 Plug 'vim-denops/denops.vim'
 Plug 'Shougo/ddc.vim'
+Plug 'Shougo/ddc-ui-native'
 Plug 'Shougo/ddc-around'
 Plug 'tani/ddc-fuzzy'
 Plug 'matsui54/ddc-ultisnips'
@@ -322,6 +323,7 @@ call skkeleton#config({
       \ })
 
 " ddc
+call ddc#custom#patch_global('ui', 'native')
 call ddc#custom#patch_global('sources', ['skkeleton', 'vim-lsp', 'around', 'ultisnips'])
 call ddc#custom#patch_global('sourceOptions', {
       \ 'skkeleton': {
