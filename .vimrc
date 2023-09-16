@@ -202,6 +202,7 @@ Plug 'mrbigass/darcula'
 Plug 'vim-airline/vim-airline'
 Plug 'osyo-manga/vim-brightest'
 Plug 't9md/vim-quickhl'
+Plug 'google/vim-jsonnet'
 
 " Plug 'vim-airline/vim-airline-themes'
 Plug 'mrbigass/vim-prettier', { 'do': 'yarn install'  }

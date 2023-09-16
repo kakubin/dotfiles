@@ -4,3 +4,4 @@
 .vim/view
 .vim/autoload/plug.vim
 .irb_history
+.config/yarn/global/
