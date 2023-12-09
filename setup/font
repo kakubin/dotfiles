@@ -13,6 +13,6 @@ cd $PROJECT_DIR
 docker-compose build; docker-compose run --rm cica
 
 echo '=================================
-設定からフォントの登録をすること
+TODO: 設定からフォントの登録をする
 ================================='
 sleep 10
