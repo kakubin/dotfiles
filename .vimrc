@@ -37,9 +37,6 @@ set splitright
 
 set complete=.,w,b,u,U,s,i,d,t
 set completeopt& completeopt+=menuone completeopt+=noinsert completeopt-=preview
-" for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
-"  exec "imap <expr> " . k . " pumvisible() ? '" . k . "' : '" . k . "\<C-X>\<C-P>\<C-N>'"
-" endfor
 
 " set laststatus
 set cursorline
@@ -183,9 +180,6 @@ Plug 'matsui54/ddc-ultisnips'
 
 Plug 'editorconfig/editorconfig-vim'
 
-" skk
-Plug 'vim-skk/skkeleton'
-
 " lsp
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
@@ -194,21 +188,21 @@ Plug 'shun/ddc-vim-lsp'
 " snippets
 if has('python3')
   Plug 'SirVer/ultisnips'
+  Plug 'thomasfaingnaert/vim-lsp-snippets'
+  Plug 'thomasfaingnaert/vim-lsp-ultisnips'
 endif
 Plug 'honza/vim-snippets'
 
 " style
-Plug 'mrbigass/darcula'
+Plug 'kakubin/darcula'
 Plug 'vim-airline/vim-airline'
 Plug 'osyo-manga/vim-brightest'
 Plug 't9md/vim-quickhl'
 Plug 'google/vim-jsonnet'
 
-" Plug 'vim-airline/vim-airline-themes'
-Plug 'mrbigass/vim-prettier', { 'do': 'yarn install'  }
+Plug 'kakubin/vim-prettier', { 'do': 'yarn install'  }
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-endwise'
-" Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'simeji/winresizer'
@@ -304,25 +298,10 @@ let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
 
-" skk
-imap <C-j> <Plug>(skkeleton-toggle)
-cmap <C-j> <Plug>(skkeleton-toggle)
-
-call skkeleton#config({
-      \ 'globalJisyo': '/usr/share/skk/SKK-JISYO.L',
-      \ 'eggLikeNewline': v:true
-      \ })
-
 " ddc
 call ddc#custom#patch_global('ui', 'native')
-call ddc#custom#patch_global('sources', ['skkeleton', 'vim-lsp', 'around', 'ultisnips'])
+call ddc#custom#patch_global('sources', ['vim-lsp', 'around', 'ultisnips'])
 call ddc#custom#patch_global('sourceOptions', {
-      \ 'skkeleton': {
-      \   'mark': 'skk',
-      \   'matchers': ['skkeleton'],
-      \   'sorters': [],
-      \   'minAutoCompleteLength': 2,
-      \ },
       \ 'vim-lsp': {'mark': 'LS'},
       \ 'around': {'mark': 'Around'},
       \ 'ultisnips': {'mark': 'Snip'},
@@ -341,6 +320,9 @@ let g:lsp_diagnostics_echo_cursor = 1
 nnoremap <silent><C-J> :<C-u>LspNextDiagnostic<CR>
 nnoremap <silent><C-K> :<C-u>LspPreviousDiagnostic<CR>
 nnoremap <Leader>sd :<C-u>LspDefinition<CR>
+
+nnoremap gi :LspDefinition<CR>
+nnoremap gh :LspHover<CR>
 
 augroup lsp_deno
   au!
