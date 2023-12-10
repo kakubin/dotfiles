@@ -46,9 +46,18 @@ augroup CursorLine
 augroup END
 
 augroup DeleteSpace
-  autocmd!
-  autocmd BufWritePre * :%s/\s\+$//e
+  au!
+  autocmd BufEnter * call s:delete_trailing_space()
 augroup END
+
+function! s:delete_trailing_space()
+  if &filetype != 'gitcommit'
+    augroup DeleteSpace
+      autocmd!
+      autocmd BufWritePre * :%s/\s\+$//e
+    augroup END
+  endif
+endfunction
 
 augroup ReloadVimrc
   autocmd!
@@ -301,15 +310,6 @@ augroup lsp_deno
   au BufWritePre *.ts *.tsx LspDocumentFormatSync
 augroup END
 
-" for textlint on tex. no more no less.
-" augroup LspEFM
-"   au!
-"   autocmd User lsp_setup call lsp#register_server({
-"       \ 'name': 'efm-langserver',
-"       \ 'cmd': {server_info->['efm-langserver', '-c=~/.config/efm-langserver/config.yaml']},
-"       \ 'allowlist': ['tex'],
-"       \ })
-" augroup END
 
 " NERDTree
 let g:NERDTreeShowHidden=1
