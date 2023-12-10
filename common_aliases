@@ -26,7 +26,7 @@ alias dspec='dfiles | rg spec.rb | xargs bundle exec rspec'
 alias dcop='dfiles | rg rb | xargs bundle exec rubocop --fail-level R'
 alias dice='echo $(($RANDOM % 6 + 1))'
 alias bomb=':(){ :|:& };:'
-alias rubo='bundle exec rubocop -a'
+alias rubo='bundle exec rubocop'
 alias pump='ps aux | grep puma'
 
 if is_osx; then

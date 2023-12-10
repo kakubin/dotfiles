@@ -178,6 +178,19 @@ Plug 'Shougo/ddc-around'
 Plug 'tani/ddc-fuzzy'
 Plug 'matsui54/ddc-ultisnips'
 
+" fuzzy finder
+Plug 'Shougo/ddu.vim'
+
+"" ui
+Plug 'Shougo/ddu-ui-ff'
+"" source
+Plug 'Shougo/ddu-source-file_rec'
+Plug 'shun/ddu-source-rg'
+"" filter
+Plug 'Shougo/ddu-filter-matcher_substring'
+"" kind
+Plug 'Shougo/ddu-kind-file'
+
 Plug 'editorconfig/editorconfig-vim'
 
 " lsp
@@ -344,7 +357,73 @@ let g:NERDTreeShowHidden=1
 nnoremap <silent><Leader>t :NERDTreeToggle<CR>
 let g:NERDTreeIgnore=['\.git$', '\.clean$', '\.swp$', '\.bak$', '\~$', '\.DS_Store', '__pycache__$']
 
-" FZF
+
+" fuzzy finder
+" call ddu#custom#patch_global(#{
+"     \   ui: 'ff',
+"     \   sourceParams : #{
+"     \     rg : #{
+"     \       args: ['--column', '--no-heading', '--color', 'never'],
+"     \     },
+"     \   },
+"     \   },
+"     \   kindOptions: #{
+"     \     file: #{
+"     \       defaultAction: 'open',
+"     \     },
+"     \   }
+"     \ })
+call ddu#custom#patch_global({
+    \   'ui': 'ff',
+    \   'uiParams': {
+    \     'ff': {
+    \       'startFilter': v:true,
+    \     }
+    \   },
+    \   'sources': [
+    \     {
+    \       'name': 'file_rec',
+    \       'params': #{
+    \          path: expand("%")
+    \       }
+    \     }
+    \   ],
+    \   'sourceOptions': {
+    \     '_': {
+    \       'matchers': ['matcher_substring'],
+    \     },
+    \   },
+    \   'kindOptions': {
+    \     'file': {
+    \       'defaultAction': 'open',
+    \     },
+    \   }
+    \ })
+
+nnoremap FF :call ddu#start()<CR>
+
+function! s:ddu_my_settings() abort
+  nnoremap <buffer><silent> <CR>
+        \ <Cmd>call ddu#ui#ff#do_action('itemAction')<CR>
+  nnoremap <buffer><silent> <Space>
+        \ <Cmd>call ddu#ui#ff#do_action('toggleSelectItem')<CR>
+  nnoremap <buffer><silent> i
+        \ <Cmd>call ddu#ui#ff#do_action('openFilterWindow')<CR>
+  nnoremap <buffer><silent> q
+        \ <Cmd>call ddu#ui#ff#do_action('quit')<CR>
+endfunction
+autocmd FileType ddu-ff call s:ddu_my_settings()
+
+function! s:ddu_filter_my_settings() abort
+  inoremap <buffer><silent> <CR>
+  \ <Esc><Cmd>close<CR>
+  nnoremap <buffer><silent> <CR>
+  \ <Cmd>close<CR>
+  nnoremap <buffer><silent> q
+  \ <Cmd>close<CR>
+endfunction
+autocmd FileType ddu-ff-filter call s:ddu_filter_my_settings()
+
 nnoremap ff :GFiles<CR>
 nnoremap fs :GFiles?<CR>
 nnoremap fb :Buffers<CR>

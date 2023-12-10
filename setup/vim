@@ -3,8 +3,8 @@
 set -eu
 set -o pipefail
 
-# mkdir $HOME/.config/nvim/
-# ln -sf $HOME/.vimrc $HOME/.config/nvim/init.vim
+mkdir $HOME/.config/nvim/
+ln -sf $HOME/.vimrc $HOME/.config/nvim/init.vim
 
 if [ -e $HOME/.vim/autoload/plug.vim ]; then
   echo You have already installed vim-plug!
@@ -13,3 +13,4 @@ else
 fi
 
 $HOME/dotfiles/bin/build_vim
+$HOME/dotfiles/bin/build_nvim

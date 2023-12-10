@@ -1,3 +1,5 @@
+#! /usr/bin ruby
+
 brew "fzf"
 brew "ripgrep"
 brew "tree"
