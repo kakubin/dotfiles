@@ -385,6 +385,12 @@ nnoremap ff :GFiles<CR>
 nnoremap fs :GFiles?<CR>
 nnoremap fb :Buffers<CR>
 nnoremap fl :Lines<CR>
+" fzf.vimの定義でhiddenが入っていないので被せでオプション追加を再定義
+" https://github.com/junegunn/fzf.vim/blob/1e054c1d075d87903647db9320116d360eb8b024/plugin/fzf.vim#L63C65-L63C216
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --hidden --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
 nnoremap fr :Rg<CR>
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 
