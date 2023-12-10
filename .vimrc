@@ -251,8 +251,6 @@ Plug 'kat0h/bufpreview.vim'
 " SQL
 Plug 'vim-scripts/SQLUtilities'
 
-Plug 'twitvim/twitvim'
-
 call plug#end()
 
 filetype plugin indent on
