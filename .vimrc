@@ -86,8 +86,6 @@ inoremap <expr><S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
 nnoremap ,.  :<C-u>edit $MYVIMRC<CR>
 nnoremap ,s. :<C-u>source $MYVIMRC<CR>
 
-nnoremap <silent> <Leader>bp :<C-u>bprevious<CR>
-nnoremap <silent> <Leader>bn :<C-u>bnext<CR>
 nnoremap <silent> <C-H> :<C-u>tabprev<CR>
 nnoremap <silent> <C-L> :<C-u>tabnext<CR>
 nnoremap <C-B> <C-^>
@@ -100,45 +98,6 @@ nnoremap q: :q
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
-
-function! s:path2project_directory_git(path) abort
-  let parent = a:path
-
-  while 1
-    let path = parent . '/.git'
-    if isdirectory(path) || filereadable(path)
-      return parent
-    endif
-    let next = fnamemodify(parent, ':h')
-    if next == parent
-      return ''
-    endif
-    let parent = next
-  endwhile
-endfunction
-
-function! s:fetch_absolute_path()
-  let @+ = expand('%:p')
-endfunction
-
-function! s:copy_absolute_path()
-  call s:fetch_absolute_path()
-  echo 'Copy absolute path: ' . @+
-endfunction
-
-function! s:copy_relative_path_from_root()
-  call s:fetch_absolute_path()
-  let git_root = s:path2project_directory_git(@+)
-  let @+ = substitute(@+, git_root, '.', 'g')
-  echo 'Copy relative path: ' . @+
-endfunction
-
-" augroup MyAutoCmd
-"   autocmd WinEnter <buffer> checktime
-" augroup END
-
-nmap cp  :call <SID>copy_absolute_path()<CR>
-nmap cpr :call <SID>copy_relative_path_from_root()<CR>
 
 " Make sure pasting in visual mode doesn't replace paste buffer
 function! RestoreRegister()
