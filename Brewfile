@@ -20,9 +20,11 @@ brew "mariadb-connector-c"
 brew "openssl"
 brew "nkf"
 brew "jq"
+brew "pstree"
 
 brew "awscli"
 brew "saml2aws"
+brew "gcloud"
 
 # brew "postgresql"
 brew "libpg"

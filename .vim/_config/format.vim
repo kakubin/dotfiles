@@ -3,6 +3,8 @@ function! s:format_file() abort
     call s:format_xml()
   elseif &filetype == 'svg'
     call s:format_xml()
+  elseif &filetype == 'html'
+    call s:format_xml()
   elseif &filetype == 'json'
     call s:format_json()
   else
