@@ -1,0 +1,32 @@
+extends typescript
+
+snippet dpro defineProps
+	interface Props {
+	  ${0}
+	}
+
+	const props = defineProps<Props>();
+snippet demi defineEmits
+	const emit = defineEmits<{
+		(event: '${0}'): void;
+	});
+snippet setup "script setup"
+	<script setup lang="ts">
+		${0}
+	</script>
+snippet vstyle "style tag"
+	<style lang="${0:scss}" scoped>
+	</style>
+snippet comp "computed"
+	const ${1:variable_name} = computed(() => {
+	  return ${2:true}
+	});
+snippet watcht "watch"
+	watch(
+		() => ${1:target},
+		(${2:value}: ${3:type}) => {
+			${0}
+		},
+	);
+snippet tcl "<tag>{{}}</tag>"
+	{{${0}}}

@@ -48,3 +48,13 @@ snippet ilar bundler/inline with AR
 	end
 snippet al "stdout query"
 	ActiveRecord::Base.logger = Logger.new($stdout)
+snippet ibl400 "BadRequest"
+	it_behaves_like "400 Bad request"
+snippet ibl401 "Unauthorized"
+	it_behaves_like "401 Unauthorized"
+snippet ibl403 "Forbidden"
+	it_behaves_like "403 Forbidden"
+snippet ibl404 "Not Found"
+	it_behaves_like "404 Not found"
+snippet ibl405 "Not Allowed"
+	it_behaves_like "405 Not Allowed"
