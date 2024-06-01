@@ -182,6 +182,7 @@ Plug 'honza/vim-snippets'
 
 " style
 Plug 'kakubin/darcula'
+" Plug 'cocopon/iceberg.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'osyo-manga/vim-brightest'
 Plug 't9md/vim-quickhl'
@@ -252,6 +253,8 @@ filetype plugin indent on
 
 syntax enable
 colorscheme darcula
+" colorscheme iceberg
+" set background=dark
 
 " plugin config================================
 " vim-brightest'
@@ -294,9 +297,9 @@ let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_settings_filetype_vue = ['volar-server', 'typescript-language-server']
 let g:lsp_settings_filetype_ruby = ['ruby-lsp', 'rubocop-lsp-mode']
 let g:lsp_settings_filetype_sql = ['sqls']
-nnoremap <silent><C-J> :<C-u>LspNextDiagnostic<CR>
-nnoremap <silent><C-K> :<C-u>LspPreviousDiagnostic<CR>
-nnoremap <Leader>sd :<C-u>LspDefinition<CR>
+nnoremap <silent><C-J> <plug>(lsp-next-diagnostic)
+nnoremap <silent><C-K> <plug>(lsp-previous-diagnostic)
+nnoremap <Leader>sd <plug>(lsp-definition)
 
 nnoremap gi :LspDefinition<CR>
 nnoremap gh :LspHover<CR>

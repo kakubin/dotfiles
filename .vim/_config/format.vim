@@ -7,6 +7,8 @@ function! s:format_file() abort
     call s:format_xml()
   elseif &filetype == 'json'
     call s:format_json()
+  elseif &filetype == 'ruby'
+    LspDocumentFormatSync<CR>
   else
     return
     " ggVG=

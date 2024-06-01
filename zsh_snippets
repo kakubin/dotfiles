@@ -8,6 +8,10 @@ rails:db:rollback
 env_dev:RAILS_ENV=development
 env_test:RAILS_ENV=test
 env_prod:RAILS_ENV=production
-docker_bundle:dke web bundle exec
+docker bundle:dke web bundle exec
 strict: -c .rubocop_strict.yml
 printf:printf "\e[33m${1}\e[m\n"
+docker image prune:docker rmi $(docker images -f "dangling=true" -q)
+docker exec:docker exec -it container_name bash
+docker volume:docker volume
+docker run:docker run --rm -it --name container_name image_name command
