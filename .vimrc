@@ -222,7 +222,7 @@ Plug 'slim-template/vim-slim'
 Plug 'pocke/rbs.vim'
 
 " vue
-" Plug 'posva/vim-vue'
+Plug 'posva/vim-vue'
 
 " javascript
 " just in case
@@ -230,7 +230,7 @@ Plug 'othree/yajs.vim'
 
 " typescript
 Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
+" Plug 'peitalin/vim-jsx-typescript'
 
 " graphql
 Plug 'jparise/vim-graphql'
