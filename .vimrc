@@ -244,10 +244,7 @@ Plug 'mattn/vim-goimports'
 " Plug 'lervag/vimtex'
 
 " markdown
-Plug 'kat0h/bufpreview.vim'
-
-" SQL
-Plug 'vim-scripts/SQLUtilities'
+" Plug 'kat0h/bufpreview.vim'
 
 call plug#end()
 
@@ -296,6 +293,7 @@ call ddc#enable()
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_settings_filetype_vue = ['volar-server', 'typescript-language-server']
 let g:lsp_settings_filetype_ruby = ['ruby-lsp', 'rubocop-lsp-mode']
+let g:lsp_settings_filetype_sql = ['sqls']
 nnoremap <silent><C-J> :<C-u>LspNextDiagnostic<CR>
 nnoremap <silent><C-K> :<C-u>LspPreviousDiagnostic<CR>
 nnoremap <Leader>sd :<C-u>LspDefinition<CR>
