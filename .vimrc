@@ -65,6 +65,12 @@ augroup ReloadVimrc
   autocmd BufWritePost *gvimrc if has('gui_running') source $MYGVIMRC
 augroup END
 
+augroup ReloadBefore
+  autocmd!
+  autocmd BufEnter,InsertEnter,CursorHold,CursorHoldI * checktime
+  " FocusGained
+augroup END
+
 set clipboard=unnamedplus clipboard+=unnamed
 
 set noswapfile
@@ -144,7 +150,6 @@ Plug 'Shougo/ddc.vim'
 Plug 'Shougo/ddc-ui-native'
 Plug 'Shougo/ddc-around'
 Plug 'tani/ddc-fuzzy'
-Plug 'matsui54/ddc-ultisnips'
 
 " fuzzy finder
 Plug 'Shougo/ddu.vim'
@@ -168,6 +173,7 @@ Plug 'shun/ddc-vim-lsp'
 
 " snippets
 if has('python3')
+  Plug 'matsui54/ddc-ultisnips'
   Plug 'SirVer/ultisnips'
   Plug 'thomasfaingnaert/vim-lsp-snippets'
   Plug 'thomasfaingnaert/vim-lsp-ultisnips'
@@ -181,7 +187,6 @@ Plug 'osyo-manga/vim-brightest'
 Plug 't9md/vim-quickhl'
 Plug 'google/vim-jsonnet'
 
-Plug 'kakubin/vim-prettier', { 'do': 'yarn install'  }
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
@@ -192,7 +197,7 @@ Plug 'simeji/winresizer'
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-scripts/vim-auto-save'
 Plug 'preservim/nerdcommenter'
-Plug 'glidenote/memolist.vim'
+" Plug 'glidenote/memolist.vim'
 Plug 'thinca/vim-quickrun'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'markonm/traces.vim'
@@ -210,20 +215,13 @@ Plug 'iberianpig/tig-explorer.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
-" html
-Plug 'mattn/emmet-vim'
-
 " rails
 Plug 'tpope/vim-rails'
 Plug 'slim-template/vim-slim'
-Plug 'vim-scripts/ruby-matchit'
 Plug 'pocke/rbs.vim'
 
 " vue
-Plug 'posva/vim-vue'
-
-" rust
-Plug 'rust-lang/rust.vim'
+" Plug 'posva/vim-vue'
 
 " javascript
 " just in case
@@ -296,6 +294,8 @@ call ddc#enable()
 
 " lsp
 let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_settings_filetype_vue = ['volar-server', 'typescript-language-server']
+let g:lsp_settings_filetype_ruby = ['ruby-lsp', 'rubocop-lsp-mode']
 nnoremap <silent><C-J> :<C-u>LspNextDiagnostic<CR>
 nnoremap <silent><C-K> :<C-u>LspPreviousDiagnostic<CR>
 nnoremap <Leader>sd :<C-u>LspDefinition<CR>
@@ -389,7 +389,7 @@ nnoremap fl :Lines<CR>
 " https://github.com/junegunn/fzf.vim/blob/1e054c1d075d87903647db9320116d360eb8b024/plugin/fzf.vim#L63C65-L63C216
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg --hidden --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  \   'rg --hidden -g "!.git/*" --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
 nnoremap fr :Rg<CR>
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
@@ -402,9 +402,6 @@ nnoremap <Leader>sn :UltiSnipsEdit<CR>
 
 " close-tag
 let g:closetag_filenames = '*.html,*.vue'
-
-" vim-prettier
-let g:prettier#autoformat_config_present = 1 " prettireの設定ファイルがあった場合、そちらを優先する
 
 " ググる
 nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>

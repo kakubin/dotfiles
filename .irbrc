@@ -1,3 +1,5 @@
+# vi: set ft=ruby :
+
 # unless RUBY_VERSION.match?(/^3\.1\.\d/)
 #   require 'irb/completion'
 #   require 'wirb'
