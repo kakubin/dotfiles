@@ -15,3 +15,4 @@ docker image prune:docker rmi $(docker images -f "dangling=true" -q)
 docker exec:docker exec -it container_name bash
 docker volume:docker volume
 docker run:docker run --rm -it --name container_name image_name command
+fail:--only-failures

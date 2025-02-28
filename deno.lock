@@ -1,0 +1,301 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "jsr:@core/asyncutil@~1.2.0": "jsr:@core/asyncutil@1.2.0",
+      "jsr:@core/unknownutil@^3.17.2": "jsr:@core/unknownutil@3.18.1",
+      "jsr:@core/unknownutil@^3.18.0": "jsr:@core/unknownutil@3.18.1",
+      "jsr:@core/unknownutil@^4.0.0": "jsr:@core/unknownutil@4.3.0",
+      "jsr:@core/unknownutil@^4.3.0": "jsr:@core/unknownutil@4.3.0",
+      "jsr:@core/unknownutil@~4.3.0": "jsr:@core/unknownutil@4.3.0",
+      "jsr:@denops/core@^7.0.0": "jsr:@denops/core@7.0.1",
+      "jsr:@denops/std@~7.1.0": "jsr:@denops/std@7.1.1",
+      "jsr:@denops/std@~7.2.0": "jsr:@denops/std@7.2.0",
+      "jsr:@denops/vim-channel-command@^4.0.2": "jsr:@denops/vim-channel-command@4.0.2",
+      "jsr:@lambdalisue/errorutil@^1.1.0": "jsr:@lambdalisue/errorutil@1.1.1",
+      "jsr:@lambdalisue/indexer@^1.0.0": "jsr:@lambdalisue/indexer@1.0.0",
+      "jsr:@lambdalisue/messagepack-rpc@^2.4.0": "jsr:@lambdalisue/messagepack-rpc@2.4.0",
+      "jsr:@lambdalisue/messagepack@^1.0.1": "jsr:@lambdalisue/messagepack@1.0.1",
+      "jsr:@lambdalisue/reservator@^1.0.1": "jsr:@lambdalisue/reservator@1.0.1",
+      "jsr:@lambdalisue/streamtools@^1.0.0": "jsr:@lambdalisue/streamtools@1.0.1",
+      "jsr:@lambdalisue/workerio@^4.0.1": "jsr:@lambdalisue/workerio@4.0.1",
+      "jsr:@milly/async-signal@^1.0.0": "jsr:@milly/async-signal@1.0.1",
+      "jsr:@shougo/ddc-vim@7.1.0": "jsr:@shougo/ddc-vim@7.1.0",
+      "jsr:@std/assert@^1.0.6": "jsr:@std/assert@1.0.6",
+      "jsr:@std/assert@~1.0.2": "jsr:@std/assert@1.0.6",
+      "jsr:@std/async@^1.0.1": "jsr:@std/async@1.0.6",
+      "jsr:@std/async@~1.0.1": "jsr:@std/async@1.0.6",
+      "jsr:@std/bytes@^0.221.0": "jsr:@std/bytes@0.221.0",
+      "jsr:@std/cli@^1.0.1": "jsr:@std/cli@1.0.6",
+      "jsr:@std/internal@^1.0.4": "jsr:@std/internal@1.0.4",
+      "jsr:@std/path@^1.0.2": "jsr:@std/path@1.0.6",
+      "jsr:@std/path@~1.0.2": "jsr:@std/path@1.0.6",
+      "jsr:@std/semver@^1.0.0": "jsr:@std/semver@1.0.3",
+      "jsr:@std/semver@^1.0.1": "jsr:@std/semver@1.0.3",
+      "jsr:@std/testing@~1.0.0": "jsr:@std/testing@1.0.3",
+      "jsr:@std/ulid@^1.0.0": "jsr:@std/ulid@1.0.0",
+      "npm:@streamparser/json@^0.0.21": "npm:@streamparser/json@0.0.21",
+      "npm:msgpackr@^1.10.1": "npm:msgpackr@1.11.0"
+    },
+    "jsr": {
+      "@core/asyncutil@1.2.0": {
+        "integrity": "9967f15190c60df032c13f72ce5ac73d185c34f31c53dc918d8800025854c118"
+      },
+      "@core/unknownutil@3.18.1": {
+        "integrity": "6aaa108b623ff971d062dd345da7ca03b97f61ae3d29c8677bff14fec11f0d76"
+      },
+      "@core/unknownutil@4.3.0": {
+        "integrity": "538a3687ffa81028e91d148818047df219663d0da671d906cecd165581ae55cc"
+      },
+      "@denops/core@7.0.1": {
+        "integrity": "ede39eec60de6d5bf0fbc0337d3e420a9689cc48afea8c71752e6c0fb630bde0"
+      },
+      "@denops/std@7.1.1": {
+        "integrity": "9178027fc9192034842ac4d8d7219ce65ea80cb115b722e681e5c3630b503cb8",
+        "dependencies": [
+          "jsr:@denops/core@^7.0.0"
+        ]
+      },
+      "@denops/std@7.2.0": {
+        "integrity": "acfd45e3f8b5a61010de3adf52fb3a3aff5003ca1ab645705576d2d0bdfd76de",
+        "dependencies": [
+          "jsr:@core/unknownutil@^4.3.0",
+          "jsr:@std/semver@^1.0.0",
+          "jsr:@std/ulid@^1.0.0"
+        ]
+      },
+      "@denops/vim-channel-command@4.0.2": {
+        "integrity": "8f574f9beb2fa766dd97e189cf4a4405c07f62443a766f0b8c37796c974cf772",
+        "dependencies": [
+          "jsr:@lambdalisue/indexer@^1.0.0",
+          "jsr:@lambdalisue/reservator@^1.0.1",
+          "npm:@streamparser/json@^0.0.21"
+        ]
+      },
+      "@lambdalisue/errorutil@1.1.1": {
+        "integrity": "d0234a8a510da52f130c44698643b7f420f332ef2ffce1451415925b14f5f63f",
+        "dependencies": [
+          "jsr:@core/unknownutil@^3.18.0"
+        ]
+      },
+      "@lambdalisue/indexer@1.0.0": {
+        "integrity": "f1dbbca13a0cb3b8d87533f3ac807ba2881107e28a7eb7eb85ac1b1c5d6a5c42"
+      },
+      "@lambdalisue/messagepack-rpc@2.4.0": {
+        "integrity": "51b9aabe1ce88c3309e12fa834f2a8340ffcd0611f53ea012d28c8f9328ea7d2",
+        "dependencies": [
+          "jsr:@core/unknownutil@^3.17.2",
+          "jsr:@lambdalisue/indexer@^1.0.0",
+          "jsr:@lambdalisue/messagepack@^1.0.1",
+          "jsr:@lambdalisue/reservator@^1.0.1"
+        ]
+      },
+      "@lambdalisue/messagepack@1.0.1": {
+        "integrity": "e35888d9ac295826f24234f10f7ef660c890b506eb09fac1f7509798e94c525a",
+        "dependencies": [
+          "npm:msgpackr@^1.10.1"
+        ]
+      },
+      "@lambdalisue/reservator@1.0.1": {
+        "integrity": "daf9189747c5cb2ad49e42ad3c65ec367684e1765ebb856a0ad6d754b3e650c4"
+      },
+      "@lambdalisue/streamtools@1.0.1": {
+        "integrity": "8bc2fdeefa7131911b19b53dc5eb9c10c68ed4bf9e9de8bd5ed0c27f83953516",
+        "dependencies": [
+          "jsr:@std/bytes@^0.221.0"
+        ]
+      },
+      "@lambdalisue/workerio@4.0.1": {
+        "integrity": "415899635e6d5e53ca0ed25c6ff18670cd3f9c00c8051dce9bc0b37a76507144"
+      },
+      "@milly/async-signal@1.0.1": {
+        "integrity": "80a9641a2005974d392c8e3e330bcb33072c3d20fbf699c7c6452b0d5aa50a12"
+      },
+      "@shougo/ddc-vim@7.1.0": {
+        "integrity": "3ce20b145cdd87f3250c2c11da81a511519e3e1f31624d0d41f4af3f0cbae6d0",
+        "dependencies": [
+          "jsr:@denops/std@~7.1.0"
+        ]
+      },
+      "@std/assert@1.0.6": {
+        "integrity": "1904c05806a25d94fe791d6d883b685c9e2dcd60e4f9fc30f4fc5cf010c72207",
+        "dependencies": [
+          "jsr:@std/internal@^1.0.4"
+        ]
+      },
+      "@std/async@1.0.6": {
+        "integrity": "6d262156dd35c4a72ee1a2f8679be40264f370cfb92e2e13d4eca2ae05e16f34"
+      },
+      "@std/bytes@0.221.0": {
+        "integrity": "64a047011cf833890a4a2ab7293ac55a1b4f5a050624ebc6a0159c357de91966"
+      },
+      "@std/cli@1.0.6": {
+        "integrity": "d22d8b38c66c666d7ad1f2a66c5b122da1704f985d3c47f01129f05abb6c5d3d"
+      },
+      "@std/internal@1.0.4": {
+        "integrity": "62e8e4911527e5e4f307741a795c0b0a9e6958d0b3790716ae71ce085f755422"
+      },
+      "@std/path@1.0.6": {
+        "integrity": "ab2c55f902b380cf28e0eec501b4906e4c1960d13f00e11cfbcd21de15f18fed"
+      },
+      "@std/semver@1.0.3": {
+        "integrity": "7c139c6076a080eeaa4252c78b95ca5302818d7eafab0470d34cafd9930c13c8"
+      },
+      "@std/testing@1.0.3": {
+        "integrity": "f98c2bee53860a5916727d7e7d3abe920dd6f9edace022e2d059f00d05c2cf42",
+        "dependencies": [
+          "jsr:@std/assert@^1.0.6"
+        ]
+      },
+      "@std/ulid@1.0.0": {
+        "integrity": "d41c3d27a907714413649fee864b7cde8d42ee68437d22b79d5de4f81d808780"
+      }
+    },
+    "npm": {
+      "@msgpackr-extract/msgpackr-extract-darwin-arm64@3.0.3": {
+        "integrity": "sha512-QZHtlVgbAdy2zAqNA9Gu1UpIuI8Xvsd1v8ic6B2pZmeFnFcMWiPLfWXh7TVw4eGEZ/C9TH281KwhVoeQUKbyjw==",
+        "dependencies": {}
+      },
+      "@msgpackr-extract/msgpackr-extract-darwin-x64@3.0.3": {
+        "integrity": "sha512-mdzd3AVzYKuUmiWOQ8GNhl64/IoFGol569zNRdkLReh6LRLHOXxU4U8eq0JwaD8iFHdVGqSy4IjFL4reoWCDFw==",
+        "dependencies": {}
+      },
+      "@msgpackr-extract/msgpackr-extract-linux-arm64@3.0.3": {
+        "integrity": "sha512-YxQL+ax0XqBJDZiKimS2XQaf+2wDGVa1enVRGzEvLLVFeqa5kx2bWbtcSXgsxjQB7nRqqIGFIcLteF/sHeVtQg==",
+        "dependencies": {}
+      },
+      "@msgpackr-extract/msgpackr-extract-linux-arm@3.0.3": {
+        "integrity": "sha512-fg0uy/dG/nZEXfYilKoRe7yALaNmHoYeIoJuJ7KJ+YyU2bvY8vPv27f7UKhGRpY6euFYqEVhxCFZgAUNQBM3nw==",
+        "dependencies": {}
+      },
+      "@msgpackr-extract/msgpackr-extract-linux-x64@3.0.3": {
+        "integrity": "sha512-cvwNfbP07pKUfq1uH+S6KJ7dT9K8WOE4ZiAcsrSes+UY55E/0jLYc+vq+DO7jlmqRb5zAggExKm0H7O/CBaesg==",
+        "dependencies": {}
+      },
+      "@msgpackr-extract/msgpackr-extract-win32-x64@3.0.3": {
+        "integrity": "sha512-x0fWaQtYp4E6sktbsdAqnehxDgEc/VwM7uLsRCYWaiGu0ykYdZPiS8zCWdnjHwyiumousxfBm4SO31eXqwEZhQ==",
+        "dependencies": {}
+      },
+      "@streamparser/json@0.0.21": {
+        "integrity": "sha512-v+49JBiG1kmc/9Ug79Lz9wyKaRocBgCnpRaLpdy7p0d3ICKtOAfc/H/Epa1j3F6YdnzjnZKKrnJ8xnh/v1P8Aw==",
+        "dependencies": {}
+      },
+      "detect-libc@2.0.3": {
+        "integrity": "sha512-bwy0MGW55bG41VqxxypOsdSdGqLwXPI/focwgTYCFMbdUiBAxLg9CFzG08sz2aqzknwiX7Hkl0bQENjg8iLByw==",
+        "dependencies": {}
+      },
+      "msgpackr-extract@3.0.3": {
+        "integrity": "sha512-P0efT1C9jIdVRefqjzOQ9Xml57zpOXnIuS+csaB4MdZbTdmGDLo8XhzBG1N7aO11gKDDkJvBLULeFTo46wwreA==",
+        "dependencies": {
+          "@msgpackr-extract/msgpackr-extract-darwin-arm64": "@msgpackr-extract/msgpackr-extract-darwin-arm64@3.0.3",
+          "@msgpackr-extract/msgpackr-extract-darwin-x64": "@msgpackr-extract/msgpackr-extract-darwin-x64@3.0.3",
+          "@msgpackr-extract/msgpackr-extract-linux-arm": "@msgpackr-extract/msgpackr-extract-linux-arm@3.0.3",
+          "@msgpackr-extract/msgpackr-extract-linux-arm64": "@msgpackr-extract/msgpackr-extract-linux-arm64@3.0.3",
+          "@msgpackr-extract/msgpackr-extract-linux-x64": "@msgpackr-extract/msgpackr-extract-linux-x64@3.0.3",
+          "@msgpackr-extract/msgpackr-extract-win32-x64": "@msgpackr-extract/msgpackr-extract-win32-x64@3.0.3",
+          "node-gyp-build-optional-packages": "node-gyp-build-optional-packages@5.2.2"
+        }
+      },
+      "msgpackr@1.11.0": {
+        "integrity": "sha512-I8qXuuALqJe5laEBYoFykChhSXLikZmUhccjGsPuSJ/7uPip2TJ7lwdIQwWSAi0jGZDXv4WOP8Qg65QZRuXxXw==",
+        "dependencies": {
+          "msgpackr-extract": "msgpackr-extract@3.0.3"
+        }
+      },
+      "node-gyp-build-optional-packages@5.2.2": {
+        "integrity": "sha512-s+w+rBWnpTMwSFbaE0UXsRlg7hU4FjekKU4eyAih5T8nJuNZT1nNsskXpxmeqSK9UzkBl6UgRlnKc8hz8IEqOw==",
+        "dependencies": {
+          "detect-libc": "detect-libc@2.0.3"
+        }
+      }
+    }
+  },
+  "remote": {},
+  "workspace": {
+    "packageJson": {
+      "dependencies": [
+        "npm:@babel/preset-env@^7.25.8",
+        "npm:@datadog/datadog-ci@2.43.0",
+        "npm:@eslint/compat@^1.2.0",
+        "npm:@eslint/eslintrc@^3.1.0",
+        "npm:@eslint/js@^9.11.1",
+        "npm:@mdi/font@7.4.47",
+        "npm:@mdi/js@^7.4.47",
+        "npm:@storybook/addon-essentials@^8.3.5",
+        "npm:@storybook/vue3-vite@^8.3.5",
+        "npm:@stylistic/eslint-plugin@^2.8.0",
+        "npm:@total-typescript/ts-reset@^0.5.1",
+        "npm:@types/crypto-js@^4.2.2",
+        "npm:@types/evaporate@^2.1.10",
+        "npm:@types/jest@^29.5.13",
+        "npm:@types/node@22",
+        "npm:@types/sanitize-html@^2.13.0",
+        "npm:@typescript-eslint/eslint-plugin@^8.8.0",
+        "npm:@typescript-eslint/parser@^8.8.0",
+        "npm:@vitejs/plugin-vue@^5.1.4",
+        "npm:@vue/compat@^3.5.12",
+        "npm:@vue/test-utils@2.4.6",
+        "npm:@vue/vue3-jest@^29.2.6",
+        "npm:@vueuse/core@^11.1.0",
+        "npm:audio-recorder-polyfill@^0.4.1",
+        "npm:axios@^1.6.8",
+        "npm:babel-jest@^29.7.0",
+        "npm:bulma-steps@^2.2.1",
+        "npm:bulma@^0.9.4",
+        "npm:chart.js@^3.9.1",
+        "npm:clipboard-copy@^4.0.1",
+        "npm:crypto-js@^4.2.0",
+        "npm:eslint-config-prettier@^9.1.0",
+        "npm:eslint-plugin-import@^2.30.0",
+        "npm:eslint-plugin-jest@^28.8.3",
+        "npm:eslint-plugin-vue@^9.29.0",
+        "npm:eslint@^9.12.0",
+        "npm:evaporate@^2.1.4",
+        "npm:flush-promises@^1.0.2",
+        "npm:globals@^15.9.0",
+        "npm:hls.js@^1.5.15",
+        "npm:jest-environment-jsdom@^29.7.0",
+        "npm:jest-junit@^16.0.0",
+        "npm:jest-transform-stub@^2.0.0",
+        "npm:jest@^29.7.0",
+        "npm:less@^3.13.1",
+        "npm:lodash.debounce@^4.0.8",
+        "npm:moment@^2.30.1",
+        "npm:msw-storybook-addon@2.0.3",
+        "npm:msw@^2.4.9",
+        "npm:postcss-html@^1.7.0",
+        "npm:postcss-preset-env@^10.0.6",
+        "npm:postcss@^8.4.47",
+        "npm:prettier@^3.3.3",
+        "npm:qrcode@^1.5.4",
+        "npm:react-dom@^18.3.1",
+        "npm:react@^18.3.1",
+        "npm:sanitize-html@2.13.0",
+        "npm:sass@^1.79.5",
+        "npm:storybook@^8.3.5",
+        "npm:stylelint-config-standard-scss@^13.1.0",
+        "npm:stylelint-config-standard-vue@^1.0.0",
+        "npm:stylelint@^16.9.0",
+        "npm:tiny-emitter@^2.1.0",
+        "npm:ts-jest@^29.2.5",
+        "npm:tui-image-editor@^3.15.3",
+        "npm:typescript@^5.6.2",
+        "npm:ulid@^2.3.0",
+        "npm:vite-plugin-compression@^0.5.1",
+        "npm:vite-plugin-node-polyfills@^0.22.0",
+        "npm:vite-plugin-ruby@^5.1.0",
+        "npm:vite@^5.4.8",
+        "npm:vue-chartjs@^4.1.2",
+        "npm:vue-cropperjs@^5.0.0",
+        "npm:vue-eslint-parser@^9.4.3",
+        "npm:vue-froala-wysiwyg@4.2.2",
+        "npm:vue-i18n@^9.14.1",
+        "npm:vue-tsc@^2.0.7",
+        "npm:vue3-moveable@^0.28.0",
+        "npm:vue@^3.5.12",
+        "npm:vuedraggable@^4.1.0",
+        "npm:workbox-cli@^7.1.0"
+      ]
+    }
+  }
+}
