@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -eu
+set -o pipefail
+
+readonly NVIM_DIRECTORY=$HOME/neovim
+
+if [ ! -d $NVIM_DIRECTORY ]; then
+  git clone https://github.com/vim/vim.git $NVIM_DIRECTORY
+fi
+
+cd $NVIM_DIRECTORY
+git pull origin master
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
+pip3 install neovim
+# hash -r

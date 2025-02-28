@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -eu
+set -o pipefail
+
+# latest home Homebrew
+brew update
+
+# update already-installed formula
+brew upgrade
+
+# bundle from Brewfile
+brew bundle
+
+# regularly executed
+brew cleanup

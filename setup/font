@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -eu
+set -o pipefail
+
+PROJECT_DIR=$HOME/ghq/github.com/miiton/Cica
+
+if [[ ! -d $PROJECT_DIR ]]; then
+  git clone https://github.com/miiton/Cica $PROJECT_DIR
+fi
+
+cd $PROJECT_DIR
+docker-compose build; docker-compose run --rm cica
+
+echo '=================================
+TODO: 設定からフォントの登録をする
+================================='
+sleep 10

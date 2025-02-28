@@ -2,20 +2,12 @@ snippet dsc described_class
 	described_class
 snippet jp JSON parse
 	JSON.parse(${0:response.body})
-snippet st
-	sign_in_as_client_suser[1]
-snippet dt
-	sign_in_as_driver
-snippet ct
-	sign_in_as_normal_client
 snippet eac extend ActiveSupport::Concern
 	extend ActiveSupport::Concern
 snippet ise is_expected
 	is_expected
 snippet head
 	let(:headers) { { Authorization: "Bearer #{token}" } }
-snippet suser create(:m_client_suser)
-	let(:suser) { create(:m_client_suser) }
 snippet il bundler/inline
 	require 'bundler/inline'
 
@@ -56,3 +48,13 @@ snippet ilar bundler/inline with AR
 	end
 snippet al "stdout query"
 	ActiveRecord::Base.logger = Logger.new($stdout)
+snippet ibl400 "BadRequest"
+	it_behaves_like "400 Bad request"
+snippet ibl401 "Unauthorized"
+	it_behaves_like "401 Unauthorized"
+snippet ibl403 "Forbidden"
+	it_behaves_like "403 Forbidden"
+snippet ibl404 "Not Found"
+	it_behaves_like "404 Not found"
+snippet ibl405 "Not Allowed"
+	it_behaves_like "405 Not Allowed"

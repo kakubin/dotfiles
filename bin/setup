@@ -1,0 +1,90 @@
+#!/usr/bin/env bash
+
+set -eu
+set -o pipefail
+
+not_installed_yet() {
+  if type $1 > /dev/null 2>&1; then
+    return 1
+  else
+    return 0
+  fi
+}
+
+readonly HEADER='
+    .__       __    _____.__.__
+  __| | _____/  |__/ ____\__|  |   ____   ______
+ / __ |/  _ \   __\   __\|  |  | _/ __ \ /  ___/
+/ /_/ (  <_> )  |  |  |  |  |  |_\  ___/ \___ \
+\_____|\____/|__|  |__|  |__|____/\___/  /_____>
+                                                   @kakubin
+'
+echo "${HEADER}"
+
+cd $HOME/dotfiles
+
+for FILE in .??*
+do
+  # 無視するファイル
+  if [ $FILE = ".git" -o $FILE = ".vscode" -o $FILE = ".DS_Store" -o $FILE = ".gitignore" -o $FILE = ".github" ]; then
+    continue
+  fi
+
+  # 既に存在する場合、上書きを行うか確認
+  if [ -e $HOME/$FILE ]; then
+    echo "File exists: $FILE"
+    read -p "override? y/n " yn
+  else
+    yn=y
+  fi
+
+  if [ $yn = "y" ]; then
+    echo "make symbol $FILE"
+    ln -sf $HOME/dotfiles/$FILE $HOME/$FILE
+  fi
+done
+
+if [[ $OSTYPE = *darwin* ]]; then
+  # brewのインストール
+  if not_installed_yet brew; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    # (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/kakubin/dotfiles/.zshrc
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  fi
+
+  brew doctor
+  $HOME/dotfiles/setup/brew
+
+  # finderで隠しファイルを表示する
+  read -p "Do you wish to show hidden files with Finder? y/n " yn
+  if [ $yn = "y" -o $yn = "Y" ]; then
+    defaults write com.apple.finder AppleShowAllFiles TRUE
+    echo "done!!"
+    echo "...restart finder\n"
+    killall Finder
+  fi
+
+  # DS_Storeを作るか確認
+  read -p "Never create .DS_Store? y/n" yn
+  if [ $yn = "y" -o $yn = "Y" ]; then
+    defaults write com.apple.desktopservices DSDontWriteNetworkStores True
+    echo "...success"
+  fi
+else # linux
+  cat apt_list | xargs sudo apt-get install -y
+fi
+
+$HOME/dotfiles/setup/deno&
+$HOME/dotfiles/setup/rbenv&
+$HOME/dotfiles/setup/nodenv&
+$HOME/dotfiles/setup/tmux&
+$HOME/dotfiles/setup/go&
+$HOME/dotfiles/setup/rust&
+$HOME/dotfiles/setup/font
+# $HOME/dotfiles/setup/vscode
+
+source $HOME/.zshrc
+
+echo "==============================>>"
+echo "Installation completed"
+echo "You only have to DO execute :PlugInstall on vim :)"

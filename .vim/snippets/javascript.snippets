@@ -1,0 +1,22 @@
+snippet desc "describe(cont, func)"
+	describe('${1:context}', () => {
+		$0
+	});
+snippet it "it(assercion, func)"
+	it('${1:context}', () => {
+		$0
+	});
+snippet eldn "eslint-disable-next-line"
+	// eslint-disable-next-line${0}
+snippet eld "disable eslint"
+	<!-- eslint-disable -->
+		${0}
+	<!-- eslint-enable -->
+snippet getf "getter"
+	get() {
+		${0}
+	}
+snippet setf "setter"
+	set() {
+		${0}
+	}

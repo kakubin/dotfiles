@@ -1,3 +1,5 @@
+# vi: set ft=ruby :
+
 # unless RUBY_VERSION.match?(/^3\.1\.\d/)
 #   require 'irb/completion'
 #   require 'wirb'
@@ -37,3 +39,21 @@ module Kernel
   end
 end
 
+# module SourceLocation
+#   module Inspection
+#     def pretty_print(printer = nil)
+#       printer.text join(':')
+#     end
+#   end
+
+#   def source_location
+#     super.tap do |orig|
+#       if orig.singleton_class
+#         orig.singleton_class.prepend Inspection
+#       end
+#     end
+#   end
+# end
+
+# UnboundMethod.prepend SourceLocation
+# Method.prepend SourceLocation

@@ -1,6 +1,15 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-cd $HOME/vim
+set -eu
+set -o pipefail
+
+readonly VIM_DIRECTORY=$HOME/vim
+
+if [ ! -d $VIM_DIRECTORY ]; then
+  git clone https://github.com/vim/vim.git $VIM_DIRECTORY
+fi
+
+cd $VIM_DIRECTORY
 git pull origin master
 ./configure --with-features=huge \
   --disable-gui \

@@ -87,15 +87,14 @@ is_linux() {
 }
 
 ## PATH
-eval "$(nodenv init -)"
-eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+eval "$(rbenv init -)"
 export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/dotfiles/bin:$PATH"
-export PATH="/usr/local/go/bin:$PATH"
-export GOPATH="$HOME/go"
-export PATH="$PATH:$GOPATH/bin"
+# export GOPATH="$HOME/go"
+# export PATH="/usr/local/go/bin:$GOPATH/bin:$PATH"
 # mysql-build
 # export PATH="$HOME/mysql-build/bin:$PATH"
 
@@ -150,8 +149,12 @@ zle -N fzf-src
 bindkey '^Xs' fzf-src
 
 command_not_found_handler() {
-  echo -e "\\n███    ██  ██████  ████████ ███████  ██████  ██    ██ ███    ██ ██████\\n████   ██ ██    ██    ██    ██      ██    ██ ██    ██ ████   ██ ██   ██\\n██ ██  ██ ██    ██    ██    █████   ██    ██ ██    ██ ██ ██  ██ ██   ██\\n██  ██ ██ ██    ██    ██    ██      ██    ██ ██    ██ ██  ██ ██ ██   ██\\n██   ████  ██████     ██    ██       ██████   ██████  ██   ████ ██████\\n"
+  echo -e "command not found"
 }
+
+eval "$(direnv hook zsh)"
+export DIRENV_LOG_FORMAT=""
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 if [[ $SHLVL = 1 ]]; then
   tmux
@@ -171,6 +174,6 @@ if is_osx; then
   export PATH="/usr/local/opt/sbt@0.13/bin:$PATH"
 fi
 
-eval `dircolors -b .colorrc`
-eval "$(direnv hook zsh)"
-export DIRENV_LOG_FORMAT=""
+# eval `dircolors -b .colorrc`
+# eval "$(direnv hook zsh)"
+# export DIRENV_LOG_FORMAT=""
