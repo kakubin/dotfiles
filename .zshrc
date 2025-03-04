@@ -152,9 +152,9 @@ command_not_found_handler() {
   echo -e "command not found"
 }
 
-eval "$(direnv hook zsh)"
-export DIRENV_LOG_FORMAT=""
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# eval "$(direnv hook zsh)"
+# export DIRENV_LOG_FORMAT=""
+# eval "$(/opt/homebrew/bin/brew shellenv)"
 
 if [[ $SHLVL = 1 ]]; then
   tmux
