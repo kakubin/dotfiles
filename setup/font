@@ -10,7 +10,7 @@ if [[ ! -d $PROJECT_DIR ]]; then
 fi
 
 cd $PROJECT_DIR
-docker-compose build; docker-compose run --rm cica
+docker compose build; docker compose run --rm cica
 
 echo '=================================
 TODO: 設定からフォントの登録をする

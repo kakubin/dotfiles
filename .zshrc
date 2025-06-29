@@ -105,6 +105,7 @@ export PATH="$HOME/dotfiles/bin:$PATH"
 if [[ -e $HOME/.deno/bin ]]; then
   export DENO_INSTALL="$HOME/.deno"
   export PATH="$DENO_INSTALL/bin:$PATH"
+  . "$HOME/.deno/env"
 fi
 
 if [[ -d $HOME/.wasmtime ]]; then
