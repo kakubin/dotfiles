@@ -1,0 +1,10 @@
+lowercaseKeywords: false
+connections:
+  - alias: mydb
+    driver: mysql
+    proto: tcp
+    host: localhost
+    port: 3306
+    user: root
+    passwd: password
+    dbName: training_development
