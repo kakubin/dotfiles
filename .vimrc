@@ -85,8 +85,8 @@ syntax on
 let g:mapleader = "\<Space>"
 nnoremap j gj
 nnoremap k gk
-nnoremap <C-w>v <C-w>v<C-w>l
-nnoremap <C-w>s <C-w>s<C-w>j
+" nnoremap <C-w>v <C-w>v<C-w>l
+" nnoremap <C-w>s <C-w>s<C-w>j
 nnoremap Y y$
 nnoremap $ g_
 
@@ -186,7 +186,7 @@ Plug 'kakubin/darcula'
 Plug 'vim-airline/vim-airline'
 Plug 'osyo-manga/vim-brightest'
 Plug 't9md/vim-quickhl'
-Plug 'google/vim-jsonnet'
+" Plug 'sheerun/vim-polyglot'
 
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-endwise'
@@ -228,15 +228,17 @@ Plug 'pocke/rbs.vim'
 " just in case
 Plug 'othree/yajs.vim'
 
+Plug 'prettier/vim-prettier'
+
 " typescript
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
+" Plug 'leafgarland/typescript-vim'
+" Plug 'peitalin/vim-jsx-typescript'
 
 " graphql
-Plug 'jparise/vim-graphql'
+" Plug 'jparise/vim-graphql'
 
 " terraform
-Plug 'hashivim/vim-terraform'
+" Plug 'hashivim/vim-terraform'
 
 " go
 Plug 'mattn/vim-goimports'
@@ -275,6 +277,10 @@ let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
 
+" let g:prettier#autoformat = 1
+let g:prettier_exec_cmd = 'yarn prettierlint --write'
+" let g:prettier#autoformat_config_present = 1
+
 " ddc
 call ddc#custom#patch_global('ui', 'native')
 call ddc#custom#patch_global('sources', ['vim-lsp', 'around', 'ultisnips'])
@@ -295,8 +301,9 @@ call ddc#enable()
 " lsp
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_settings_filetype_vue = ['volar-server', 'typescript-language-server']
-let g:lsp_settings_filetype_ruby = ['ruby-lsp', 'rubocop-lsp-mode']
+let g:lsp_settings_filetype_ruby = ['ruby-lsp', 'rubocop-lsp-mode'] ", 'typeprof']
 let g:lsp_settings_filetype_sql = ['sqls']
+" let g:lsp_semantic_enabled = 1
 nnoremap <silent><C-J> <plug>(lsp-next-diagnostic)
 nnoremap <silent><C-K> <plug>(lsp-previous-diagnostic)
 nnoremap <Leader>sd <plug>(lsp-definition)
@@ -315,6 +322,11 @@ let g:NERDTreeShowHidden=1
 nnoremap <silent><Leader>t :NERDTreeToggle<CR>
 let g:NERDTreeIgnore=['\.git$', '\.clean$', '\.swp$', '\.bak$', '\~$', '\.DS_Store', '__pycache__$']
 
+" easymotion
+" map f <Plug>(easymotion-fl)
+" map t <Plug>(easymotion-tl)
+" map F <Plug>(easymotion-Fl)
+" map T <Plug>(easymotion-Tl)
 
 " fuzzy finder
 " call ddu#custom#patch_global(#{

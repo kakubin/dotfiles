@@ -93,8 +93,9 @@ export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/dotfiles/bin:$PATH"
-# export GOPATH="$HOME/go"
+export GOPATH="$HOME/go"
 # export PATH="/usr/local/go/bin:$GOPATH/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
 # mysql-build
 # export PATH="$HOME/mysql-build/bin:$PATH"
 
@@ -153,9 +154,15 @@ command_not_found_handler() {
   echo -e "command not found"
 }
 
-# eval "$(direnv hook zsh)"
-# export DIRENV_LOG_FORMAT=""
-# eval "$(/opt/homebrew/bin/brew shellenv)"
+# docker-exec() {
+#   name=$(docker ps --format "{{.Names}}" | fzf)
+#   docker exec -it $name
+# }
+
+eval "$(saml2aws --completion-script-zsh)"
+eval "$(direnv hook zsh)"
+export DIRENV_LOG_FORMAT=""
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 if [[ $SHLVL = 1 ]]; then
   tmux

@@ -58,3 +58,11 @@ snippet ibl404 "Not Found"
 	it_behaves_like "404 Not found"
 snippet ibl405 "Not Allowed"
 	it_behaves_like "405 Not Allowed"
+snippet esb
+	expect { subject }
+snippet toc
+	to change { ${1} }
+snippet esbc
+	expect { subject }.to change { ${1} }
+snippet cft
+	from(${1}).to(${2})
