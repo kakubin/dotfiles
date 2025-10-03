@@ -39,7 +39,8 @@ brew "gh"
 
 tap "homebrew/cask"
 
-# brew "orbstack"
+cask "google-cloud-sdk"
+brew "orbstack"
 cask "skitch"
 # cask "postman"
 # cask "wkhtmltopdf"

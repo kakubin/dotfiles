@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+curl https://mise.run | sh
+# in case of unregistered
+# echo 'eval "$(~/.local/bin/mise activate zsh)"' >> ~/.zshrc

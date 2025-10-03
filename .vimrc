@@ -133,6 +133,8 @@ if !filereadable(s:plug_manager_path)
         \ ' https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 endif
 
+packadd! editorconfig
+
 " PluginManager
 call plug#begin('~/.vim/plugged')
 
@@ -163,8 +165,6 @@ Plug 'shun/ddu-source-rg'
 Plug 'Shougo/ddu-filter-matcher_substring'
 "" kind
 Plug 'Shougo/ddu-kind-file'
-
-Plug 'editorconfig/editorconfig-vim'
 
 " lsp
 Plug 'prabirshrestha/vim-lsp'
