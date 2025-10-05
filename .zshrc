@@ -109,6 +109,10 @@ if [[ -e $HOME/.deno/bin ]]; then
   . "$HOME/.deno/env"
 fi
 
+if [[ -e $HOME/.local/bin/mise ]]; then
+  eval "$($HOME/.local/bin/mise activate zsh)"
+fi
+
 if [[ -d $HOME/.wasmtime ]]; then
   export WASMTIME_HOME="$HOME/.wasmtime"
   export PATH="$WASMTIME_HOME/bin:$PATH"
