@@ -4,6 +4,7 @@ return {
     'Shougo/ddc.vim',
     dependencies = {
       'vim-denops/denops.vim',
+      'Shougo/ddc-ui-native',
       'Shougo/ddc-around',
       'tani/ddc-fuzzy',
       'matsui54/ddc-ultisnips',
@@ -42,6 +43,7 @@ return {
       vim.fn['ddc#enable']()
     end
   },
+  'Shougo/ddc-ui-native',
   'Shougo/ddc-around',
   'tani/ddc-fuzzy',
   {

@@ -7,7 +7,7 @@ return {
   },
   {
     'vim-scripts/vim-auto-save',
-    config = function()
+    init = function()
       vim.g.auto_save = 1
       vim.g.auto_save_in_insert_mode = 0
       vim.g.auto_save_silent = 1
@@ -21,5 +21,5 @@ return {
       vim.keymap.set('n', '<C-/>', '<Plug>NERDCommenterToggle')
       vim.keymap.set('v', '<C-_>', '<Plug>NERDCommenterToggle<CR>gv')
     end
-  }
+  },
 }
