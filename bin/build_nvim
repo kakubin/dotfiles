@@ -13,5 +13,5 @@ cd $NVIM_DIRECTORY
 git pull origin master
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
-pip3 install neovim
+pipx install pynvim
 # hash -r

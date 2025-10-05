@@ -22,6 +22,7 @@ brew "nkf"
 brew "jq"
 brew "pstree"
 brew "python@3.13"
+brew "pipx"
 brew "libyaml"
 brew "lua"
 

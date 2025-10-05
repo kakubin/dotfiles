@@ -19,6 +19,7 @@ dip
 ruby-lsp
 ruby-lsp-rails
 refe2
+neovim
 EOL
 
 # gem install mysql2 -v '0.5.6' -- --with-opt-dir=$(brew --prefix openssl) --with-ldflags=-L/opt/homebrew/opt/zstd/lib
