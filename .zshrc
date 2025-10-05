@@ -163,9 +163,6 @@ command_not_found_handler() {
 #   docker exec -it $name
 # }
 
-eval "$(saml2aws --completion-script-zsh)"
-eval "$(direnv hook zsh)"
-export DIRENV_LOG_FORMAT=""
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 if [[ $SHLVL = 1 ]]; then
@@ -181,11 +178,4 @@ function fssh() {
   fi
 }
 
-if is_osx; then
-  # . /usr/local/opt/asdf/libexec/asdf.sh
-  export PATH="/usr/local/opt/sbt@0.13/bin:$PATH"
-fi
-
 # eval `dircolors -b .colorrc`
-# eval "$(direnv hook zsh)"
-# export DIRENV_LOG_FORMAT=""

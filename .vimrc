@@ -189,7 +189,7 @@ Plug 't9md/vim-quickhl'
 " Plug 'sheerun/vim-polyglot'
 
 Plug 'alvan/vim-closetag'
-Plug 'tpope/vim-endwise'
+" Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'simeji/winresizer'
