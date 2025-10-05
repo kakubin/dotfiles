@@ -109,6 +109,14 @@ if [[ -e $HOME/.deno/bin ]]; then
   . "$HOME/.deno/env"
 fi
 
+if [[ -e $HOME/.bun ]]; then
+  # bun completions
+  [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+  # bun
+  export BUN_INSTALL="$HOME/.bun"
+  export PATH="$BUN_INSTALL/bin:$PATH"
+fi
+
 if [[ -e $HOME/.local/bin/mise ]]; then
   eval "$($HOME/.local/bin/mise activate zsh)"
 fi
