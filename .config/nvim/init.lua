@@ -18,4 +18,6 @@ vim.keymap.set('n', '<ESC><ESC>', ':nohlsearch<CR><ESC>')
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
+vim.g.mapleader = " "
+
 require('plugin')
