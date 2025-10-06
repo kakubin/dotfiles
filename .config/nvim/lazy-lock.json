@@ -14,11 +14,14 @@
   "tig-explorer.vim": { "branch": "master", "commit": "ac49ff17f51c1cbe3128b3632edbd8f8ba88adcc" },
   "ultisnips": { "branch": "master", "commit": "b22a86f9dcc5257624bff3c72d8b902eac468aad" },
   "vim-auto-save": { "branch": "master", "commit": "1685175183d160879ebcf231cd4c96b1b8a5a5c9" },
+  "vim-brightest": { "branch": "master", "commit": "717682eda87a4b9a19720b01ef5b09c339e3412c" },
+  "vim-easymotion": { "branch": "master", "commit": "b3cfab2a6302b3b39f53d9fd2cd997e1127d7878" },
   "vim-fugitive": { "branch": "master", "commit": "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4" },
   "vim-gitgutter": { "branch": "main", "commit": "488c0555e47e2aabe273c635f7dd233e985311a6" },
   "vim-lsp": { "branch": "master", "commit": "be06c952810226f372149ea1af68b628c662c65a" },
   "vim-lsp-settings": { "branch": "master", "commit": "a80c2f9dd7b2be95c63b70f6ecd4cd4f0c7f4fd5" },
   "vim-lsp-snippets": { "branch": "master", "commit": "7d9bca7f5b37285cfec412caf92e1d6132e1fffb" },
   "vim-lsp-ultisnips": { "branch": "master", "commit": "e6e903f4c5442004965890907e4318acbc61d375" },
-  "vim-snippets": { "branch": "master", "commit": "f371d635f6f6350d34bbb483e37e383db322d145" }
+  "vim-snippets": { "branch": "master", "commit": "f371d635f6f6350d34bbb483e37e383db322d145" },
+  "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" }
 }

@@ -13,6 +13,16 @@ return {
       vim.g.auto_save_silent = 1
     end
   },
+  'easymotion/vim-easymotion',
+  'tpope/vim-surround',
+  {
+    'osyo-manga/vim-brightest',
+    init = function()
+      vim.g['brightest#highlight'] = {
+        group = "BrightestUnderline"
+      }
+    end
+  },
   {
     'preservim/nerdcommenter',
     config = function()
